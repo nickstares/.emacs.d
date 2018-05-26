@@ -1,0 +1,4 @@
+alias gco git checkout
+alias gst git status
+alias gph git push heroku master
+alias gca git commit -am

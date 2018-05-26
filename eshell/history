@@ -1,0 +1,128 @@
+ls
+resources
+ls
+ls
+cd ..
+test
+resolveLinks 
+resources
+ls
+ls
+cd ..
+ls
+cd test
+ls
+cd resources/
+ls
+gst
+git commit -am "Use test image from worker resources"
+git push
+git commit -am "Find pwd in build"
+git push
+lein test2junit :integration
+lein test :integration
+cd ../..
+..
+web
+lein test2junit :integration
+git commit -am "Use test image from worker resources"
+lein test2junit :integration
+lein test2junit :integration
+lein test2junit :integration
+lein test2junit :integration
+ls
+ls
+ls
+rm FUTURE
+rm FUTURE\~ 
+rm notes.org
+gst
+ls
+git init
+dct
+cd ~/evidentsystems/drawing-comparison-tool/
+git status
+ls
+web
+ls
+resources
+ls
+public
+ls
+img
+ls
+ls
+cd ..
+ls
+cd vendor/
+ls
+ls
+cd ..
+ls
+cd js
+ls
+cd ..
+cd css
+ls
+ls
+cd ../../..
+tree
+ls
+cd resources/
+ls
+cd public/
+ls
+ls
+cd _default/
+ls
+ls
+ls
+cd ..
+ls
+..
+ls
+cd themes/
+ls
+anake
+ls
+rm fonts
+cd ..
+cd css
+rm -rf fonts
+cd ..
+sl
+ls
+cd js
+ls
+ls
+cd ..
+cd css
+ls
+open .
+ls
+ls
+cd ..
+ls
+cd ..
+ls
+cd layouts/
+ls
+cd partials/
+ls
+mkdir headers
+touch site-header.html
+ls
+ls
+joplin
+ls
+dct
+web
+cd ..
+lein test integration
+make integration-test
+cd .. & make integration-test
+cd .. & make integration-test
+cd drawing-comparison-tool/
+make integration-test
+git fetch
+git fetch origin

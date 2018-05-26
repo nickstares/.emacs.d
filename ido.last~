@@ -1,0 +1,374 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/Users/nicholasstares/.emacs.d/" . "elpa/")
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/web/joplin/" . "seeds/")
+ ("/Users/nicholasstares/evidentsystems/website/themes/ananke/layouts/" . "partials/")
+ ("/Users/nicholasstares/evidentsystems/website/themes/ananke/" . "layouts/")
+ ("/Users/nicholasstares/evidentsystems/website/static/css/" . "fonts/")
+ ("/Users/nicholasstares/evidentsystems/website/static/" . "fonts/")
+ ("/Users/nicholasstares/evidentsystems/website/themes/" . "ananke/")
+ ("/Users/nicholasstares/evidentsystems/website/layouts/partials/" . "contact/")
+ ("/Users/nicholasstares/evidentsystems/website/layouts/" . "_default/")
+ ("/Users/nicholasstares/evidentsystems/website/" . "layouts/")
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/web/resources/public/" . "img/")
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/web/resources/" . "public/")
+ ("/Users/nicholasstares/research/" . "happy-future/")
+ ("/tmp/dct/data/file-storage/" . "0f2d83a7-2ec4-4445-8f27-e03ec566ff60/")
+ ("/tmp/dct/data/" . "file-storage/")
+ ("/tmp/dct/" . "data/")
+ ("/tmp/" . "dct/")
+ ("/" . "tmp/")
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/web/test/clj/com/toyota_europe/dct/" . "web/")
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/web/test/clj/com/toyota_europe/" . "dct/")
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/web/test/clj/com/" . "toyota_europe/")
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/web/test/clj/" . "com/")
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/web/test/cljs/com/toyota_europe/dct/" . "ui/")
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/web/test/cljs/com/toyota_europe/" . "dct/")
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/web/test/cljs/com/" . "toyota_europe/")
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/web/test/cljs/" . "com/")
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/web/test/" . "resources/")
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/web/src/clj/com/toyota_europe/dct/" . "web/")
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/web/src/clj/com/toyota_europe/" . "dct/")
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/web/src/clj/com/" . "toyota_europe/")
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/web/src/clj/" . "com/")
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/web/src/cljs/com/" . "toyota_europe/")
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/web/src/cljs/" . "com/")
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/web/src/" . "clj/")
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/web/" . "joplin/")
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/worker/src/clj/com/toyota_europe/dct/worker/" . "image/")
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/common/src/clj/com/toyota_europe/dct/" . "component/")
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/common/src/clj/com/toyota_europe/" . "dct/")
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/common/src/clj/com/" . "toyota_europe/")
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/common/src/clj/" . "com/")
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/common/src/" . "clj/")
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/common/" . "src/")
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/worker/src/clj/com/toyota_europe/dct/" . "worker/")
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/worker/src/clj/com/toyota_europe/" . "dct/")
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/worker/src/clj/com/" . "toyota_europe/")
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/worker/src/clj/" . "com/")
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/worker/src/" . "clj/")
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/worker/" . "logs/")
+ ("/Users/nicholasstares/evidentsystems/" . "drawing-comparison-tool/")
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/" . "web/")
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/web/src/cljs/com/toyota_europe/dct/" . "ui/")
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/web/src/cljs/com/toyota_europe/" . "dct/")
+ ("/Users/nicholasstares/code/overtone-scratch/src/" . "overtone_scratch/")
+ ("/Users/nicholasstares/code/overtone-scratch/" . "src/")
+ ("/Users/nicholasstares/code/hello-quil/src/" . "hello_quil/")
+ ("/Users/nicholasstares/code/hello-quil/" . "src/")
+ ("/Users/nicholasstares/code/re-frame/examples/simple/src/" . "simple/")
+ ("/Users/nicholasstares/code/re-frame/examples/simple/" . "src/")
+ ("/Users/nicholasstares/code/scratch/src/" . "scratch/")
+ ("/Users/nicholasstares/code/scratch/" . "src/")
+ ("/Users/nicholasstares/unity-projects/" . "nick-arcadia/")
+ ("/Users/nicholasstares/code/understanding-re-frame/src/cljs/" . "understanding_re_frame/")
+ ("/Users/nicholasstares/code/understanding-re-frame/src/" . "cljs/")
+ ("/Users/nicholasstares/code/understanding-re-frame/" . "src/")
+ ("/Users/nicholasstares/code/re-frame/examples/todomvc/src/" . "todomvc/")
+ ("/Users/nicholasstares/code/re-frame/examples/todomvc/" . "src/")
+ ("/Users/nicholasstares/code/re-frame/examples/" . "todomvc/")
+ ("/Users/nicholasstares/code/re-frame/src/" . "re_frame/")
+ ("/Users/nicholasstares/code/re-frame/images/" . "Readme/")
+ ("/Users/nicholasstares/code/re-frame/" . "docs/")
+ ("/Users/nicholasstares/code/learn-re-frame/resources/" . "public/")
+ ("/Users/nicholasstares/code/learn-re-frame/src/cljs/" . "learn_re_frame/")
+ ("/Users/nicholasstares/code/learn-re-frame/src/" . "cljs/")
+ ("/Users/nicholasstares/code/learn-re-frame/" . "src/")
+ ("/Users/nicholasstares/code/realworld-clj/src/clj/" . "realworld_clj/")
+ ("/Users/nicholasstares/code/realworld-clj/src/" . "clj/")
+ ("/Users/nicholasstares/code/realworld-clj/" . "src/")
+ ("/Users/nicholasstares/code/realworld-clj/src/clj/realworld_clj/" . "db/")
+ ("/Users/nicholasstares/code/dropbox-repl/src/" . "dropbox_repl/")
+ ("/Users/nicholasstares/code/dropbox-repl/" . "src/")
+ ("/Users/nicholasstares/code/" . "re-frame/")
+ ("/Users/" . "nicholasstares/")
+ ("/Users/nicholasstares/Documents/d3_test/" . "linechart/")
+ ("/Users/nicholasstares/Documents/tensorflow/" . "tensorflow/")
+ ("/Users/nicholasstares/Documents/smash_elo/victory-tutorial/src/" . "js/")
+ ("/Users/nicholasstares/Documents/smash_elo/victory-tutorial/" . "src/")
+ ("/Users/nicholasstares/Documents/smash_elo/" . "victory-tutorial/")
+ ("/Users/nicholasstares/Documents/" . "notes/")
+ ("/Users/nicholasstares/documents/smash_elo/victory-tutorial/" . "node_modules/")
+ ("/Users/nicholasstares/documents/smash_elo/victory-tutorial/src/" . "js/")
+ ("/Users/nicholasstares/documents/offblockway/" . "views/")
+ ("/Users/nicholasstares/downloads/fed-assessment (1)/" . "src/")
+ ("/Users/nicholasstares/Downloads/fed-assessment (1)/" . "node_modules/")
+ ("/Users/nicholasstares/Downloads/" . "fed-assessment (1)/")
+ ("/Users/nicholasstares/" . ".emacs.d/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/Users/nicholasstares/.emacs.d/"
+ "/Users/nicholasstares/.emacs.d/elpa/"
+ "/Users/nicholasstares/evidentsystems/drawing-comparison-tool/web/src/cljs/com/toyota_europe/dct/ui/"
+ "/Users/nicholasstares/evidentsystems/drawing-comparison-tool/web/src/clj/com/toyota_europe/dct/web/"
+ "/Users/nicholasstares/evidentsystems/drawing-comparison-tool/common/src/clj/com/toyota_europe/dct/component/"
+ "/Users/nicholasstares/evidentsystems/drawing-comparison-tool/web/joplin/"
+ "/Users/nicholasstares/evidentsystems/drawing-comparison-tool/web/joplin/seeds/"
+ "/Users/nicholasstares/evidentsystems/drawing-comparison-tool/web/joplin/migrations/"
+ "/Users/nicholasstares/evidentsystems/drawing-comparison-tool/web/"
+ "/Users/nicholasstares/evidentsystems/drawing-comparison-tool/worker/logs/"
+ "/Users/nicholasstares/evidentsystems/drawing-comparison-tool/worker/src/clj/com/toyota_europe/dct/worker/"
+ "/Users/nicholasstares/evidentsystems/website/layouts/_default/"
+ "/Users/nicholasstares/evidentsystems/website/layouts/partials/"
+ "/Users/nicholasstares/evidentsystems/website/themes/ananke/layouts/partials/"
+ "/Users/nicholasstares/evidentsystems/website/layouts/"
+ "/Users/nicholasstares/evidentsystems/website/static/css/"
+ "/Users/nicholasstares/evidentsystems/website/static/fonts/"
+ "/Users/nicholasstares/Downloads/"
+ "/Users/nicholasstares/evidentsystems/website/startbootstrap-modern-business-gh-pages/"
+ "/Users/nicholasstares/evidentsystems/website/"
+ "/Users/nicholasstares/evidentsystems/website/themes/ananke/"
+ "/Users/nicholasstares/evidentsystems/drawing-comparison-tool/web/src/clj/com/toyota_europe/dct/"
+ "/Users/nicholasstares/evidentsystems/drawing-comparison-tool/web/resources/public/img/"
+ "/Users/nicholasstares/evidentsystems/drawing-comparison-tool/web/resources/public/"
+ "/Users/nicholasstares/evidentsystems/dct-design-doc/"
+ "/Users/nicholasstares/evidentsystems/drawing-comparison-tool/web/src/cljs/com/toyota_europe/dct/"
+ "/Users/nicholasstares/evidentsystems/toyota-misc/"
+ "/Users/nicholasstares/research/happy-future/"
+ "/Users/nicholasstares/evidentsystems/drawing-comparison-tool/"
+ "/Users/nicholasstares/research/"
+ "/Users/nicholasstares/"
+ "/Users/nicholasstares/evidentsystems/drawing-comparison-tool/web/test/resources/"
+ "/tmp/dct/data/file-storage/0f2d83a7-2ec4-4445-8f27-e03ec566ff60/"
+ "/tmp/dct/data/file-storage/"
+ "/Users/nicholasstares/evidentsystems/drawing-comparison-tool/web/test/clj/com/toyota_europe/dct/web/"
+ "/Users/nicholasstares/evidentsystems/drawing-comparison-tool/web/test/cljs/com/toyota_europe/dct/ui/"
+ "/Users/nicholasstares/evidentsystems/"
+ "/Users/nicholasstares/evidentsystems/drawing-comparison-tool/ops/"
+ "/Users/nicholasstares/Desktop/"
+ "/tmp/dct/data/file-storage/3548558c-548e-41d3-b78e-93bd3948471c/"
+ "/Users/nicholasstares/evidentsystems/drawing-comparison-tool/common/src/clj/com/toyota_europe/dct/"
+ "/Users/nicholasstares/evidentsystems/drawing-comparison-tool/worker/src/clj/com/toyota_europe/dct/worker/image/"
+ "/Users/nicholasstares/evidentsystems/drawing-comparison-tool/worker/src/clj/com/toyota_europe/dct/"
+ "/Users/nicholasstares/Documents/notes/"
+ "/Users/nicholasstares/code/overtone-scratch/src/overtone_scratch/"
+ "/Users/nicholasstares/code/hello-quil/src/hello_quil/"
+ "/Users/nicholasstares/code/re-frame/examples/todomvc/src/todomvc/"
+ "/Users/nicholasstares/code/re-frame/examples/simple/src/simple/"
+ "/Users/nicholasstares/code/re-frame/examples/todomvc/"
+ "/Users/nicholasstares/code/re-frame/docs/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "init.el"
+ "api.cljs"
+ "db.cljs"
+ "subs.cljs"
+ "service.clj"
+ "redis.clj"
+ "redis_listener.clj"
+ "sql.clj"
+ "joplin.edn"
+ "20180511092600_comparisons.clj"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/Users/nicholasstares/.emacs.d/" (23301 26358 0 0) "work-init.el/" "var/" "use-package/" "url/" "themes/" "semanticdb/" "recentf~" "recentf" "README.md" "projectile.cache" "projectile-bookmarks.eld" "network-security.data" "init.el~" "init.el" "ido.last~" "ido.last" "eshell/" "elpa/" "el-get/" "customizations/" "cider-history" "bookmarks" "backups/" "auto-save-list/" "arcadia.el" "abbrev_defs" ".sx/" ".smex-items" ".recentf" ".org-id-locations" ".gitignore" ".git/" ".emacs.desktop" ".DS_Store" "../" "./")
+
+ ("/Users/nicholasstares/" (23301 26358 0 0) "Wine Files/" "VirtualBox VMs/" "unity-projects/" "toolbar-switching.mov" "tmp/" "temp" "space-emacs.d/" "screen.png" "samples" "Resume/" "research/" "Public/" "Pictures/" "package-lock.json" "org/" "oremacs/" "node_modules/" "natures-leaf-collective-2-2.htm" "Music/" "Movies/" "Library/" "init.el~" "html_linguistics_encylopedia.html" "gtd/" "Google Drive/" "floobits/" "ezgif-5-6b54827e03.gif" "evidentsystems/" "emacs_old_Info.plist" "Dropbox/" "Downloads/" "Documents/" "Desktop/" "Creative Cloud Files/" "code/" "character-sheet-example/" "Calibre Library/" "bubble app.rtf" "Books/" "Applications/" ".zshrc.swo" ".zshrc.swn" ".zshrc.pre-oh-my-zsh" ".zshrc" ".zsh_history" ".zsh-update" ".zlogin" ".zcompdump-Nicholas’s MacBook Pro-5.3" ".yarnrc" ".Xauthority" ".vimrc" ".viminfo" ".vim/" ".vagrant.d/" ".v8flags.5.1.281.107.9b453d582abd9f3012988b7296477711.json" ".Trash/" ".subversion/" ".ssh/" ".spacemacs" ".smex-items" ".rvm/" ".rnd" ".profile" ".planck_history" ".overtone/" ".oracle_jre_usage/" ".oh-my-zsh/" ".nvm/" ".nuuid.ini" ".npm/" ".node-gyp/" ".netrc" ".mkshrc" ".m2/" ".lumo_history" ".local/" ".live-packs/" ".lesshst" ".lein-env" ".lein/" ".irb-history" ".inputrc" ".gitconfig" ".ghc/" ".Genymobile/" ".gem/" ".floorc.json" ".emacs_anywhere/" ".emacs.d/" ".DS_Store" ".dropbox/" ".docker/" ".cups/" ".config/" ".CFUserTextEncoding" ".calibre_calibre_GUI.lock" ".cache/" ".bundle/" ".boot/" ".bashrc" ".bash_sessions/" ".bash_profile.pysave" ".bash_profile" ".bash_history" ".ansible_galaxy" ".ansible/" ".android/" "../" "./")
+
+ ("/Users/nicholasstares/.emacs.d/elpa/" (23301 25924 0 0) "zoutline-20170722.651/" "yasnippet-20180319.607/" "xelb-0.14/" "with-editor-readme.txt" "with-editor-20180217.548/" "which-key-20180301.1018/" "websocket-20171113.2045/" "undo-tree-20170706.246/" "tagedit-20140618.521/" "synosaurus-readme.txt" "synosaurus-20180125.1034/" "sx-readme.txt" "sx-20180128.1705/" "swiper-20180119.911/" "spinner-1.7.3/" "sotclojure-readme.txt" "smex-20140425.1314/" "skewer-mode-20170730.1241/" "simple-httpd-20171004.938/" "shut-up-20150423.522/" "shell-pop-20170304.616/" "seq-2.20/" "s-20140714.707/" "runner-readme.txt" "runner-1.8/" "rich-minority-20170813.622/" "request-20170131.1747/" "ranger-readme.txt" "ranger-20170817.857/" "rainbow-delimiters-20140713.1131/" "racket-mode-readme.txt" "racket-mode-20171110.1153/" "queue-0.1.1/" "pug-mode-20171018.829/" "projectile-20140716.416/" "popup-20160709.729/" "pkg-info-20140610.630/" "peg-20150707.2341/" "pcache-20170105.1414/" "parinfer-readme.txt" "parinfer-20180226.2134/" "parinfer-20170710.821/" "paredit-20140128.1248/" "org-pomodoro-20171108.1314/" "org-jira-20180103.1813/" "org-9.1.13/" "omnisharp-20171226.1147/" "neotree-20170522.758/" "multiple-cursors-20180406.1350/" "multi-term-20160619.233/" "monokai-theme-20180104.429/" "marshal-20180102.201/" "markup-20170420.429/" "markdown-mode-20180124.138/" "magit-readme.txt" "magit-popup-readme.txt" "magit-popup-20180217.910/" "magit-20180302.1342/" "logito-20120225.1255/" "log4e-20170401.604/" "lispy-readme.txt" "lispy-20180123.1255/" "linum-relative-readme.txt" "linum-relative-20180124.247/" "leuven-theme-readme.txt" "leuven-theme-20170919.252/" "let-alist-1.0.5/" "keyfreq-20160516.716/" "key-chord-20160227.438/" "js2-mode-20171211.607/" "ivy-20180115.1555/" "inflections-20170913.216/" "inf-ruby-readme.txt" "inf-ruby-20171211.225/" "indium-20171206.1512/" "iedit-20170916.1024/" "ido-ubiquitous-20140526.1306/" "hydra-20171120.1042/" "ht-20171213.1334/" "highlight-20170702.732/" "heroku-theme-readme.txt" "heroku-readme.txt" "helm-projectile-20170926.1123/" "helm-core-20180104.2210/" "helm-clojuredocs-20160405.23/" "helm-20180103.1013/" "hackernews-20170930.1313/" "guru-mode-readme.txt" "goto-chg-20170917.1200/" "gntp-20141024.1950/" "github-modern-theme-readme.txt" "git-commit-readme.txt" "git-commit-20180202.321/" "ghub-readme.txt" "ghub-20180221.1319/" "geiser-20171102.1825/" "fountain-mode-readme.txt" "fountain-mode-20171121.559/" "flycheck-20171214.1215/" "flx-ido-20180117.719/" "flx-20151030.1112/" "floobits-20170802.1500/" "fix-muscle-memory-readme.txt" "fish-completion-readme.txt" "faceup-20170925.1246/" "f-20171230.1229/" "exwm-0.18/" "exec-path-from-shell-20141212.846/" "evil-rsi-readme.txt" "evil-readme.txt" "evil-magit-20180410.804/" "evil-lispy-readme.txt" "evil-escape-readme.txt" "evil-escape-20170913.618/" "evil-collection-20180422.1442/" "evil-20171224.929/" "epl-20140620.218/" "edn-20160215.419/" "editorconfig-20180428.2222/" "dired-ranger-readme.txt" "dired-hacks-utils-readme.txt" "dired-hacks-utils-20160527.1436/" "diminish-20170419.1036/" "dash-readme.txt" "dash-20180206.2124/" "csharp-mode-20171211.2238/" "counsel-readme.txt" "counsel-0.10.0/" "company-20171206.352/" "color-theme-readme.txt" "color-theme-20070910.1007/" "clojure-mode-readme.txt" "clojure-mode-extra-font-locking-20140613.839/" "clojure-mode-20180121.1011/" "clojure-mode-20141120.1410/" "clojure-cheatsheet-readme.txt" "clojure-cheatsheet-20180201.4/" "clojure-cheatsheet-20161004.2328/" "cljsbuild-mode-readme.txt" "clj-refactor-20180411.43/" "cl-lib-0.5/" "cider-readme.txt" "cider-20180122.2345/" "cider-20141120.1746/" "bind-key-20171210.2125/" "avy-20171230.220/" "auto-complete-20170124.1845/" "async-20180103.2312/" "archives/" "align-cljlet-20160112.1301/" "alert-20180122.1242/" "adjust-parens-readme.txt" "ack-readme.txt" "achievements-20150530.1126/" "ace-window-20171228.1109/" "ac-slime-readme.txt" "4clojure-readme.txt" "4clojure-20131014.1507/" "0xc-readme.txt" "0blayout-readme.txt" ".DS_Store" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/web/src/cljs/com/toyota_europe/dct/ui/" (23301 25778 0 0) "views.cljs" "util.cljs" "subs.cljs" "routes.cljs" "pixi.cljs" "events.cljs" "effects.cljs" "db.cljs" "config.cljs" "api.cljs" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/web/src/clj/com/toyota_europe/dct/web/" (23300 19542 0 0) "system.clj" "service.clj" "server.clj" "config.clj" "api.clj" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/" (23300 2076 0 0) "worker/" "web/" "README.md" "ops/" "opencv/" "Makefile" "Dockerfile" "docker-compose.worker.yml" "docker-compose.web.yml" "docker-compose.services.yml" "common/" "adrs/" ".lein-env" ".gitignore" ".git/" ".editorconfig" ".DS_Store" ".dockerignore" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/worker/src/clj/com/toyota_europe/dct/worker/" (23293 46766 0 0) "system.clj" "image_processor.clj" "image.clj" "db_writer.clj" "config.clj" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/common/src/clj/com/toyota_europe/dct/component/" (23298 62710 0 0) "redis_listener.clj" "redis.clj" "file_storage.clj" "database.clj" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/web/joplin/seeds/" (23293 43682 0 0) "sql.clj" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/web/" (23293 46766 0 0) "test/" "target/" "src/" "resources/" "project.clj" "logs/" "joplin/" "dev/" "config/" "build.xml" ".nrepl-port" ".lein-repl-history" ".lein-failures" ".lein-env" ".gitignore" ".DS_Store" ".cljs_rhino_repl/" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/web/joplin/migrations/" (23298 60516 0 0) "20180511092600_comparisons.clj" "20180511092400_revisions.clj" "20180410051114_tiles.clj" "20180320173455_pages.clj" "20180312210639_users.clj" ".20180410051114_tiles.clj.swp" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/web/test/" (23293 35698 0 0) "resources/" "cljs/" "clj/" ".DS_Store" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/web/test/clj/" (23252 40333 0 0) "com/" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/web/test/clj/com/" (23252 40333 0 0) "toyota_europe/" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/web/test/clj/com/toyota_europe/" (23252 40333 0 0) "dct/" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/web/test/clj/com/toyota_europe/dct/web/" (23293 43199 0 0) "test-resources/" "service_test.clj" "etaoin_test.clj~" "etaoin_test.clj" ".DS_Store" ".#etaoin_test.clj" "#etaoin_test.clj#" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/worker/logs/" (23291 13995 0 0) "dct-worker-dev-2018-05-15.0.log" "dct-worker-dev-2018-05-14.0.log" "dct-worker-dev-2018-05-12.0.log" "dct-worker-dev-2018-05-11.0.log" "dct-worker-dev-2018-05-08.0.log" "dct-worker-dev-2018-05-07.0.log" "dct-worker-dev-2018-05-02.0.log" "dct-worker-dev-2018-05-01.0.log" "dct-worker-dev-2018-04-28.0.log" "dct-worker-dev-2018-04-27.0.log" "dct-worker-dev-2018-04-17.0.log" "dct-worker-dev-2018-04-16.0.log" "dct-worker-2018-04-23.0.log" "dct-worker-2018-04-22.0.log" "dct-worker-2018-04-21.0.log" "dct-worker-2018-04-20.0.log" "dct-worker-2018-04-19.0.log" "dct-worker-2018-04-18.0.log" "dct-worker-2018-04-17.0.log" "dct-worker-2018-04-16.0.log" ".dct-worker-dev-2018-05-01.0.log.swp" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/worker/" (23291 14470 0 0) "test/" "target/" "src/" "resources/" "project.clj" "logs/" "libopencv_java341.dylib" "dev/" "config/" "build.xml" ".nrepl-port" ".lein-repl-history" ".lein-failures" ".lein-env" ".gitignore" ".DS_Store" "../" "./")
+
+ ("/tmp/" (23291 14924 0 0) "powerlog/" "ntfs-automount.log" "lein-trampoline-SNZdngz41lyW0" "lein-trampoline-PjUfyb4roLa09" "lein-trampoline-NSAH4Zx8zX4rC" "lein-trampoline-JZJ3PKE1IJS7T" "lein-trampoline-i7bnqvOa2aDRM" "lein-trampoline-92aRJh1RI1vxD" "lein-trampoline-3eNzP9ov4ry8x" "dct/" "com.apple.launchd.WufaGrzLJf/" "com.apple.launchd.RqTMWSGsPo/" "com.apple.launchd.csc9CdfWss/" ".keystone_install_lock" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/web/src/clj/" (23252 40333 0 0) "com/" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/web/src/clj/com/" (23252 40333 0 0) "toyota_europe/" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/web/src/clj/com/toyota_europe/" (23252 40333 0 0) "dct/" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/web/joplin/" (23289 62795 0 0) "seeds/" "migrations/" "joplin.edn" "#joplin.edn#" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/web/test/cljs/com/toyota_europe/dct/ui/" (23252 40333 0 0) "runner.cljs" "core_test.cljs" "../" "./")
+
+ ("/tmp/dct/data/file-storage/" (23289 61390 0 0) "e51206f7-fc48-4c24-84e7-4a09e543359b/" "9b71f3bf-0960-4467-9d66-563caa7e4398/" "7098c9c4-3d4e-4603-9cad-5e13124afb6e/" "6c8d7ff1-88d3-4f96-b9f5-b07b78382576/" "08e84932-11a9-41b0-9d4b-3f9f90bafbe9/" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/web/test/resources/" (23289 46919 0 0) "E-2C_Hawkeye_0014_noisy.png" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/web/src/cljs/com/toyota_europe/dct/" (23256 50537 0 0) "ui.cljs" "ui/" "../" "./")
+
+ ("/Users/nicholasstares/.m2/repository/ragtime/ragtime.core/0.6.3/" (23252 41100 0 0) "ragtime.core-0.6.3.pom.sha1" "ragtime.core-0.6.3.pom" "ragtime.core-0.6.3.jar.sha1" "ragtime.core-0.6.3.jar" "_remote.repositories" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/website/layouts/partials/" (23289 39460 0 0) "site-header.html" "site-footer.html" "contact/" ".DS_Store" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/common/src/" (23252 40333 0 0) "clj/" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/common/src/clj/" (23252 40333 0 0) "com/" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/common/src/clj/com/" (23252 40333 0 0) "toyota_europe/" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/common/src/clj/com/toyota_europe/" (23252 40333 0 0) "dct/" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/website/layouts/" (23289 39381 0 0) "shortcodes/" "partials/" "index.html" "_default/" ".DS_Store" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/worker/src/clj/com/toyota_europe/dct/" (23252 40333 0 0) "worker.clj" "worker/" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/common/src/clj/com/toyota_europe/dct/" (23263 32855 0 0) "util.clj" "math.clj" "component/" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/toyota-misc/" (23265 52251 0 0) "html/" "call-in-number" ".DS_Store" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/website/themes/ananke/layouts/partials/" (23285 55314 0 0) "tags.html" "svg/" "summary.html" "summary-with-image.html" "social-follow.html" "site-scripts.html" "site-navigation.html" "site-header.html" "site-footer.html" "site-favicon.html" "page-header.html" "menu-contextual.html" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/website/themes/ananke/layouts/" (23285 55314 0 0) "shortcodes/" "section/" "robots.txt" "post/" "partials/" "index.html" "_default/" "404.html" "../" "./")
+
+ ("/Users/nicholasstares/code/" (23250 28722 0 0) "understanding-re-frame/" "twilio-sms-reminders/" "scratch/" "realworld-clj/" "re-frame/" "pasta/" "overtone-scratch/" "org-mode-sms-inbox/" "literate-clojure-ants/" "learn-spec/" "learn-re-frame/" "include-dropbox-repl/" "hello-quil/" "guestbook/" "dropbox-repl/" "dice-api/" "clojure-getting-started/" ".lein-env" "../" "./")
+
+ ("/Users/nicholasstares/code/re-frame/docs/" (23243 46936 0 0) "Using-Stateful-JS-Components.md" "The-re-frame-logo.md" "Testing.md" "Talking-To-Servers.md" "SubscriptionsCleanup.md" "SubscriptionInfographic.md" "SubscriptionFlow.md" "Subscribing-To-External-Data.md" "styles/" "Solve-the-CPU-hog-problem.md" "README.md" "Performance-Problems.md" "Navigation.md" "Namespaced-Keywords.md" "MentalModelOmnibus.md" "Loading-Initial-Data.md" "INTRO.md" "Interceptors.md" "images/" "Figma Infographics/" "FAQs/" "External-Resources.md" "EventHandlingInfographic.md" "Effects.md" "EffectfulHandlers.md" "Debugging.md" "Debugging-Event-Handlers.md" "Coeffects.md" "CodeWalkthrough.md" "Basic-App-Structure.md" "ApplicationState.md" "API.md" "AnEpoch.md" "../" "./")
+
+ ("/Users/nicholasstares/code/re-frame/examples/simple/src/simple/" (23252 37228 0 0) "debug.clj" "core.cljs" "../" "./")
+
+ ("/Users/nicholasstares/code/re-frame/examples/todomvc/src/todomvc/" (23252 37210 0 0) "views.cljs" "subs.cljs" "events.cljs" "db.cljs" "core.cljs" "../" "./")
+
+ ("/Users/nicholasstares/code/hello-quil/src/hello_quil/" (23252 37208 0 0) "core.clj~" "core.clj" ".#core.clj" "../" "./")
+
+ ("/Users/nicholasstares/code/overtone-scratch/src/overtone_scratch/" (23250 25916 0 0) "core.clj~" "core.clj" ".#core.clj" "#core.clj#" "../" "./")
+
+ ("/Users/nicholasstares/Desktop/" (23284 29776 0 0) "yowza.png" "yolo.png" "wiki.png" "upload.png" "Screen Shot 2018-05-10 at 12.33.17 PM.png" "Screen Shot 2018-04-30 at 2.00.17 PM.png" "Screen Shot 2018-04-30 at 12.37.57 PM.png" "Screen Shot 2018-04-27 at 5.26.23 PM.png" "Screen Shot 2018-04-24 at 1.31.48 PM.png" "Screen Shot 2018-04-24 at 1.29.16 PM.png" "Screen Shot 2018-04-24 at 1.27.22 PM.png" "Screen Shot 2018-04-16 at 5.53.18 PM.png" "Screen Shot 2018-04-16 at 12.28.42 PM.png" "projects.png" "Old Firefox Data/" "foobar.png" "Dolphin.app/" "ActivationRequestFile.html" ".localized" ".DS_Store" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/ops/" (23282 64652 0 0) "bin/" "bamboo-unit-tests" "bamboo-integration-tests" "bamboo-deploy-ssh" "bamboo-build" ".lein-env" "../" "./")
+
+ ("/Users/nicholasstares/research/happy-future/" (23284 44710 0 0) "notes.md" "LICENSE" ".git/" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/website/" (23289 38546 0 0) "themes/" "static_src/" "static/" "startbootstrap-modern-business-gh-pages/" "services/" "scratch.md" "README.md" "products/" "microservices.md" "layouts/" "data/" "content/" "config.toml" "buildspec.yml" "bootstrap.cft.json" "archetypes/" "aliases.cft.json" ".gitignore" ".git/" ".DS_Store" "#config.toml#" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/website/static/css/" (23289 38048 0 0) "modern-business.css" "bootstrap/" ".DS_Store" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/website/layouts/_default/" (23289 32777 0 0) "baseof.html" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/website/static/" (23289 37560 0 0) "js/" "images/" "fonts/" "css/" ".DS_Store" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/website/static/css/fonts/" (23289 35012 0 0) "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/website/static/fonts/" (23289 35202 0 0) "OpenSans-SemiBold.ttf" "OpenSans-Regular.ttf" "OpenSans-Italic.ttf" "OpenSans-Bold.ttf" "MerriweatherSans-Light.ttf" "MerriweatherSans-Bold.ttf" "../" "./")
+
+ ("/Users/nicholasstares/Downloads/" (23289 34976 0 0) "Zukin 2004.pdf" "Zukin 2004 (1).pdf" "Zach Phillips - Wall-to-Wall Parrots -Truly Bald/" "Zach Phillips - The Closest Exit May Be Behind You -Beautiful Music CDs/" "Zach Phillips - Recorded In Hell -Lillerne Tapes/" "Zach Phillips - Recorded In Heaven -Lillerne Tapes/" "Zach Phillips - New Cartoons -Gnar Tapes/" "Zach Phillips - I Can't Predict My Past Actions -OSR7/" "YSUSB_V1910_Mac.zip" "YSUSB_V1910_Mac/" "Xcode_8.2.1.xip" "Xcode.app/" "Wobbleiser.mxb.zip" "Wobbleiser.mxb" "WM_Finals.zip" "WM_Finals/" "WM_BoiDoe/" "wm.rtfd/" "wm.html.zip" "Windows 10 activator2017_v0.3.rtf" "Win10_1703_English_x64.iso" "William Austin Clay - 22 Etudes For Keyboard- Voice And Multi-Track -OSR56/" "Wiimotes_GUI.zip" "Wiimotes_GUI (1).zip" "Wiimotes_GUI/" "whole foods.pdf" "WhatsApp.apk" "WhatsApp Image 2018-04-09 at 4.49.45 PM.jpeg" "WhatsApp Image 2018-04-09 at 12.23.10 PM.jpeg" "WhatsApp Audio 2017-09-23 at 2.08.31 AM.mp4" "Welcome.pdf" "WakeUpHelperInstallerApp.zip" "wac-Network-Midi-Demo-OSX.zip" "Voting Game Day.docx" "Vladislav Delay - Anima.mp3" "vladimir-nabokov-pale-fire.epub" "vis-4.19.1.zip" "vis-4.19.1 (1).zip" "vis-4.19.1/" "VID_20160510_155132151.mp4" "VID_20160510_155100227.mp4" "VID_20160510_155100227 (1).mp4" "VID_20160510_154743596.mp4" "VID_20160510_154503398.mp4" "VID_20160510_154421718.mp4" "VID_20160510_154047007.mp4" "VID_20160510_153901636.mp4" "VID_20160510_153901636 (2).mp4" "VID_20160510_153901636 (1).mp4" "Very Funny Videos 2014 HD.mp3.asd" "Very Funny Videos 2014 HD.mp3" "Vertex.java" "URC Candidate Last Name_GEICO Questionnaire 2016.docx" "untitled2.jpg" "untitled2 (1).jpg" "Untitled document.pdf" "Untitled document (1).pdf" "UnRarX_2.2.zip" "UnRarX.app/" "Unconfirmed 513534.crdownload" "Unconfirmed 332855.crdownload" "Unconfirmed 170196.crdownload" "ui-mockup.zip" "UCF-v0.66-BETA.txt" "Tori Kudo - Enka Blues -OSR61/" "Toccata.scd" "TimestretchLooper-master.zip" "Tim Hecker - The Ravedeath 1972 [Full Album].mp3" "Tim Hecker - Haunt Me, Haunt Me Do It Again.mp3" "Thunderbird 52.7.0.dmg" "TheUnarchiver3.11.1.zip" "thenewjimcrow_timeline-master_new_jakes_my_best_buddy.zip" "thenewjimcrow_timeline-master.zip" "thenewjimcrow_timeline-master/" "themeforest-13489470-ubold-responsive-web-app-kit.zip" "themeforest-13489470-ubold-responsive-web-app-kit/" "The-Power-of-Now-A-Guide-to-Spiritual-Enlightenment.epub" "The Unarchiver.app/" "The Trajectories Project final.docx" "The Trajectories Project final (2).docx" "The Trajectories Project final (1).docx" "The Memories - Crash On My Heart cassingle -OSR13/" "The Howling Hex - Navajo Rag -OSR4/" "The Dream Scene - New Emotion b-w Behind The Scenes cassingle -OSR21/" "the because.zip" "the because/" "Tech 202 pseudocode Wii Instrument.rtf" "taf2-curb-7799f9a/" "taf2-curb-0.7.15-269-g7799f9a.zip" "TabFig2008.xls" "synthcore23c.zip" "synthcore23c/" "synthcore2.app.app.zip" "Syllabus Feminist Theory.docx" "swift_window_switcher_v0.2.8.alfredworkflow" "Susan Gerson.vcf" "Survey.docx" "SuperCollider-OSX-3.7.1.zip" "SuperCollider/" "Super Smash Bros. Melee (USA) (En,Ja) (v1.02).7z" "sugarSynth.zip" "sugarSynth/" "SudokuSolver.zip" "SudokuSolver.java" "Stutterer.maxpat.zip" "Stutterer.maxpat" "Student_Solution_Chap_02.pdf" "store-locator-final.zip" "store-locator-final 2/" "store-locator-final/" "Statement_201801.pdf" "StartupNation_LifePlan_example.pdf" "stares_Max_HW_3.zip" "STARES_FINAL_PROPOSAL_AHComment.rtf" "SpotifyInstaller.zip" "SpotifyInstaller (1).zip" "Spotify-Login-Button--master.zip" "Spotify-Login-Button--master/" "spec.zip" "spacemacs-master.zip" "spacemacs-master/" "soundtrack.mp3" "SOUND EFFECT - Playground - Soundeffekt Spielplatz Kinder spielen.mp3.asd" "SOUND EFFECT - Playground - Soundeffekt Spielplatz Kinder spielen.mp3" "SOUND EFFECT - Playground - Soundeffekt Spielplatz Kinder spielen (1).mp3" "Sord - Rebuking The Despoiler -OSRXX/" "Sord - Endless Muselike Vision -Faux Pas Recordings- + extras/" "sonification-pd-patch-download.zip" "solution.njk" "software_developer_coding_assessment_instructions.txt" "software_developer_coding_assessment_instructions (1).txt" "SOCI252SectionFourMemo.pdf" "SOCI252SectionFourFutureDirectionMemo.pdf" "SOCI252GLOBALIZATION.pdf" "SOCI252GLOBALIZATION (1).pdf" "SOCI252CONSUMPTION.pdf" "SmashEnabler.pkg.zip" "Skree (recital version)-20180510T221011Z-001.zip" "Skree (recital version)/" "Signal.app/" "signal-desktop-mac-1.6.1.zip" "sigmund.zip" "sigmund/" "sicp.mobi" "SiBuzzBug.zip" "SiBuzzBug/" "SFPM902.zip" "SFPM902/" "selfish file.wav" "Screen Shot 2016-08-30 at 5.16.18 PM.png" "Sci-Fi.adv" "Samuel Boat - Flowers 12 Stems 3 Sunflowers -OSR36/" "Salt People - Deep Swim -OSR65/" "Sachiko M  Toshimaru Nakamura  Otomo Yoshihide - Good Morning.mp3" "Ruth Garbus - Hello Everybody -7- OSR75/" "Rumpala.pdf" "Ruby_on_Rails.zip" "Ruby_on_Rails/" "Robinson on Wallerstein.pdf" "Robinson on Wallerstein (1).pdf" "Ritzer on prosumption.pdf" "Rhythm_Milking.aiff.asd" "Resume.pdf" "Relaxing rain sounds - 3 mins.mp3.asd" "Relaxing rain sounds - 3 mins.mp3" "ratpoison-1.4.9/" "R. Hundro - 007 Town -OSR67/" "Project M 3.6 Full Netplay (1).zip" "Project M 3.6 Full Netplay (1)/" "prettytime-nlp-4.0.1.Final (1).jar" "Practising-the-Power-of-Now-Essential-Teachings-Meditations-and-Exercises-for-Living-the-Liberated-Life.pdf" "POSTMax_HW_1_Objects(1).maxpat" "Postman.app/" "Postman-osx-4.10.7.zip" "Posters.pdf" "Popular Pig - Popular Pig -OSR57/" "Pop Can updated 2-27.logicx.zip" "Pop Can updated 2-27.logicx/" "PolyMod Full Maxmsp version.zip" "PolyMod Full Maxmsp version/" "PMNetplay.elf" "PM SD Netplay Build.zip" "PM SD Netplay Build/" "pixie/" "Photo on 2011-04-30 at 23.28.jpg" "Pharo6.1-64-mac.zip" "phantomjs-2.1.1-macosx.zip" "phantomjs-2.1.1-macosx/" "phantomjs-2.1.1-linux-x86_64.tar.bz2" "Peter Kirsch - Free Music Zone -OSR44/" "percolate-master.zip" "percolate-master/" "Panda Bear - The Preakness.mp3" "overtone-cheat-sheet.pdf" "Otomo Yoshihides New Jazz Orchestra - Will be Back.mp3" "OSR - Music On A Tape- Songs by Chris Weisman -OSR18/" "OSR - Heat Wilson -Nals Vs Nals Are Roan Stars- -OSRxx/" "osm_generic_macosx.zip" "osm_generic_gmapsupp.zip" "OSM generic routable.gmap/" "osberg on inequality.pdf" "OpenSans-SemiBold.ttf" "OpenSans-Regular.ttf" "OpenSans-Italic.ttf" "OpenSans-Bold.ttf" "OINC_May_Eval.docx" "OINC_Dec_Eval.docx" "OINC_Dec_Eval (1).docx" "oinc spring 2017 final performance.wav" "of_v0.9.8_osx_release.zip" "nwdlbots release 01.alp" "Nonviolent-Communication-A-Language-of-Life.azw3" "Noise Thunder.adv" "NJC_TIMELINE.zip" "NJC_TIMELINE/" "NJC2-master.zip" "NJC2-master/" "nick.key" "nick zip.zip" "Nick Stares.pdf" "Nick Stares Survey.docx" "Nick Stares - Stack Overflow.pdf" "Nicholas_Stares_Resume.pdf" "Nicholas Stares Resume.pdf" "Nicholas Stares Resume (3).pdf" "Nicholas Stares Resume (2).pdf" "Nicholas Stares Resume (1).pdf" "Nicholas Stares GMU Application Essay.pdf" "ngrok-stable-darwin-amd64.zip" "ngrok" "Nals Goring - Ratan Altan -OSRXX/" "MOTU Audio Installer for Mac.zip" "MOTU Audio Installer for Mac/" "Moth Eggs - Adventures Away -OSR55/" "Montgomery College Spring 2018 Shuttle Schedule.xlsx" "Modern Chairs - Modern Chairs -OSR70/" "model-lease1-doc-(october-2012).doc" "Meyer American Journal of Sociology globalization 2000.pdf" "MerriweatherSans-Light.ttf" "MerriweatherSans-Bold.ttf" "Mega Bog - Shadows Break - For The Old World -OSR51/" "mbv.zip" "mbv/" "MaxforLiveEssentials_r30639_v1.0.alp" "Maschine.iso" "Martyr Group - Tone Stencil Pirates -OSR40/" "Martyr Group - Martyr Group -OSR29/" "Marlon Cherry - Life After Theatre - Pete -OSR73/" "Mark Beer - Cassette -OSR74/" "Maher Shalal Hash Baz - Hello NewYork -LP-CD- OSR60/" "lucky dragons - a sewing circle.zip" "lucky dragons - a sewing circle/" "Lord of the Rings, The - The Return of the King (USA).7z" "Logic Pro X 10.2.4 OS X [dada]/" "LNX_Studio 2.0.app/" "LNX_Studio 2.0.3.h.zip" "LiveAPI_rev11.zip" "LiveAPI/" "Live-Sampler-2.0b1.zip" "Listening Woman - Getting Mystic -OSR66/" "LispCast - Reduce Mini-Course - MD.zip" "LispCast - Optimization - MD.zip" "LispCast - Manipulating time with clj-time - MD.zip" "LispCast - Leiningen - MD.zip" "LispCast - JVM Fundamentals for Clojure - MD.zip" "LispCast - Domain Specific Languages in Clojure - MD.zip" "LispCast - Data Modeling in Clojure - MD.zip" "LispCast - core.async Patterns - MD.zip" "LispCast - Clojure Combinators - MD.zip" "lighttable-0.8.1-mac/" "Leonardo Borges-Clojure Reactive Programming-Packt Publishing (2015).epub" "legalbeastlanguage_SCORE.pdf" "lecture25.ppt" "LEASE.pdf" "LaunchControl-XL-Controls.zip" "LaunchControl XL Controls.maxpat" "Larry Wish - Soundtruck Musuc -OSR42/" "KIMG0264.JPG" "Key.docx" "Kellner consumer.pdf" "KeeWeb-1.6.3.mac.dmg" "keepvid-music-tag-editor-mac_full4172.dmg" "Kateboard - That's Not A Helicopter -OSR16/" "karoshi.zip" "karma1.0.zip" "karma1.0 (1).zip" "karma1.0 (1)/" "karma1.0/" "KaiserLooper-Max.zip" "KaiserLooper Max/" "KaiGen-betas-1.zip" "KaiGen (betas)/" "k2pdfopt" "K.jpg" "junXion v5.38 release.zip" "junXion v5.38 release/" "junXion v5.35 release.zip" "junXion v5.35 release/" "Julio Zúñiga  24 [w score] [fms16 Winner].mp3" "JPS - OSR#33/" "Jordan Piper Philips - Glades -Feeding Tube Records- + many extras/" "Jo Miller-Gamble - Free -OSR58/" "Jimmie Packard - Singing Your Requests -OSR49/" "Jimmie Packard - A Time To Look Back -OSR23/" "jfc-spectral-tutorials.zip" "janpaepke-ScrollMagic-v2.0.5-20-gae215ee.zip" "janpaepke-ScrollMagic-ae215ee/" "JAMP_2015063015460294.pdf" "Jake Tobin - Accidentally On Purpose -OSR59/" "iTerm2-3_1_5.zip" "Instapaper-ReadLater-2018-03-30.epub" "Instapaper-ReadLater-2018-03-19.mobi" "Instapaper-ReadLater-2018-03-19.epub" "Instapaper-ReadLater-2018-03-19 (1).epub" "Instapaper-ReadLater-2018-03-02.mobi" "Instapaper-ReadLater-2018-02-24.mobi" "Inside-out_the_limits_of_language.doc" "IMG_4437.PNG" "IMG_4430.PNG" "IMG_2777.jpg" "IMG_2758.jpg" "IMG_2737.JPG" "IMG_20180302_212611880.jpg" "IMG_0279.MOV" "IFF-IFFP-INFO-2018.pdf" "IFF-IFFP-INFO-2018 (3).pdf" "IFF-IFFP-INFO-2018 (2).pdf" "IFF-IFFP-INFO-2018 (1).pdf" "HW_5_CodeSnippets copy.zip" "HW_5_CodeSnippets copy/" "How-to-Communicate-Like-a-Buddhist.azw3" "Horse Boys - III - IV -Feeding Tube Records/" "Horse Boys - II -Spooky Town Records/" "Hirschle.pdf" "Hellier Ulysses - Prime Example -OSR47/" "Heat Wilson - Seersucker -OSR14/" "Hartley C. White - This Is Not What You Expect LP -OSR26/" "Hartley C. White - Something Better -LP- OSR77/" "Hartley C. White & Blanche Blanche Blanche - White-Blanche cassingle -OSR10/" "hackmii_installer_v1.2.zip" "Ground Zero Plays Standards Full Album (2002).mp3" "Ground Zero - Revolutionary Pekingese Opera.mp3" "Ground Zero - Consume Red.mp3" "GRM_Tools_ST_Demo_Mac.mpkg.zip" "GRM Tools/" "Gregorian Chant Benedictinos.mp3.asd" "Gregorian Chant Benedictinos.mp3" "Gravity's Rainbow 001A dehissed.mp3" "Grape Room - What the Frog-man Knows -OSR53/" "granular_25.zip" "GMU Application Essay.pdf" "GLQ- A Journal of Lesbian and Gay Studies-1994-Stryker-237-54.pdf" "Gene Kim, Jez Humble, Patrick Debois, John Willis-The DevOps Handbook_ How to Create World-Class Agility, Reliability, and Security in Technology Organizations-IT Revolution Press (2016).epub" "Geekbench-4.2.2-Mac.dmg" "GDC - Jours Avec Jennie -Alchemist Records/" "gcr_1_1.zip" "Funny Videos Fail Compilation 2014 Best Funny Fail Videos & New Funny Home Videos 2014.mp3.asd" "Funny Videos Fail Compilation 2014 Best Funny Fail Videos & New Funny Home Videos 2014.mp3" "FTM.2.6.0.BETA-Max6-7.zip" "FTM.2.6.0.BETA-Max6-7/" "Frequently Asked Questions, intern website.doc" "Frank Kogan - Stars Vomit Coffee Shop -OSR72/" "Flux.zip" "flexboxgrid-6.3.1.zip" "Flaming Dragons Of Middle Earth - Freedome -OSR52/" "Firewatch.MacOSX-ACTiVATED/" "Final Cut Pro 10.2.3.dmg" "filename-1.pdf" "filename-1 (6).pdf" "filename-1 (5).pdf" "filename-1 (5) (1).pdf" "filename-1 (4).pdf" "filename-1 (3).pdf" "filename-1 (2).pdf" "filename-1 (2) (2).pdf" "filename-1 (2) (1).pdf" "filename-1 (1).pdf" "filename-1 (1) (1).pdf" "fed-assessment (1).zip" "evil.pdf" "Evident Systems ICSA- Nick Stares.pdf" "environmental sociology.pdf" "entasi ii april 7.wav.asd" "entasi ii april 7.wav" "entasi i.wav.asd" "entasi i.wav" "emacs.d-master.zip" "emacs-for-clojure-book1.zip" "emacs-for-clojure-book1 2/" "emacs-for-clojure-book1 (2).zip" "emacs-for-clojure-book1 (1).zip" "Emacs-25.3-universal.dmg" "ELO v12.xlsx" "elementsofclojure.mobi" "Electromagnetic Sounds of a Chaos Communication Congress 33c3.mp3" "ebooksclub-org__philosophy_and_social_hope.txt" "eb.Granular.zip" "eb.Granular/" "E-2C_Hawkeye_0014_noisy.png" "E-2C_Hawkeye_0014_clean.png" "Dub From The Roots by King Tubby.mp3" "door creaks background.wav" "dispo_new.rb" "Digital Completion Report.docx" "Diachronic-1st-version.zip" "Diachronic 1st version/" "desktop" "Depressive Silence - Demo 1996 (Full Demo).mp3" "Death From Above 1979 - Romantic Rights.mp3.asd" "Death From Above 1979 - Romantic Rights.mp3" "Deaf Center - Recount.zip" "Deaf Center - Recount/" "DCMsynthesis.maxpat.zip" "DCMsynthesis.maxpat" "dataset-20160623071034.json" "data.tsv" "data (1).tsv" "DarwiinRemoteOSC-master.zip" "DarwiinRemoteOSC-master 2/" "DarwiinRemoteOSC-master/" "danbooru2017-sfw512px-torrent.tar.xz" "danbooru2017-sfw512px-torrent.tar (1).xz" "Daga Voladora - Chiu-Chium -OSR43/" "dada_0.0.1.zip" "Cyberduck.app/" "Cyberduck-4.9.19632.zip" "Cyberduck-4.9.19632 (1).zip" "Culture of Class Symbolization Gartman.pdf" "CSCI364_VotingGameDay_Votes.xlsx" "CSCI364_VotingGameDay_Votes (1).xlsx" "CSCI364_VotingGameDay.docx" "CSCI364_AuctionDay_ItemList.docx" "Cooper, AJ. Colored Women as Wage Earners-1.docx" "Cooper, AJ. Colored Women as Wage Earners-1 (2).docx" "Cooper, AJ. Colored Women as Wage Earners-1 (1).docx" "Contexts-License-CON180131-8343-19587.contexts-license" "consent_form_20180221.pdf" "consent_form_20180221 (1).pdf" "Common Clojure Expression Flashcards (Anki CSV)- PurelyFunctional.tv.csv" "com.google.android.gms_9.2.56_(070-124593566)-9256070_minAPI9(x86)(nodpi)_apkmirror.com.apk" "color-theme-zenburn.el" "color-theme-tangotango.el" "Cognitect Candidate NDA.pdf" "Cognitect Candidate NDA (1).pdf" "CNMAT-Externs-master.zip" "clojure-analysis-results.csv" "clojure-1.9.0-beta1.zip" "Class 14 World Polity Theory.ppt" "citations.txt" "citations.ris" "Cioffi-2005-CanonicalTheory-JMS.pdf" "Cioffi-2005-CanonicalTheory-JMS (1).pdf" "Cicada sounds.mp3" "chuck-1.2.1.3-exe 2/" "chuck-1.2.1.3-exe/" "chromedriver" "Christina Schneider - Violence Etcetera -OSR71.zip" "Christina Schneider - Violence Etcetera -OSR71 2/" "Christina Schneider - Violence Etcetera -OSR71/" "Chris Weisman - Trash Picture - August Demos -OSR62/" "Chris Weisman - Monet In The 90's LP -OSR24/" "Chris Weisman - Living With Poison -OSR32/" "Chris Weisman - Hi -OSR39/" "Chris Weisman - Beatleboro -OSR2/" "CHEWIEBACA-TWO.maxpat" "Chen on prosumtion sociological quarterly.pdf" "Chaney dept store as cultural.pdf" "CE Schneider Topical - Look Who Showed Up Out Here -OSR28/" "CE Schneider Topical - Antifree -LP- OSR48/" "Carin Meier-Living Clojure-O'Reilly Media (2015).epub" "Calculus-Concepts-and-Contexts-4th-Edition-.pdf" "cage_0.4.zip" "cage/" "Bruce Hart - Songs For Music -OSR1/" "Bruce Hart - Music For Drawing -Not Not Fun Records 2/" "Bruce Hart - Music For Drawing -Not Not Fun Records/" "Brave Radar - High Season Blues -OSR64/" "Box-corer_awi.png" "BookScanCenter.svg" "Blanche Blanche Blanche - Wooden Ball -NNA Tapes/" "Blanche Blanche Blanche - Wink With Both Eyes -OSR34/" "Blanche Blanche Blanche - Termite Music -OSR15/" "Blanche Blanche Blanche - Songs of Blanche Blanche Blanche -Night People Records/" "Blanche Blanche Blanche - Papas Proof -La Station Radar Records/" "Blanche Blanche Blanche - Our Place -Feeding Tube Records/" "Blanche Blanche Blanche - Open Session Rock -OSR3/" "Blanche Blanche Blanche - Hints To Pilgrims LP -OSR25 - BBB#9/" "Blanche Blanche Blanche - Breaking Mirrors -Wharf Cat Records/" "Blanche Blanche Blanche - 2wice 2wins -OSR1/" "Blanche Blanche Blanche & The Birds Of Paradise - Scam b-w Press Dumps 7- -Adagio830 Records/" "Black Bananas - Spydr Brain -7- OSR76/" "Birds Flapping Sound Effect.mp3" "Bike Locker Contract-2017-1.pdf" "Big French - Would Not Try cassingle -OSR9/" "Bibliography.docx" "Bibliography (5).docx" "Bibliography (4).docx" "Bibliography (3).docx" "Bibliography (2).docx" "Bibliography (1).docx" "Better Psychics - What Is Rule -OSR6/" "Better Psychics - Better Psychics -OSR5/" "Berna2.zip" "Berna2/" "Ben Lawless - Other Motions -OSR63/" "BEHRINGER_UMC_Driver_v2_23_0.zip" "BEHRINGER_UMC_Driver_v2_23_0/" "Battery Time Remaining 2-3.0.zip" "BaseCamp_462.exe" "Balanced and Turbo.rar" "Balanced and Turbo/" "Background Reading.pdf" "bach_0.7.9.zip" "bach/" "Avet Terterian Symphony N6.mp3" "automatic_programming_sound_synthesis-master.zip" "AUTHORIZATION FOR RELEASE OR EXCHANGE OF INFORMATION.docx" "Aube - Millennium - Aprilis [full album].mp3" "Asher Horton - Mystery Bones -OSR37/" "ARGOv2MacOSXUB.zip" "argotlunar-2.06-osx_10.8-vst.zip" "argotlunar-2.06-osx_10.8-vst/" "argotlunar-2.06-osx_10.8-audiounit.zip" "argotlunar-2.06-osx_10.8-audiounit/" "ARGOMacOSX.sit" "ARGOMacOSX/" "Archive.zip" "Archive/" "appointment.ics" "annurev-soc-071913-043208.pdf" "Andy Stott - Luxury Problems [Full Album].mp3" "Andrea Schiavelli - Souls On Fire -OSR31/" "Amazon Rainforest Sounds (No Music - 9 Min) The Jungle at Night.mp3.asd" "Amazon Rainforest Sounds (No Music - 9 Min) The Jungle at Night.mp3" "alalia (2016).wav" "AL.java" "Al Marantz - Tall Dancers On Fire -OSR54/" "Al Marantz - Forgotten Device -OSR30/" "aka.wiiremote-b7.zip" "aka.wiiremote-b7-src.zip" "aka.wiiremote-b7-src/" "aka.wiiremote-b7 2/" "aka.wiiremote-b7 (1).zip" "aka.wiiremote-b7/" "ajh.wiiremote.mxo-older1.zip" "ajh.wiiremote.mxo/" "ajh.wiiremote 2.mxo/" "Academic Transcript.pdf" "About Downloads.lpdf/" "Ableton Live Suite 9.5/" "Ableton Live Plugins Pack 2016/" "A Wall Arrived.mp3" "A Day with the Homies mp3s.rar" "A Day with the Homies mp3s/" "[tindeck.com] - jetski0 - counting game.mp3" "[Michael_Fogus,_Chris_Houser]_The_Joy_of_Clojure(b-ok.org).epub" "[Ben_Vandgrift,_Alex_Miller]_Clojure_Applied_From(b-ok.org).azw3" "[99Sounds] 99 Drum Samples.zip" "[99Sounds] 99 Drum Samples/" "9783319238494-c2.pdf" "9781849963015-c2.pdf" "94216__benboncan__steam-train-1.wav.asd" "78563__joedeshon__alarm-clock-ticking-01.wav.asd" "76677__cornodrig__train-passing.wav.asd" "725.TwinPusher.maxpat.zip" "725.TwinPusher.maxpat/" "67883__benboncan__lake-waves-1.wav.asd" "669034358-PMLadder.zip" "669034358-PMLadder/" "64b344a0.jpeg.jpg" "52p16SINK.zip" "52p05NOISEGRID.zip" "52p05NOISEGRID/" "50506__sparrer__crash.wav.asd" "47530__arnaud-coutancier__passing-train-trains-paris-8.wav.asd" "371854__wildbillyd__train-pass-enc.mp3.asd" "371854__wildbillyd__train-pass-enc.mp3" "277-6285-r_world.kmz" "266668__eriklindmanmata__alarm-clock.wav.asd" "264065__paul368__ticking-clock-created-for-a-trailer-to-create-tension.wav.asd" "2537.Examplepatch.zip" "2537.Examplepatch/" "219233__crashoverride61088__dc-metro-interior-1.wav.asd" "20XXTE-v2d-r2-USA.gci" "20XXTE-v2a-USA.gci" "20XX 4.06.iso" "20XX 4.05 Root Files.zip" "20XX 4.05 Root Files (1).zip" "20XX 4.05/" "202_Patch_Analysis_HW_Due_4-4-17.zip" "202_Patch_Analysis_HW_Due_4-4-17/" "2017-09-30_UCF-v0.66b_SD-card-files_NTSC-PAL.7z" "2017-09-30_UCF-v0.66b_SD-card-files_NTSC-PAL (1).7z" "2017-09-30_UCF-v0.66b_SD-card-files_NTSC-PAL/" "1945__rhumphries__rbh-dc-metro-indoor-01.wav.asd" "194364__dave-welsh__thunder-clap-owb-ky-441x16.wav.asd" "171043__st303__mechanical-alarm-clock-is-ticking-slava.wav.asd" "1617IMProposal.doc" "1617IMProposal (1).doc" "11-wii.zip" "11-wii/" "10061175.acsm" "052970935-sfpd-officers-patdown-black-am-692x360.jpeg" "03hGranularSynth.zip" "03hGranularSynth/" ".~lock.ELO v12.xlsx#" ".localized" ".emacs.d-master 3/" ".emacs.d-master 2/" ".DS_Store" ".com.google.Chrome.WYG2AR" ".com.google.Chrome.mnHJVX" ".com.google.Chrome.3BZgLX" "-1480918271892760320.jpg" "++Audio FX 110910.tar.gz" "(The Pragmatic Programmers) Paul Butcher-Seven Concurrency Models in Seven Weeks_ When Threads Unravel-Pragmatic Bookshelf (2014).epub" "(The Nature of Order) Christopher Alexander-The Phenomenon of Life_ Nature of Order,  Book 1_ An Essay on the Art of Building and the Nature of the Universe (The Nature of Order)-CES Publishing (2004).pdf" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/website/startbootstrap-modern-business-gh-pages/" (23289 33175 0 0) "vendor/" "sidebar.html" "services.html" "README.md" "pricing.html" "portfolio-item.html" "portfolio-4-col.html" "portfolio-3-col.html" "portfolio-2-col.html" "portfolio-1-col.html" "package.json" "package-lock.json" "mail/" "LICENSE" "js/" "index.html" "gulpfile.js" "full-width.html" "faq.html" "css/" "contact.html" "blog-post.html" "blog-home-2.html" "blog-home-1.html" "about.html" "404.html" ".travis.yml" ".gitignore" ".DS_Store" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/website/static_src/" (23285 55314 0 0) "hero.jpg" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/website/content/" (23285 55314 0 0) "contact/" "about/" "_index.md" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/website/themes/ananke/" (23285 55314 0 0) "theme.toml" "static/" "src/" "README.md" "package.json" "LICENSE.md" "layouts/" "images/" "exampleSite/" "archetypes/" ".gitignore" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/website/themes/" (23285 55314 0 0) "ananke/" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/website/layouts/partials/contact/" (23285 55314 0 0) "us.html" "sign_up.html" "info.html" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/website/layouts/shortcodes/" (23285 55314 0 0) "mailing-list-signup.html" "contact-form.html" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/" (23285 55303 0 0) "website/" "upload_buttons.png" "toyota-misc/" "Gibson-Les-Paul-Custom-large.png" "E-2C_Hawkeye_0014_clean.png" "drawing-comparison-tool/" "dct-design-doc/" "Box-corer_awi.png" ".DS_Store" "../" "./")
+
+ ("/Volumes/MACINTOSH HD/Applications/" (23283 15279 0 0) "Yamaha Steinberg USB Control Panel.app/" "Xcode.app/" "WineBottler.app/" "Wine.app/" "Wake Up Time.app/" "VirtualBox.app/" "uTorrent.app/" "Utilities/" "Unity/" "unetbootin.app/" "UBRIDGE.app/" "TorBrowser.app/" "Time Machine.app/" "Thunderbird.app/" "TextEdit.app/" "System Preferences.app/" "SuperCollider.app/" "SuperCollider 2/" "Sublime Text.app/" "Stride.app/" "Stickies.app/" "Spotify.app/" "SPEAR.app/" "Spark.app/" "SoundToys/" "Soundflower/" "Sonos.app/" "Skype.app/" "SizeUp.app/" "Siri.app/" "Safari.app/" "Reminders.app/" "REAPER.app/" "Racket_v6.11/" "QupZilla.app/" "QuickTime Player.app/" "Python 3.6/" "Preview.app/" "Postgres.app/" "Photos.app/" "Photo Booth.app/" "Pharo6.1-64.app/" "Packages/" "OSCulator.app/" "Notes.app/" "Nightcode.app/" "NetLogo 5.3.1/" "Native Instruments/" "Native Access.app/" "MPEG Streamclip.app/" "MOTU SMPTE Setup.app/" "MOTU PCI SMPTE Setup.app/" "MOTU PCI Audio Setup.app/" "MOTU Audio Setup.app/" "Mission Control.app/" "Messages.app/" "MaxMSP Runtime 4.6/" "Max.app/" "Maps.app/" "Mail.app/" "Logic Pro X.app/" "LightTable.app/" "LibreOffice.app/" "Library/" "Launchpad.app/" "KeeWeb.app/" "Karabiner.app/" "Karabiner-EventViewer.app/" "Karabiner-Elements.app/" "junXion.app/" "iZotope RX.app/" "iTunes.app/" "iTerm.app/" "Install macOS Sierra.app/" "Image Capture.app/" "iExplorer.app/" "iBooks.app/" "HourGlass.app/" "HipChat.app/" "GRM/" "Google Drive.app/" "Google Chrome.app/" "Google Chrome Canary.app/" "GIMP.app/" "Genymotion.app/" "Font Book.app/" "Flux.app/" "Floola.app/" "Firefox.app/" "Final Cut Pro.app/" "FaceTime.app/" "Emacs.app/" "DVD Player.app/" "Dropbox.app/" "Dolphin.app/" "Docker.app/" "Dictionary.app/" "Dashboard.app/" "DarwiinRemoteOSC.app/" "DarwiinRemoteOSC copy.app/" "DarwiinRemoteOSC copy 2.app/" "CueMix FX.app/" "Contexts.app/" "Contacts.app/" "Chess.app/" "Charles.app/" "calibre.app/" "Calendar.app/" "Calculator.app/" "Brave.app/" "Berna 2/" "Automator.app/" "App Store.app/" "Anki.app/" "Amadeus Pro.app/" "Alfred 3.app/" "Adobe/" "Ableton Live 9 Suite.app/" ".localized" ".DS_Store" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/web/resources/public/css/" (23282 64971 0 0) "site.css" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/web/resources/public/img/" (23283 7902 0 0) "header-background.jpg" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/web/resources/public/" (23283 7902 0 0) "vendor/" "js/" "index.html" "img/" "css/" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/web/resources/" (23252 40333 0 0) "public/" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/dct-design-doc/ui-mockup/" (23276 30999 0 0) "webpack.config.js" "src/" "semantic.json" "package.json" "index.html" "assets/" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/dct-design-doc/ui-mockup/assets/" (23276 30998 0 0) "tiles/" "login-background.jpg" "images/" "header-background.jpg" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/web/src/clj/com/toyota_europe/dct/" (23255 32717 0 0) "web.clj" "web/" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/web/src/" (23252 40333 0 0) "less/" "cljs/" "clj/" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/web/src/cljs/" (23252 40333 0 0) "com/" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/web/src/cljs/com/" (23252 40333 0 0) "toyota_europe/" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/web/src/cljs/com/toyota_europe/" (23252 40333 0 0) "dct/" "../" "./")
+
+ ("/Users/nicholasstares/code/learn-re-frame/resources/public/" (23223 46420 0 0) "js/" "index.html" "css/" "../" "./")
+
+ ("/Users/nicholasstares/code/learn-re-frame/src/cljs/learn_re_frame/" (23236 8720 0 0) "views.cljs~" "views.cljs" "subs.cljs" "events.cljs" "db.cljs" "core.cljs" "config.cljs" "../" "./")
+
+ ("/Users/nicholasstares/code/re-frame/src/re_frame/" (23223 44538 0 0) "utils.cljc" "trace.cljc" "subs.cljc" "std_interceptors.cljc" "router.cljc" "registrar.cljc" "loggers.cljc" "interop.cljs" "interop.clj" "interceptor.cljc" "fx.cljc" "events.cljc" "db.cljc" "core.cljc" "cofx.cljc" "../" "./")
+
+ ("/Users/nicholasstares/code/re-frame/" (23243 45916 0 0) "test/" "target/" "SUPPORT.md" "src/" "README.md" "project.clj" "package-lock.json" "node_modules/" "license.txt" "karma.conf.js" "images/" "examples/" "docs/" "CONTRIBUTING.md" "CITATION.md" "circle.yml" "CHANGES.md" "book.json" "bin/" ".lein-env" ".idea/" ".gitignore" ".gitattributes" ".git/" ".editorconfig" "../" "./")
+
+ ("/Users/nicholasstares/code/learn-re-frame/" (23223 50281 0 0) "target/" "src/" "resources/" "README.md" "project.clj" "figwheel_server.log" ".nrepl-port" ".lein-env" ".gitignore" "../" "./")
+
+ ("/Users/nicholasstares/code/understanding-re-frame/" (23236 9071 0 0) "test/" "target/" "src/" "resources/" "README.md" "project.clj" "Procfile" "figwheel_server.log" ".lein-env" ".gitignore" ".git/" "../" "./")
+
+ ("/Users/nicholasstares/code/understanding-re-frame/src/cljs/understanding_re_frame/" (23236 8717 0 0) "views.cljs" "subs.cljs" "routes.cljs" "hiccup.cljs" "events.cljs" "db.cljs" "core.cljs" "config.cljs" "components.cljs" "../" "./")
+
+ ("/Users/nicholasstares/code/scratch/src/scratch/" (23242 43958 0 0) "core.clj" "#core.clj#" "../" "./")
+
+ ("/Users/nicholasstares/code/re-frame/examples/todomvc/" (23243 46036 0 0) "target/" "src/" "resources/" "README.md" "project.clj" "figwheel_server.log" ".nrepl-port" ".lein-env" ".gitignore" "../" "./")
+
+ ("/Users/nicholasstares/Documents/notes/" (23274 11415 0 0) "todo.org~" "todo.org" "thank-you" "realworld.org~" "realworld.org" "maryland-visit.org~" "maryland-visit.org" "eric" "data/" "bikes.org~" "bikes.org" "approach-new-codebase-bobby-calderwood" ".#beatles" "#beatles#" "../" "./")
+
+ ("/Users/nicholasstares/research/" (23282 59845 0 0) "karlsims.org~" "karlsims.org" "happy-future/" "FUTURE.org" "FUTURE" "embodied-cognition/" "capture.org~" "capture.org" "../" "./")
+
+ ("/Users/nicholasstares/Resume/" (23218 48125 0 0) "Nicholas Stares Resume.pdf" "Nicholas Stares GMU Application Essay.pdf" "Academic Transcript.pdf" ".DS_Store" "../" "./")
+
+ ("/tmp/dct/data/file-storage/0f2d83a7-2ec4-4445-8f27-e03ec566ff60/" (23279 16098 0 0) "E-2C_Hawkeye_0014_noisy.png" "../" "./")
+
+ ("/tmp/dct/data/" (23275 13227 0 0) "file-storage/" "../" "./")
+
+ ("/tmp/dct/" (23275 13227 0 0) "data/" "../" "./")
+
+ ("/Users/" (23176 41755 0 0) "Shared/" "nicholasstares/" "Guest/" ".localized" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/common/" (23267 23769 0 0) "test/" "src/" "config/" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/dct-design-doc/" (23276 34308 0 0) "ui-mockup/" "README.md" "package-lock.json" "docs/" "deps/" ".gitignore" ".git/" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/web/test/clj/com/toyota_europe/dct/web/test-resources/" (23275 26543 0 0) "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/worker/test/" (23267 23769 0 0) "resources/" "com/" ".DS_Store" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/worker/test/com/" (23252 40333 0 0) "toyota_europe/" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/worker/test/com/toyota_europe/" (23252 40333 0 0) "dct/" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/worker/test/com/toyota_europe/dct/" (23263 32855 0 0) "worker_test.clj" "worker/" "../" "./")
+
+ ("/Users/nicholasstares/evidentsystems/drawing-comparison-tool/web/config/" (23252 40333 0 0) "logback.xml" "../" "./")
+
+ ("/tmp/dct/data/file-storage/3548558c-548e-41d3-b78e-93bd3948471c/" (23271 30783 0 0) "Screen Shot 2018-04-16 at 5.53.18 PM.png" "../" "./")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t

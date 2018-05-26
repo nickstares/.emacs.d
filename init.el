@@ -8,7 +8,7 @@
    (add-to-list 'package-archives 
                      '("melpa" . "http://melpa.milkbox.net/packages/")
                      'APPEND)
-  ;;(add-to-list 'package-archives (cons "melpa-stable" (concat proto "://stable.melpa.org/packages/")) t)
+  ;;(add-to-list 'package-archives (cons "melpa-stable" (concat proto "://stable.melpa.org/packag/es/")) t)
   (when (< emacs-major-version 24)
     ;; For important compatibility libraries like cl-lib
     (add-to-list 'package-archives '("gnu" . (concat proto "://elpa.gnu.org/packages/")))))
@@ -48,7 +48,6 @@
 ;; (define-key paredit-mode-map (kbd "C-k") 'kill-line)
 ;; (define-key parinfer-mod-map (kbd "C-'") 'align-cljlet)
 
-;; (setq parinfer extensions '(defaults paredit smart-yank smart-tab))
 
 
 ;; (require 'paredit)
@@ -138,7 +137,9 @@
 ;; (global-unset-key (kbd "C-x b") )
 ;; (global-unset-key (kbd "C-x C-m") )
 ;; (global-unset-key (kbd "C-x m") )
+(editorconfig-mode 1)
 
+(global-set-key (kbd "C-x n t") 'neotree-toggle)
 
 
 
@@ -169,7 +170,9 @@
 ;;      (figwheel-sidecar.repl-api/start-figwheel!)
 ;;      (figwheel-sidecar.repl-api/cljs-repl))")
 (add-hook 'text-mode-hook 'turn-on-visual-line-mode)
-          ;(add-hook 'clojure-mode-hook 'parinfer-mode)
+(add-hook 'clojure-mode-hook 'parinfer-mode)
+
+
 
 
 (require 'dired)
@@ -181,7 +184,6 @@
 (defun xah-dired-mode-setup ()
   "to be run as hook for `dired-mode'."
   (dired-hide-details-mode 1))
-
 
 (add-hook 'dired-mode-hook 'xah-dired-mode-setup)
 ;; (defun cider-figwheel-repl ()
@@ -288,24 +290,26 @@
   (and evil-mode (evil-force-normal-state))
   (keyboard-quit))
 (setq evil-want-C-u-scroll t)
-(global-set-key (kbd "C-e") 'end-of-visual-line)
-;; (define-key evil-normal-state-map   (kbd "C-g") #'evil-keyboard-quit) 
-; ;uevil-window-map         (kbd "C-g") #'evil-keyboard-quit) 
+;(global-set-key (kbd "C-e") 'end-of-visual-line)
+(define-key evil-normal-state-map   (kbd "C-g") #'evil-keyboard-quit) 
+;uevil-window-map         (kbd "C-g") #'evil-keyboad-quit) 
 ;; (define-key evil-operator-state-map (kbd "C-g") #'evil-keyboard-quit) 
-;; (define-key evil-normal-state-map (kbd "C-u") 'evil-scroll-up)
+(define-key evil-normal-state-map (kbd "H") 'back-to-indentation)
+(define-key evil-normal-state-map (kbd "L") 'evil-end-of-line) 
+;(define-key evil-normal-state-map (kbd "C-e") 'end-of-visual-line)
+;(define-key evil-insert-state-map (kbd "C-e") 'end-of-visual-line)
 (setq evil-escape-key-sequence "kj")
 (global-unset-key (kbd "C-z"))
-;; (define-key evil-normal-state-map (kbd "0") 'back-to-indentation)
+;(define-key evil-normal-state-map (kbd "0") 'back-to-indentation)
 (setq default-cursor-type 'bar)
 
 (global-set-key "\C-x2" (lambda () (interactive)(split-window-vertically) (other-window 1)))
 (global-set-key "\C-x3" (lambda () (interactive)(split-window-horizontally) (other-window 1)))
 ;; (add-hook 'emacs-lisp-mode-hook #'evil-lispy-mode)
-;; (add-hook 'clojure-mode-hook #'evil-lispy-mode)
 ;; (dolist (mode '(cider-repl-mode))
 ;;  (add-to-list 'evil-emacs-state-modes mode))
 
-(defvar my-leader-map (make-sparse-keymap))
+;(defvar my-leader-map (make-sparse-keymap))
 
 ;; (define-key evil-normal-state-map (kbd "SPC SPC") 'smex)   
 ;; (define-key evil-normal-state-map (kbd "SPC e") 'cider-eval-last-sexp)   
@@ -321,7 +325,7 @@
 ;;(set-frame-font "Menlo-14.5" nil t)
 
 
-(setq evil-move-cursor-back t)
+;(setq evil-move-cursor-back t)
 
 
 (defadvice cider-last-sexp (around evil activate)
@@ -347,26 +351,35 @@
 ;; (global-set-key (kbd "<f2> i") 'counsel-info-lookup-symbol)
 ;; (global-set-key (kbd "<f2> u") 'counsel-unicode-char)
 
+(visual-line-mode t)
 
-
-
-
-
-
-
-
+(setq projectile-switch-project-action 'neotree-projectile-action)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(blink-cursor-mode nil)
  '(byte-compile-delete-errors t)
+ '(cider-auto-jump-to-error nil)
  '(cider-auto-select-error-buffer nil)
  '(cider-debug-use-overlays t)
+ '(cider-mode-line nil)
+ '(cider-mode-line-show-connection nil)
+ '(cider-show-error-buffer nil)
  '(cider-use-overlays t)
  '(compilation-message-face (quote default))
+ '(cursor-in-non-selected-windows (quote hollow))
+ '(cursor-type (quote bar))
+ '(custom-safe-themes
+   (quote
+    ("c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "9a155066ec746201156bb39f7518c1828a73d67742e11271e4f24b7b178c4710" "43c1a8090ed19ab3c0b1490ce412f78f157d69a29828aa977dae941b994b4147" "53f97243218e8be82ba035ae34c024fd2d2e4de29dc6923e026d5580c77ff702" default)))
+ '(evil-escape-mode t)
+ '(evil-lispy-cursor (quote ("blue" box)))
  '(fci-rule-color "#3C3D37")
+ '(global-linum-mode t)
+ '(global-visual-line-mode t)
  '(highlight-changes-colors (quote ("#FD5FF0" "#AE81FF")))
  '(highlight-tail-colors
    (quote
@@ -382,9 +395,12 @@
  '(org-agenda-files (quote ("~/org/school.org" "~/org/home.org")))
  '(package-selected-packages
    (quote
-    (align-cljlet clj-refactor el-get ranger runner 4clojure flx-ido which-key with-editor counsel evil-escape helm-clojuredocs clojure-cheatsheet synosaurus sx org-pomodoro evil-lispy clojure-mode cider lispy parinfer ace-window key-chord magit-gh-pulls achievements avy helm-ag-r ag org org-jira helm-projectile projectile magit company helm-ag omnisharp helm monokai-theme)))
+    (highlight2clipboard evil-lispy lispyville exwm diminish evil-magit shell-pop neotree org align-cljlet clj-refactor el-get ranger runner 4clojure flx-ido which-key with-editor counsel evil-escape helm-clojuredocs clojure-cheatsheet synosaurus sx org-pomodoro clojure-mode cider parinfer ace-window key-chord magit-gh-pulls achievements avy helm-ag-r ag org-jira helm-projectile projectile magit company helm-ag omnisharp helm monokai-theme)))
  '(pos-tip-background-color "#FFFACE")
  '(pos-tip-foreground-color "#272822")
+ '(rich-minority-mode nil)
+ '(rm-blacklist (quote ("\"vc-mode\"")))
+ '(shell-pop-universal-key "C-t")
  '(vc-annotate-background nil)
  '(vc-annotate-color-map
    (quote

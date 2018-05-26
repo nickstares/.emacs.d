@@ -1,0 +1,55 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode emacs-lisp-mode
+      :tags 
+        '( ("package" include nil nil [53 71])
+            ("add-to-list" code nil nil [72 173])
+            ("add-to-list" code nil nil [174 260])
+            ("add-to-list" code nil nil [261 357])
+            ("setq" code nil nil [650 685])
+            ("key-chord-define" code nil nil [686 750])
+            ("key-chord-mode" code nil nil [751 769])
+            ("set-scroll-bar-mode" code nil nil [771 796])
+            ("tool-bar-mode" code nil nil [797 815])
+            ("package-initialize" code nil nil [966 986])
+            ("package-refresh-contents" code nil nil [1150 1176])
+            ("paredit" code nil nil [1574 2535])
+            ("eq" code nil nil [3060 3084])
+            ("add-to-list" code nil nil [3089 3137])
+            ("p" code nil nil [3148 3163])
+            ("when" code nil nil [3166 3226])
+            ("not" code nil nil [3707 3737])
+            ("add-to-list" code nil nil [3802 3854])
+            ("load" code nil nil [3948 3977])
+            ("load" code nil nil [4104 4126])
+            ("load" code nil nil [4230 4244])
+            ("load" code nil nil [4296 4315])
+            ("load" code nil nil [4354 4370])
+            ("load" code nil nil [4393 4418])
+            ("load" code nil nil [4442 4467])
+            ("load" code nil nil [4468 4488])
+            ("custom-set-variables" code nil nil [4489 5044])
+            ("custom-set-faces" code nil nil [5045 5284])
+            ("setq" code nil nil [5287 5417])
+            ("setq" code nil nil [5420 5485])
+            ("define-key" code nil nil [5491 5536])
+            ("setq" code nil nil [5538 5889])
+            ("setq" code nil nil [5890 5968])
+            ("copy-from-osx" function nil nil [5969 6031])
+            ("paste-to-osx" function (:arguments ("text" "push")) nil [6033 6249])
+            ("setq" code nil nil [6251 6305])
+            ("setq" code nil nil [6307 6348])
+            ("setq" code nil nil [6350 6396])
+            ("setq" code nil nil [6397 6446]))          
+      :file "init.el"
+      :pointmax 6447
+      :fsize 6446
+      :lastmodtime '(23141 60418 0 0)
+      :unmatched-syntax '((symbol 3702 . 3706) (open-paren 3701 . 3702) (close-paren 3602 . 3603) (string 3583 . 3602) (symbol 3573 . 3582) (punctuation 3572 . 3573) (symbol 3560 . 3571) (open-paren 3559 . 3560) (close-paren 3226 . 3227) (symbol 3141 . 3147) (open-paren 3140 . 3141) (close-paren 3137 . 3138) (symbol 3057 . 3059) (open-paren 3056 . 3057) (close-paren 2535 . 2536) (punctuation 1573 . 1574) (symbol 1559 . 1570) (symbol 1552 . 1558) (open-paren 1551 . 1552) (close-paren 1416 . 1417) (symbol 1413 . 1416) (symbol 1392 . 1412) (symbol 1385 . 1391) (open-paren 1384 . 1385) (close-paren 1382 . 1383) (symbol 1379 . 1382) (symbol 1369 . 1378) (symbol 1362 . 1368) (open-paren 1361 . 1362) (close-paren 1359 . 1360) (symbol 1356 . 1359) (symbol 1343 . 1355) (symbol 1336 . 1342) (open-paren 1335 . 1336) (close-paren 1333 . 1334) (symbol 1330 . 1333) (symbol 1313 . 1329) (symbol 1306 . 1312) (open-paren 1305 . 1306) (close-paren 1303 . 1304) (symbol 1300 . 1303) (symbol 1287 . 1299) (symbol 1280 . 1286) (open-paren 1279 . 1280) (close-paren 1176 . 1177))))
+  :file "!Users!nicholasstares!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -1,0 +1,25 @@
+;;;; Emacs Bookmark Format Version 1 ;;;;
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("ranger-a"
+ (filename . "~/")
+ (front-context-string . ".config\n  drwx--")
+ (rear-context-string . "6B Feb 18 14:33 ")
+ (position . 767))
+("org-refile-last-stored"
+ (filename . "~/gtd/gtd.org")
+ (front-context-string . "** TODO set up m")
+ (rear-context-string . "em?id=16194580\n\n")
+ (position . 91))
+("org-capture-last-stored"
+ (filename . "~/gtd/inbox.org")
+ (front-context-string . "** TODO test\n* T")
+ (rear-context-string . " go to the bank\n")
+ (position . 32))
+("floobits-nstares-258957"
+ (filename . "~/Documents/okokok/FLOOBITS_README.md")
+ (front-context-string)
+ (rear-context-string . "/help/plugins/\n\n")
+ (position . 284))
+)

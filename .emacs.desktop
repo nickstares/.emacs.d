@@ -1,0 +1,175 @@
+;; -*- mode: emacs-lisp; coding: emacs-mule; -*-
+;; --------------------------------------------------------------------------
+;; Desktop File for Emacs
+;; --------------------------------------------------------------------------
+;; Created Mon Mar  5 08:46:17 2018
+;; Desktop file format version 208
+;; Emacs version 25.3.1
+
+;; Global section:
+(setq desktop-saved-frameset [frameset 1 (23197 18985 276585 0) (desktop . "208") "nicholasstares@Nicholass-MacBook-Pro.local" nil nil ((((font-backend mac-ct) (fontsize . 0) (font . "-*-Menlo-normal-normal-normal-*-12-*-*-*-m-0-iso10646-1") (border-width . 0) (internal-border-width . 2) (vertical-scroll-bars) (horizontal-scroll-bars) (foreground-color . "#333333") (background-color . "#FFFFFF") (line-spacing) (left-fringe . 8) (right-fringe . 8) (menu-bar-lines . 1) (tool-bar-lines . 0) (title) (icon-type) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 0) (scroll-bar-height . 0) (alpha) (fullscreen) (display-type . color) (background-mode . light) (cursor-color . "#21BDFF") (environment) (frameset--id . "7E78-328F-3311-4A30") (frameset--mini t . t) (height . 73) (width . 117) (modeline . t) (minibuffer . t) (unsplittable) (left . 841) (top . 1) (right-divider-width . 0) (bottom-divider-width . 0) (icon-name) (visibility . t) (display . "Nicholass-MacBook-Pro.local") (explicit-name) (tool-bar-position . top)) ((min-height . 4) (min-width . 10) (min-height-ignore . 3) (min-width-ignore . 5) (min-height-safe . 1) (min-width-safe . 2) (min-pixel-height . 56) (min-pixel-width . 70) (min-pixel-height-ignore . 42) (min-pixel-width-ignore . 35) (min-pixel-height-safe . 14) (min-pixel-width-safe . 14)) leaf (pixel-width . 835) (pixel-height . 1008) (total-width . 119) (total-height . 72) (normal-height . 1.0) (normal-width . 1.0) (buffer "realworld.org" (selected . t) (hscroll . 0) (fringes 8 8 nil) (margins nil) (scroll-bars nil 0 t nil 0 nil) (vscroll . 0) (dedicated) (point . 1969) (start . 1))))])
+(setq desktop-missing-file-warning nil)
+(setq tags-file-name nil)
+(setq tags-table-list nil)
+(setq search-ring '("route" "bud" "my" "get" "ch" "swagger" "compojurew"))
+(setq regexp-search-ring nil)
+(setq register-alist nil)
+(setq file-name-history '("/Users/nicholasstares/code/realworld-clj/src/clj/realworld_clj/db/user.clj" "/Users/nicholasstares/code/realworld-clj/src/clj/realworld_clj/db/db.clj" "/Users/nicholasstares/code/realworld-clj/src/clj/realworld_clj/db.clj" "/Users/nicholasstares/code/realworld-clj/src/clj/realworld_clj/db/db.clj" "/Users/nicholasstares/code/realworld-clj/src/clj/realworld_clj/auth.clj" "/Users/nicholasstares/code/realworld-clj/src/clj/realworld_clj/routes/user.clj" "/Users/nicholasstares/Documents/notes/realworld.org" "/Users/nicholasstares/code/foobar/project.clj" "/Users/nicholasstares/code/foobar/Procfile" "/Users/nicholasstares/code/foobar/project.clj" "/Users/nicholasstares/.emacs.d/init.el"))
+
+;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 208
+  "/Users/nicholasstares/Documents/notes/realworld.org"
+  "realworld.org"
+  'org-mode
+  '(visual-line-mode projectile-mode flx-ido-mode which-key-mode)
+  1969
+  '(1028 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix) (truncate-lines))
+  '((mark-ring (1969))))
+
+(desktop-create-buffer 208
+  "/Users/nicholasstares/code/realworld-clj/test/clj/realworld_clj/test/api.clj"
+  "api.clj"
+  'clojure-mode
+  '(projectile-mode flx-ido-mode cider-mode auto-revert-mode which-key-mode)
+  331
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/Users/nicholasstares/code/realworld-clj/src/clj/realworld_clj/db/user.clj"
+  "user.clj"
+  'clojure-mode
+  '(projectile-mode flx-ido-mode cider-mode text-scale-mode which-key-mode)
+  960
+  '(653 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (855 966 554 964 497 760 706 761 966 966 872 760 760 774 774 760))))
+
+(desktop-create-buffer 208
+  "/Users/nicholasstares/code/realworld-clj/src/clj/realworld_clj/routes/user.clj"
+  "user.clj"
+  'clojure-mode
+  '(projectile-mode flx-ido-mode parinfer-mode cider-mode text-scale-mode which-key-mode)
+  1029
+  '(828 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . utf-8-unix))
+  '((mark-ring (283 205 806 1029 812 208 243 243 243 243 218 243 181 243 243 706))))
+
+(desktop-create-buffer 208
+  "/Users/nicholasstares/code/realworld-clj/src/clj/realworld_clj/db.clj"
+  "db.clj"
+  'clojure-mode
+  '(projectile-mode flx-ido-mode cider-mode which-key-mode)
+  1
+  '(623 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . utf-8-unix))
+  '((mark-ring (622 1 623))))
+
+(desktop-create-buffer 208
+  "/Users/nicholasstares/.emacs.d/init.el"
+  "init.el"
+  'emacs-lisp-mode
+  '(projectile-mode flx-ido-mode which-key-mode)
+  1440
+  '(1462 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . prefer-utf-8-dos))
+  '((mark-ring (1443 1697))))
+
+(desktop-create-buffer 208
+  "/Users/nicholasstares/code/realworld-clj/src/clj/realworld_clj/handler.clj"
+  "handler.clj"
+  'clojure-mode
+  '(projectile-mode flx-ido-mode parinfer-mode cider-mode auto-revert-mode which-key-mode)
+  381
+  '(324 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (817 814 817 817))))
+
+(desktop-create-buffer 208
+  "/Users/nicholasstares/code/realworld-clj/project.clj"
+  "project.clj"
+  'clojure-mode
+  '(projectile-mode flx-ido-mode cider-mode auto-revert-mode which-key-mode)
+  1317
+  '(1143 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (1110 1092 1092 122))))
+
+(desktop-create-buffer 208
+  "/Users/nicholasstares/code/realworld-clj/src/clj/realworld_clj/auth.clj"
+  "auth.clj"
+  'clojure-mode
+  '(projectile-mode flx-ido-mode cider-mode text-scale-mode which-key-mode)
+  559
+  '(1 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . utf-8-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/Users/nicholasstares/code/realworld-clj/src/clj/realworld_clj/routes/home.clj"
+  "home.clj"
+  'clojure-mode
+  '(projectile-mode flx-ido-mode cider-mode auto-revert-mode which-key-mode)
+  459
+  '(374 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (219 1))))
+
+(desktop-create-buffer 208
+  "/Users/nicholasstares/code/guestbook/src/clj/guestbook/core.clj"
+  "core.clj"
+  'clojure-mode
+  '(projectile-mode flx-ido-mode cider-mode which-key-mode)
+  20
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . utf-8-emacs-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  nil
+  ".saves-*"
+  'dired-mode
+  '(projectile-mode flx-ido-mode which-key-mode)
+  389
+  '(303 nil)
+  t
+  '("/Users/nicholasstares/.emacs.d/auto-save-list/.saves-*")
+  nil
+  '((mark-ring (303 303 303 298 286))))
+
+(desktop-create-buffer 208
+  "/Users/nicholasstares/.emacs.d/auto-save-list/.saves-48051-Nicholass-MacBook-Pro.local~"
+  ".saves-48051-Nicholass-MacBook-Pro.local~"
+  'fundamental-mode
+  '(projectile-mode flx-ido-mode which-key-mode)
+  59
+  '(nil nil)
+  t
+  nil
+  '((buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
