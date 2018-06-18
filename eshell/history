@@ -1,128 +1,128 @@
-ls
-resources
-ls
-ls
-cd ..
-test
-resolveLinks 
-resources
-ls
-ls
-cd ..
-ls
-cd test
-ls
-cd resources/
-ls
-gst
-git commit -am "Use test image from worker resources"
-git push
-git commit -am "Find pwd in build"
-git push
-lein test2junit :integration
-lein test :integration
-cd ../..
-..
-web
-lein test2junit :integration
-git commit -am "Use test image from worker resources"
-lein test2junit :integration
-lein test2junit :integration
-lein test2junit :integration
-lein test2junit :integration
-ls
-ls
-ls
-rm FUTURE
-rm FUTURE\~ 
-rm notes.org
-gst
-ls
-git init
-dct
-cd ~/evidentsystems/drawing-comparison-tool/
-git status
-ls
-web
-ls
-resources
-ls
-public
-ls
-img
-ls
-ls
-cd ..
-ls
-cd vendor/
-ls
-ls
-cd ..
-ls
-cd js
-ls
-cd ..
-cd css
-ls
-ls
-cd ../../..
-tree
-ls
-cd resources/
-ls
-cd public/
-ls
-ls
-cd _default/
-ls
-ls
-ls
-cd ..
-ls
-..
-ls
-cd themes/
-ls
-anake
-ls
-rm fonts
-cd ..
-cd css
-rm -rf fonts
-cd ..
-sl
-ls
-cd js
-ls
-ls
-cd ..
-cd css
-ls
-open .
-ls
+cd tiles/
 ls
 cd ..
 ls
 cd ..
+ls
+cd 78e37545-bb66-4be0-a5f6-b02fcd45917c/
+ls
+cd ..
+ls
+ls
+cd ..
+ls
+rm -rf file-storage/
+ls
+cd file-storage/
+ls
+cd e5a4344e-2eb0-4fcf-a219-b9fd2578d6fa/
+ls
+cd tiles/
+ls
+cd 1
+ls
+cd 0
+ls
+npm install -g ijavascript
+apm install hydrogen
+cd ..
+lein repl
+cd web
+lein repl
+lein repl
+ls
+ls -a
+lein repl
+cd ~
+ls
+ls -a
+cd .lein
+ls
+mv repl-port old-repl-port
+touch repl-port
+cd self-installs/
+ls
+cd ..
+ls
+cd ..
+ls
+ls -a
+ls
+c website/
+cd website
+hugo server
+cd ..
+cd ..
+hugo server --verbose
+ls
+ls -la
+hugo server -l
+hugo server --log
+hugo server --log
+hugo server --log
+hugo server --log
+cd ..
+hugo new site test-website
+cd test-website/
+ls
+hugo new theme
+hugo new theme modern-buisiness
+ls
+cd content/
+ls
+cd ..
+cd archetypes/
+ls
+cd ..
+cd layouts/
+ls
+cd ..
+cd ..
+cd website
+ls
+hugo server --log
+hugo server --help
+hugo server
+hugo server --disableFastRender
+hugo server --disableFastRender --log
+hugo server --disableFastRender --log
+hugo server --disableFastRender --log
+hugo server --disableFastRender --log
+hugo server --disableFastRender --log
 ls
 cd layouts/
 ls
-cd partials/
-ls
-mkdir headers
-touch site-header.html
-ls
-ls
-joplin
-ls
-dct
-web
+rm #index.html#
+rm #index.html#
+rm #index.html#
+hugo server --disableFastRender --log
 cd ..
-lein test integration
-make integration-test
-cd .. & make integration-test
-cd .. & make integration-test
-cd drawing-comparison-tool/
-make integration-test
-git fetch
-git fetch origin
+hugo server --disableFastRender --log
+hugo server --disableFastRender --log
+hugo server --disableFastRender --log
+hugo server
+hugo server
+hugo server
+cd ../../layouts/
+rm -rf about.html\~
+ls
+rm -rf about.html
+rm -rf about/
+ls
+cd section/
+ls
+rm -rf about.html\~
+rm -rf about.html
+rm -rf about/
+ls
+cd ..
+ls
+cd ..
+cd content/
+ls
+cd about/team
+ls
+mv images ../
+ls
+cd ..
+ls

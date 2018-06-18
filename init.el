@@ -1,18 +1,16 @@
-
 (require 'package)
-(let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
-                    (not (gnutls-available-p))))
-       (proto (if no-ssl "http" "https")))
-  ;; Comment/uncomment these two lines to enable/disable MELPA and MELPA Stable as desired
-;;  (add-to-list 'package-archives (cons "melpa" (concat proto "://melpa.org/packages/")) t)
-   (add-to-list 'package-archives 
-                     '("melpa" . "http://melpa.milkbox.net/packages/")
-                     'APPEND)
-  ;;(add-to-list 'package-archives (cons "melpa-stable" (concat proto "://stable.melpa.org/packag/es/")) t)
-  (when (< emacs-major-version 24)
-    ;; For important compatibility libraries like cl-lib
-    (add-to-list 'package-archives '("gnu" . (concat proto "://elpa.gnu.org/packages/")))))
-(package-initialize)
+;; (let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
+;;                     (not (gnutls-available-p))))
+;;        (proto (if no-ssl "http" "https")))
+;;   ;; Comment/uncomment these two lines to enable/disable MELPA and MELPA Stable as desired
+;; ;;  (add-to-list 'package-archives (cons "melpa" (concat proto "://melpa.org/packages/")) t) (add-to-list 'package-archives
+;;                      '("melpa" . "http://melpa.milkbox.net/packages/")
+;;                      'APPEND)
+;;   ;;(add-to-list 'package-archives (cons "melpa-stable" (concat proto "://stable.melpa.org/packag/es/")) t)
+;;   (when (< emacs-major-version 24)
+;;     ;; For important compatibility libraries like cl-lib
+;;     (add-to-list 'package-archives '("gnu" . (concat proto "://elpa.gnu.org/packages/"))))))
+;; (package-initialize)
 
 
 (add-to-list 'package-archives
@@ -48,8 +46,6 @@
 ;; (define-key paredit-mode-map (kbd "C-k") 'kill-line)
 ;; (define-key parinfer-mod-map (kbd "C-'") 'align-cljlet)
 
-
-
 ;; (require 'paredit)
 ;; (let ((paredit-modes '(clojure
 ;;                        javascript
@@ -72,7 +68,6 @@
 
 
 
-(global-set-key (kbd "C-x C-.") 'parinfer-toggle-mode)
 
 
 (projectile-mode)
@@ -84,9 +79,9 @@
 (ido-mode 1)
 ;; (ido-everywhere 0)
 ; (flx-ido-mode 1)
-(show-paren-mode 1)
+ ;; (show-paren-mode 1)
 (projectile-global-mode)
-
+(setq-default rainbow-delimiters-mode t)
 (set-scroll-bar-mode nil)
 (tool-bar-mode -1)
 (define-key global-map [menu-bar words] t)
@@ -110,8 +105,6 @@
 ;g(global-unset-key (kbd "C-x m"))
 (global-set-key (kbd "C-x m") 'smex)
 (global-set-key (kbd "M-x") 'smex)
-
-(setq parinfer-extensions '(defaults pretty-parens))
 
 
 
@@ -159,11 +152,17 @@
 (define-key global-map "\C-ca" 'org-agenda)
 
 (setq org-agenda-files
-      (list "~/org/school.org" 
+      (list "~/org/school.org"
             "~/org/home.org"))
-      
+
 (setq visual-line-mode 1)
 (setq org-log-done t)
+
+(require 'parinfer)
+(global-set-key (kbd "C-x C-.") 'parinfer-toggle-mode)
+(setq parinfer-extensions '(defaults pretty-parens smart-yank evil))
+
+
 
 ;;(setq cider-cljs-lein-repl nil)
 ;; "(do (require 'figwheel-sidecar.repl-api)
@@ -171,12 +170,30 @@
 ;;      (figwheel-sidecar.repl-api/cljs-repl))")
 (add-hook 'text-mode-hook 'turn-on-visual-line-mode)
 (add-hook 'clojure-mode-hook 'parinfer-mode)
-
-
-
+;; (add-hook 'clojure-mode-hook 'smartparens-mode)
+;; (remove-hook 'clojure-mode-hook 'evil-cleverparens-mode)
+;; (remove-hook 'clojure-mode-hook 'smartparens-mode)
+;; (remove-hook 'clojure-mode-hook 'smartparens-strict-mode)
+;;(remove-hook 'clojure-mode-hook 'aggressive-indent-mode)
+(require 'evil-cleverparens)
+;; (define-key evil-cleverparens-mode-map (kbd "}") defaule)
+;; (define-key evil-cleverparens-mode-map (kbd "{") )
+;; (define-key evil-normal-state-map (kbd "}") 'evil-forward-paragraph)
+;; (define-key evil-normal-state-map (kbd "{") 'evil-backward-paragraph)
+(setq evil-cp-additional-movement-keys
+ '(("L" . evil-cp-forward-sexp)
+ ("H" . evil-cp-backward-sexp)
+ ("M-l" . evil-cp-end-of-defun)
+ ("M-h" . evil-cp-beginning-of-defun)
+ ("[" . evil-cp-previous-opening)
+ ("]" . evil-cp-next-closing)
+ ("{" . evil-backward-paragraph)
+ ("}" . evil-forward-paragraph)
+ ("(" . evil-cp-backward-up-sexp)
+ (")" . evil-cp-up-sexp)))
+(setq-default show-trailing-whitespace 't)
 
 (require 'dired)
-
 (define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file) ; was dired-advertised-find-file
 
 (define-key dired-mode-map (kbd "DEL") (lambda () (interactive) (find-alternate-file "..")))  ; was dired-up-directory
@@ -217,13 +234,6 @@
 
 
 
-(load-theme 'leuven t)
-;; (when mswindows-p
-;;   (set-face-attribute 'default nil
-;; 		      :family "Consolas" :height 100))
-
-;; (set-scroll-bar-mode nil)
-;; (tool-bar-mode -1)
 
 (global-set-key (kbd "C-k") 'kill-line)
 (global-set-key (kbd "C-r") 'isearch-backward)
@@ -284,20 +294,21 @@
 
 (setq evil-escape-mode 1)
 
+
 (defun evil-keyboard-quit ()
   "Keyboard quit and force normal state."
   (interactive)
   (and evil-mode (evil-force-normal-state))
   (keyboard-quit))
+
 (setq evil-want-C-u-scroll t)
 ;(global-set-key (kbd "C-e") 'end-of-visual-line)
-(define-key evil-normal-state-map   (kbd "C-g") #'evil-keyboard-quit) 
-;uevil-window-map         (kbd "C-g") #'evil-keyboad-quit) 
-;; (define-key evil-operator-state-map (kbd "C-g") #'evil-keyboard-quit) 
-(define-key evil-normal-state-map (kbd "H") 'back-to-indentation)
-(define-key evil-normal-state-map (kbd "L") 'evil-end-of-line) 
-;(define-key evil-normal-state-map (kbd "C-e") 'end-of-visual-line)
-;(define-key evil-insert-state-map (kbd "C-e") 'end-of-visual-line)
+;(define-key evil-normal-state-map   (kbd "C-g") #'evil-keyboard-quit)
+;uevil-window-map         (kbd "C-g") #'evil-keyboad-quit)
+;; (define-key evil-operator-state-map (kbd "C-g") #'evil-keyboard-quit)
+(require 'evil)
+(define-key evil-normal-state-map (kbd "C-e") 'end-of-line)
+(define-key evil-insert-state-map (kbd "C-a") 'beginning-of-line)
 (setq evil-escape-key-sequence "kj")
 (global-unset-key (kbd "C-z"))
 ;(define-key evil-normal-state-map (kbd "0") 'back-to-indentation)
@@ -308,11 +319,11 @@
 ;; (add-hook 'emacs-lisp-mode-hook #'evil-lispy-mode)
 ;; (dolist (mode '(cider-repl-mode))
 ;;  (add-to-list 'evil-emacs-state-modes mode))
-
+;; (lispy-set-key-theme '(lispy c-digits))
 ;(defvar my-leader-map (make-sparse-keymap))
 
-;; (define-key evil-normal-state-map (kbd "SPC SPC") 'smex)   
-;; (define-key evil-normal-state-map (kbd "SPC e") 'cider-eval-last-sexp)   
+;; (define-key evil-normal-state-map (kbd "SPC SPC") 'smex)
+;; (define-key evil-normal-state-map (kbd "SPC e") 'cider-eval-last-sexp)
 
 (global-set-key (kbd "M-[") 'backward-paragraph)
 (global-set-key (kbd "M-]") 'forward-paragraph)
@@ -353,14 +364,40 @@
 
 (visual-line-mode t)
 
-(setq projectile-switch-project-action 'neotree-projectile-action)
+;; (setq projectile-switch-project-action 'neotree-projectile-action)
+;; (setq projectile-globally-ignored-directories
+;;         (cl-union projectile-globally-ignored-directories
+;;                   '(".git"
+;;                     ".cljs_rhino_repl"
+;;                     ".meghanada"
+;;                     ".svn"
+;;                     "out"
+;;                     "node_modules"
+;;                     "repl"
+;;                     "resources/public/js/compiled"
+;;                     "target"
+;; 		    "logs"
+;; 		    "resources/"
+;;                     "venv")))
 
+(require 'evil)
+(define-key evil-normal-state-map (kbd "H") 'back-to-indentation)
+(define-key evil-normal-state-map (kbd "L") 'evil-end-of-line)
+
+(require 'magit)
+(define-key magit-mode-map (kbd "k") #'previous-line)
+(define-key magit-mode-map (kbd "K") 'magit-discard)
+(define-key magit-mode-map (kbd "j") #'next-line)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(blink-cursor-mode nil)
+ '(ansi-color-faces-vector
+   [default bold shadow italic underline bold bold-italic bold])
+ '(ansi-color-names-vector
+   ["#c0c0c0" "#336c6c" "#806080" "#0f2050" "#732f2c" "#23733c" "#6c1f1c" "#232333"])
+ '(blink-cursor-mode t)
  '(byte-compile-delete-errors t)
  '(cider-auto-jump-to-error nil)
  '(cider-auto-select-error-buffer nil)
@@ -369,15 +406,21 @@
  '(cider-mode-line-show-connection nil)
  '(cider-show-error-buffer nil)
  '(cider-use-overlays t)
+ '(company-quickhelp-color-background "#b0b0b0")
+ '(company-quickhelp-color-foreground "#232333")
  '(compilation-message-face (quote default))
  '(cursor-in-non-selected-windows (quote hollow))
  '(cursor-type (quote bar))
+ '(custom-enabled-themes (quote (sanityinc-solarized-light)))
  '(custom-safe-themes
    (quote
-    ("c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "9a155066ec746201156bb39f7518c1828a73d67742e11271e4f24b7b178c4710" "43c1a8090ed19ab3c0b1490ce412f78f157d69a29828aa977dae941b994b4147" "53f97243218e8be82ba035ae34c024fd2d2e4de29dc6923e026d5580c77ff702" default)))
+    ("bfdcbf0d33f3376a956707e746d10f3ef2d8d9caa1c214361c9c08f00a1c8409" "bea5fd3610ed135e6ecc35bf8a9c27277d50336455dbdd2969809f7d7c1f7d79" "4cf3221feff536e2b3385209e9b9dc4c2e0818a69a1cdb4b522756bcdf4e00a4" "c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "9a155066ec746201156bb39f7518c1828a73d67742e11271e4f24b7b178c4710" "43c1a8090ed19ab3c0b1490ce412f78f157d69a29828aa977dae941b994b4147" "53f97243218e8be82ba035ae34c024fd2d2e4de29dc6923e026d5580c77ff702" default)))
+ '(evil-cleverparens-use-additional-movement-keys t)
+ '(evil-cleverparens-use-regular-insert t)
  '(evil-escape-mode t)
  '(evil-lispy-cursor (quote ("blue" box)))
  '(fci-rule-color "#3C3D37")
+ '(frame-background-mode (quote light))
  '(global-linum-mode t)
  '(global-visual-line-mode t)
  '(highlight-changes-colors (quote ("#FD5FF0" "#AE81FF")))
@@ -391,16 +434,22 @@
      ("#A75B00" . 70)
      ("#F309DF" . 85)
      ("#3C3D37" . 100))))
+ '(hl-sexp-background-color "#efebe9")
  '(magit-diff-use-overlays nil)
- '(org-agenda-files (quote ("~/org/school.org" "~/org/home.org")))
+ '(nrepl-message-colors
+   (quote
+    ("#336c6c" "#205070" "#0f2050" "#806080" "#401440" "#6c1f1c" "#6b400c" "#23733c")))
+ '(org-agenda-files (quote ("~/org/school.org" "~/org/home.org")) t)
  '(package-selected-packages
    (quote
-    (highlight2clipboard evil-lispy lispyville exwm diminish evil-magit shell-pop neotree org align-cljlet clj-refactor el-get ranger runner 4clojure flx-ido which-key with-editor counsel evil-escape helm-clojuredocs clojure-cheatsheet synosaurus sx org-pomodoro clojure-mode cider parinfer ace-window key-chord magit-gh-pulls achievements avy helm-ag-r ag org-jira helm-projectile projectile magit company helm-ag omnisharp helm monokai-theme)))
+    (lsp-mode yaml-mode adjust-parens highlight-parentheses aggressive-indent evil-smartparens evil-cleverparens smartparens evil-surround zenburn-theme anti-zenburn-theme color-theme-sanityinc-solarized color-theme-solarized solarized-theme highlight2clipboard evil-lispy lispyville exwm diminish evil-magit shell-pop neotree org align-cljlet clj-refactor el-get ranger runner 4clojure flx-ido which-key with-editor counsel evil-escape helm-clojuredocs clojure-cheatsheet synosaurus sx org-pomodoro clojure-mode cider parinfer ace-window key-chord magit-gh-pulls achievements avy helm-ag-r ag org-jira helm-projectile projectile magit company helm-ag omnisharp helm monokai-theme)))
+ '(pdf-view-midnight-colors (quote ("#232333" . "#c7c7c7")))
  '(pos-tip-background-color "#FFFACE")
  '(pos-tip-foreground-color "#272822")
  '(rich-minority-mode nil)
  '(rm-blacklist (quote ("\"vc-mode\"")))
  '(shell-pop-universal-key "C-t")
+ '(sp-navigate-interactive-always-progress-point t)
  '(vc-annotate-background nil)
  '(vc-annotate-color-map
    (quote
@@ -431,5 +480,6 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(avy-lead-face ((t (:background "#e52b50" :foreground "white" :height 1.3 :width extra-expanded))))
- '(avy-lead-face-0 ((t (:background "#4f57f9" :foreground "white" :height 1.3)))))
+ '(avy-lead-face-0 ((t (:background "#4f57f9" :foreground "white" :height 1.3))))
+ '(cursor ((t (:background "navy")))))
 (put 'dired-find-alternate-file 'disabled nil)

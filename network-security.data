@@ -1,8 +1,8 @@
 (
+ (:id "sha1:ccfd2cc2a08c89a9b10969be8c1e926954d53e28" :fingerprint "sha1:fb:7f:46:32:1a:10:44:3b:bf:29:38:1a:c7:7b:da:42:f8:fe:94:e1" :host "stable.melpa.org:443" :conditions (:insecure :unknown-ca :invalid))
  (:id "sha1:85457c729378cc93c732b6a3941c8e4f9c2e60f3" :fingerprint "sha1:ab:a6:d7:6a:b3:d3:63:fa:19:0d:65:41:60:23:6e:ef:d3:2a:46:dc" :host "marmalade-repo.org:443" :conditions (:insecure :unknown-ca :invalid))
  (:id "sha1:d6d4661088614a1368486aef36a333a7b4db3999" :fingerprint "sha1:81:5a:b2:2c:25:ed:16:4f:cc:41:94:55:04:21:fc:f9:4f:c0:49:54" :host "www.emacswiki.org:443" :conditions (:insecure :unknown-ca :invalid))
  (:id "sha1:5cce342a9a99ff6632dc081a41f5f4a28e8e10fc" :fingerprint "sha1:c9:4f:05:0e:50:48:da:fd:71:ee:ca:36:bf:ab:10:0a:52:70:16:99" :host "raw.githubusercontent.com:443" :conditions (:insecure :unknown-ca :invalid))
- (:id "sha1:ccfd2cc2a08c89a9b10969be8c1e926954d53e28" :fingerprint "sha1:b2:85:5c:6f:45:23:d5:88:0e:82:ee:17:b9:eb:c1:88:ed:50:84:44" :host "stable.melpa.org:443" :conditions (:insecure :unknown-ca :invalid))
  (:id "sha1:865ec373309ca1e78386d6ea0ea3dc45246d2b5a" :fingerprint "sha1:54:1d:10:ca:8f:da:95:58:81:9d:d2:05:2f:62:2a:15:98:4c:ad:14" :host "api.stackexchange.com:443" :conditions (:insecure :unknown-ca :invalid))
  (:id "sha1:85b31c268009209a8d3c5387033b219264f7e62b" :fingerprint "sha1:7a:b9:ee:dc:fc:f6:bc:9f:70:5f:99:36:e5:b4:3c:2b:e0:8e:0e:ec" :host "melpa.org:443" :conditions (:insecure :unknown-ca :invalid))
 )
