@@ -158,8 +158,12 @@
 (setq visual-line-mode 1)
 (setq org-log-done t)
 
+
+
+
 (require 'parinfer)
 (global-set-key (kbd "C-x C-.") 'parinfer-toggle-mode)
+(global-set-key (kbd "C-,") 'parinfer-toggle-mode)
 (setq parinfer-extensions '(defaults pretty-parens smart-yank evil))
 
 
@@ -388,6 +392,10 @@
 (define-key magit-mode-map (kbd "k") #'previous-line)
 (define-key magit-mode-map (kbd "K") 'magit-discard)
 (define-key magit-mode-map (kbd "j") #'next-line)
+
+(require 'cider)
+(define-key cider-mode-map (kbd "C-c M-.") 'cider-find-var)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -414,7 +422,7 @@
  '(custom-enabled-themes (quote (sanityinc-solarized-light)))
  '(custom-safe-themes
    (quote
-    ("bfdcbf0d33f3376a956707e746d10f3ef2d8d9caa1c214361c9c08f00a1c8409" "bea5fd3610ed135e6ecc35bf8a9c27277d50336455dbdd2969809f7d7c1f7d79" "4cf3221feff536e2b3385209e9b9dc4c2e0818a69a1cdb4b522756bcdf4e00a4" "c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "9a155066ec746201156bb39f7518c1828a73d67742e11271e4f24b7b178c4710" "43c1a8090ed19ab3c0b1490ce412f78f157d69a29828aa977dae941b994b4147" "53f97243218e8be82ba035ae34c024fd2d2e4de29dc6923e026d5580c77ff702" default)))
+    ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "4aee8551b53a43a883cb0b7f3255d6859d766b6c5e14bcb01bed572fcbef4328" "8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" "bfdcbf0d33f3376a956707e746d10f3ef2d8d9caa1c214361c9c08f00a1c8409" "bea5fd3610ed135e6ecc35bf8a9c27277d50336455dbdd2969809f7d7c1f7d79" "4cf3221feff536e2b3385209e9b9dc4c2e0818a69a1cdb4b522756bcdf4e00a4" "c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "9a155066ec746201156bb39f7518c1828a73d67742e11271e4f24b7b178c4710" "43c1a8090ed19ab3c0b1490ce412f78f157d69a29828aa977dae941b994b4147" "53f97243218e8be82ba035ae34c024fd2d2e4de29dc6923e026d5580c77ff702" default)))
  '(evil-cleverparens-use-additional-movement-keys t)
  '(evil-cleverparens-use-regular-insert t)
  '(evil-escape-mode t)
@@ -439,7 +447,7 @@
  '(nrepl-message-colors
    (quote
     ("#336c6c" "#205070" "#0f2050" "#806080" "#401440" "#6c1f1c" "#6b400c" "#23733c")))
- '(org-agenda-files (quote ("~/org/school.org" "~/org/home.org")) t)
+ '(org-agenda-files (quote ("~/org/school.org" "~/org/home.org")))
  '(package-selected-packages
    (quote
     (lsp-mode yaml-mode adjust-parens highlight-parentheses aggressive-indent evil-smartparens evil-cleverparens smartparens evil-surround zenburn-theme anti-zenburn-theme color-theme-sanityinc-solarized color-theme-solarized solarized-theme highlight2clipboard evil-lispy lispyville exwm diminish evil-magit shell-pop neotree org align-cljlet clj-refactor el-get ranger runner 4clojure flx-ido which-key with-editor counsel evil-escape helm-clojuredocs clojure-cheatsheet synosaurus sx org-pomodoro clojure-mode cider parinfer ace-window key-chord magit-gh-pulls achievements avy helm-ag-r ag org-jira helm-projectile projectile magit company helm-ag omnisharp helm monokai-theme)))
@@ -449,6 +457,7 @@
  '(rich-minority-mode nil)
  '(rm-blacklist (quote ("\"vc-mode\"")))
  '(shell-pop-universal-key "C-t")
+ '(show-paren-mode t)
  '(sp-navigate-interactive-always-progress-point t)
  '(vc-annotate-background nil)
  '(vc-annotate-color-map

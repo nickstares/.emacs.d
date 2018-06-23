@@ -1,17 +1,3 @@
-cd tiles/
-ls
-cd ..
-ls
-cd ..
-ls
-cd 78e37545-bb66-4be0-a5f6-b02fcd45917c/
-ls
-cd ..
-ls
-ls
-cd ..
-ls
-rm -rf file-storage/
 ls
 cd file-storage/
 ls
@@ -126,3 +112,17 @@ mv images ../
 ls
 cd ..
 ls
+ls
+ls
+s
+ls
+ls
+ls
+cd ~/Downloads/
+ls
+cd auto-selfcontrol-master/
+ls
+sudo /usr/bin/python .autoselfcontrol.py
+ls
+sudo python ./auto-selfcontrol.py
+sudo python ./auto-selfcontrol.py
