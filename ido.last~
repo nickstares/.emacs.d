@@ -2,13 +2,41 @@
 
 ;; ----- ido-last-directory-list -----
 (
+ ("/../" . "Library/")
+ ("/Users/" . "nick/")
+ ("/Users/nick/cognitect/drawing-comparison-tool/web/src/cljs/com/toyota_europe/dct/ui/" . "views/")
+ ("/Users/nick/cognitect/drawing-comparison-tool/common/src/cljc/com/toyota_europe/" . "dct/")
+ ("/Users/nick/cognitect/drawing-comparison-tool/common/src/cljc/com/" . "toyota_europe/")
+ ("/Users/nick/cognitect/drawing-comparison-tool/common/src/cljc/" . "com/")
+ ("/Users/nick/cognitect/drawing-comparison-tool/worker/src/clj/com/toyota_europe/dct/worker/" . "image/")
+ ("/Users/nick/cognitect/drawing-comparison-tool/web/joplin/" . "migrations/")
+ ("/Users/nick/cognitect/drawing-comparison-tool/web/src/clj/" . "com/")
+ ("/Users/nick/cognitect/drawing-comparison-tool/web/src/" . "clj/")
+ ("/Users/nick/cognitect/drawing-comparison-tool/web/resources/" . "public/")
+ ("/Users/nick/cognitect/drawing-comparison-tool/web/src/cljs/com/toyota_europe/" . "dct/")
+ ("/Users/nick/cognitect/drawing-comparison-tool/web/src/cljs/com/" . "toyota_europe/")
+ ("/Users/nick/cognitect/drawing-comparison-tool/web/src/cljs/" . "com/")
+ ("/tmp/dct/data/" . "file-storage/")
+ ("/tmp/dct/" . "data/")
+ ("/tmp/" . "dct/")
+ ("/Users/nick/cognitect/drawing-comparison-tool/web/" . "src/")
+ ("/" . "tmp/")
+ ("/Users/nick/cognitect/drawing-comparison-tool/web/src/clj/com/toyota_europe/dct/" . "web/")
+ ("/Users/nick/cognitect/drawing-comparison-tool/web/src/clj/com/" . "toyota_europe/")
+ ("/Users/nick/cognitect/drawing-comparison-tool/worker/src/clj/com/toyota_europe/dct/" . "worker/")
+ ("/Users/nick/cognitect/drawing-comparison-tool/worker/src/clj/com/toyota_europe/" . "dct/")
+ ("/Users/nick/cognitect/drawing-comparison-tool/worker/src/clj/com/" . "toyota_europe/")
+ ("/Users/nick/cognitect/drawing-comparison-tool/worker/src/clj/" . "com/")
+ ("/Users/nick/cognitect/drawing-comparison-tool/worker/src/" . "clj/")
+ ("/Users/nick/cognitect/drawing-comparison-tool/worker/" . "src/")
+ ("/Users/nick/cognitect/drawing-comparison-tool/web/src/clj/com/toyota_europe/" . "dct/")
  ("/Users/nick/cognitect/drawing-comparison-tool/common/src/clj/com/toyota_europe/dct/" . "component/")
  ("/Users/nick/cognitect/drawing-comparison-tool/common/src/clj/com/toyota_europe/" . "dct/")
  ("/Users/nick/cognitect/drawing-comparison-tool/common/src/clj/com/" . "toyota_europe/")
  ("/Users/nick/cognitect/drawing-comparison-tool/common/src/clj/" . "com/")
- ("/Users/nick/cognitect/drawing-comparison-tool/common/src/" . "clj/")
+ ("/Users/nick/cognitect/drawing-comparison-tool/common/src/" . "cljc/")
  ("/Users/nick/cognitect/drawing-comparison-tool/common/" . "src/")
- ("/Users/nick/cognitect/drawing-comparison-tool/" . "common/")
+ ("/Users/nick/cognitect/drawing-comparison-tool/" . "web/")
  ("/Users/nick/cognitect/" . "drawing-comparison-tool/")
  ("/Users/nick/" . ".emacs.d/")
 )
@@ -16,28 +44,196 @@
 ;; ----- ido-work-directory-list -----
 (
  "/Users/nick/.emacs.d/"
- "/Users/nick/cognitect/drawing-comparison-tool/common/src/clj/com/toyota_europe/dct/component/"
  "/Users/nick/cognitect/drawing-comparison-tool/web/"
+ "/Users/nick/.emacs.d/elpa/"
+ "/Users/nick/.lein/"
+ "/Users/nick/cognitect/drawing-comparison-tool/web/src/clj/com/toyota_europe/dct/web/"
+ "/Users/nick/cognitect/drawing-comparison-tool/web/src/cljs/com/toyota_europe/dct/ui/views/"
+ "/Users/nick/cognitect/"
+ "/Users/nick/"
+ "/Users/nick/source/"
+ "/Users/nick/Downloads/"
+ "/Users/nick/downloads/"
+ "/Users/nick/books/"
+ "/Users/nick/games/"
+ "/Users/nick/.emacs.d/elpa/nyan-mode-1.1.2/img/"
+ "/Users/nick/cognitect/drawing-comparison-tool/worker/"
+ "/Users/nick/cognitect/drawing-comparison-tool/worker/src/clj/com/toyota_europe/dct/worker/"
+ "/Users/nick/cognitect/drawing-comparison-tool/web/src/cljs/com/toyota_europe/dct/ui/"
+ "/Users/nick/cognitect/drawing-comparison-tool/common/src/cljc/com/toyota_europe/dct/"
+ "/Users/nick/cognitect/drawing-comparison-tool/worker/src/clj/com/toyota_europe/dct/worker/image/"
+ "/Users/nick/cognitect/drawing-comparison-tool/common/src/clj/com/toyota_europe/dct/component/"
+ "/Users/nick/cognitect/drawing-comparison-tool/"
+ "/Users/nick/cognitect/drawing-comparison-tool/web/src/"
+ "/Users/nick/cognitect/drawing-comparison-tool/worker/src/clj/com/toyota_europe/dct/"
+ "/Users/nick/cognitect/drawing-comparison-tool/web/resources/public/js/compiled/out/re_com/"
+ "/Users/nick/cognitect/drawing-comparison-tool/web/joplin/migrations/"
+ "/Users/nick/cognitect/drawing-comparison-tool/web/src/cljs/com/toyota_europe/dct/"
+ "/Users/nick/cognitect/drawing-comparison-tool/web/src/clj/com/toyota_europe/dct/"
+ "/Users/nick/cognitect/drawing-comparison-tool/web/resources/public/"
+ "/Users/nick/cognitect/drawing-comparison-tool/web/resources/public/js/"
+ "/Users/nick/cognitect/drawing-comparison-tool/worker/logs/"
+ "/Users/nick/cognitect/drawing-comparison-tool/worker/src/"
+ "/Users/nick/cognitect/drawing-comparison-tool/web/logs/"
+ "/Users/nick/Downloads/auto-selfcontrol-master/"
 )
 
 ;; ----- ido-work-file-list -----
 (
  "init.el"
- "database.clj"
  "project.clj"
+ "README.md"
+ "profiles.clj"
+ "service.clj"
+ "toolbar.cljs"
+ ".DS_Store"
+ ".zshrc"
+ "x"
+ "rainbow.xpm"
 )
 
 ;; ----- ido-dir-file-cache -----
 (
- ("/Users/nick/.emacs.d/" (23336 28569 34214 219000) "themes/" ".git/" "elpa/" "recentf" "el-get/" "history" "network-security.data" ".org-id-locations" "semanticdb/" ".gitignore" "bookmarks" "README.md" "arcadia.el" "init.el" "url/" ".emacs.desktop" "auto-save-list/" ".sx/" "recentf~" "projectile-bookmarks.eld" "ido.last~" "customizations/" "abbrev_defs" "use-package/" "eshell/" ".DS_Store" "init.el~" "work-init.el/" "../" "./")
+ ("/Applications/auto-selfcontrol-master/" (23392 65236 848022 281000) "build/" "setup.py" "README.md" "auto-selfcontrol.py" "config.json~" "config.json" "dist/" "LICENSE" "auto_selfcontrol.egg-info/" "../" "./")
 
- ("/Users/nick/cognitect/drawing-comparison-tool/web/" (23336 7333 275406 637000) "src/" "dev/" ".gitignore" "logs/" ".lein-repl-history" "resources/" "target/" "joplin/" "config/" "test/" "project.clj" "../" "./")
+ ("/Users/nick/.emacs.d/" (23392 64898 474652 146000) "themes/" ".cache/" ".git/" "#ido.last#" "elpa/" "recentf" "el-get/" "image-dired/" "history" "network-security.data" ".org-id-locations" "semanticdb/" ".gitignore" "bookmarks" "README.md" "arcadia.el" "init.el" "url/" ".emacs.desktop" "auto-save-list/" ".sx/" "recentf~" "projectile-bookmarks.eld" "ido.last~" "customizations/" "abbrev_defs" "use-package/" "eshell/" ".DS_Store" "dired+.el" "init.el~" "ido.last" "work-init.el/" "../" "./")
 
- ("/Users/nick/" (23337 8652 915290 418000) ".smex-items" ".viminfo" ".bash_history" "Downloads/" ".oh-my-zsh/" ".m2/" "Documents/" ".Trash/" "Applications/" ".vimrc" "Movies/" "Public/" ".lein/" ".bash_sessions/" ".emacs.d/" ".oracle_jre_usage/" "Library/" "Desktop/" ".zsh_history" ".zcompdump-Nick’s MacBook Pro-5.3" "cognitect/" "Pictures/" ".local/" ".zshrc" ".CFUserTextEncoding" ".DS_Store" "Solarized%20Dark%20-%20Patched.itermcolors" ".docker/" "Music/" ".config/" "../" "./")
+ ("/Users/nick/" (23392 64896 520371 252000) ".lumo_history" ".smex-items" ".cljs_nashorn_repl/" ".viminfo" ".bash_history" "games/" ".cache/" "Downloads/" ".oh-my-zsh/" ".bash_profile" ".m2/" ".spacemacs" ".gitlibs/" "Documents/" ".npm/" ".multitail.searchhistory" ".zcompdump" ".Trash/" ".space-emacs.d/" ".jenv/" "Applications/" ".vimrc" "Movies/" ".ssh/" "Public/" "AirConnect/" ".lein/" ".bash_sessions/" ".android/" ".emacs.d/" "Calibre Library/" ".oracle_jre_usage/" "books/" "Library/" "Desktop/" ".zsh_history" ".closh/" ".vim_back/" ".multitailrc" ".clojure_history" ".nvm/" ".zcompdump-Nick’s MacBook Pro-5.3" "source/" "cognitect/" "Pictures/" ".local/" ".rebel_readline_history" ".zshrc" ".lnav/" ".CFUserTextEncoding" "VirtualBox VMs/" ".zshrc~" ".DS_Store" ".Genymobile/" ".vim/" ".docker/" ".clojure/" ".SpaceVim/" "Music/" ".config/" ".SpaceVim.d/" "../" "./")
 
- ("/Users/nick/cognitect/drawing-comparison-tool/common/src/clj/com/toyota_europe/dct/component/" (23336 28606 333951 813000) "file_storage.clj" "database.clj" "redis.clj" ".#database.clj" "redis_listener.clj" "#database.clj#" "../" "./")
+ ("/Users/nick/cognitect/drawing-comparison-tool/" (23391 6607 344010 832000) "0001-WIP-on-DCT2-98-internet-explorer-support-afca7ff-WIP-Add-page-index-to-db.patch" "worker/" ".git/" "ops/" "adrs/" "docker-compose.web.yml" ".gitignore" ".dockerignore" "opencv/" "common/" "Dockerfile.chrome" "README.md" "docker-compose.chrome.yml" ".editorconfig" "docker-compose.worker.yml" "docker-compose.services.yml" "web/" "Makefile" "Dockerfile" ".DS_Store" "../" "./")
 
- ("/Users/nick/cognitect/drawing-comparison-tool/common/src/clj/com/toyota_europe/dct/" (23335 64217 543146 722000) "component/" "util.clj" "../" "./")
+ ("/Users/nick/.cljs_nashorn_repl/" (23375 56245 657079 919000) ".cljs_nashorn_repl/" "cljs/" ".nashorn_repl_deps.js" "clojure/" "goog/" "../" "./")
+
+ ("/../Library/" (23335 62735 442338 772000) "Caches/" "GPUBundles/" "Filesystems/" "OpenDirectory/" "Widgets/" "Ruby/" "Input Methods/" "Screen Savers/" "Fonts/" "Graphics/" "LaunchDaemons/" "Frameworks/" "Contextual Menu Items/" "LaunchAgents/" "Scripts/" "PreferencePanes/" "User Pictures/" "SystemProfiler/" "Sandbox/" "Internet Plug-Ins/" "Logs/" "Keyboard Layouts/" "CoreMediaIO/" "SystemMigration/" "Audio/" "Printers/" "Components/" "WebServer/" "Extensions/" "Speech/" "Updates/" "ScriptingAdditions/" "Java/" "CoreAnalytics/" "PrivilegedHelperTools/" "Desktop Pictures/" "Perl/" "StagedExtensions/" "QuickTime/" "Compositions/" "Security/" ".localized" "Python/" "QuickLook/" "MessageTracer/" "ColorSync/" "ColorPickers/" "Keychains/" "Spotlight/" "Messages/" "PDF Services/" "Preferences/" "Video/" "Documentation/" "Developer/" "Modem Scripts/" "StartupItems/" "DirectoryServices/" "Application Support/" "Receipts/" "Image Capture/" "../" "./")
+
+ ("/../" (23335 56752 547421 168000) "cores/" "tmp/" "Volumes/" "dev/" "Applications/" "Users/" ".vol/" ".DocumentRevisions-V100/" "private/" ".fseventsd/" "System/" ".Trashes/" "Library/" "var/" "etc/" ".file" "sbin/" "Network/" "installer.failurerequests" "bin/" ".PKInstallSandboxManager-SystemSoftware/" ".DS_Store" "net/" ".Spotlight-V100/" "usr/" "home/" ".HFS+ Private Directory Data
+/" "../" "./")
+
+ ("/Users/nick/downloads/" (23383 13844 669991 175000) "Melee 1.02.iso" "Andres-Gandolfi-code-challenge.clj" "SmashEnablerElCap.pkg.zip" "code-challenge (1).clj" "20XX 4.07++ Root Files/" "Airmail_Beta.app.zip" "#Andres-Gandolfi-code-challenge.clj#" "unnamed.png" "FM-v.5.9-FINAL-Mac.tar.gz" "Generic drawings/" "UCF-v0.73-BETA.txt" "a3368897166_16.jpg" "code-challenge.clj~" "spacemacs-master/" "requirements.zip" "MSEdge - Win10/" "code-challenge-Eduardo-Gandolfi.clj" "2018-02-23_UCF-v0.73_SD-card-files/" "UCF-v0.73_installation-package.zip" "20XX.iso" "auto-selfcontrol-master/" "IE11 - Win81/" "SmashEnablerElCap.pkg" "html/" "mbv_1/" "code-challenge-Eduardo-Gandolfi.clj~" "SizeUp.sizeuplicense" "Airmail Beta.app/" "SmashEnabler.kext.zip" "code-challenge.clj" "Training Mode v1.0 NTSC.iso" ".localized" "TabWranglerExport-6-20-2018.json" "React-Dropzone-Component-3.0.0.zip" ".DS_Store" "093006341890.pdf" "SmashEnabler.kext/" "Win10_1803_English_x64.iso" "Emacs-26.1-2-universal.dmg" "20XX 4.06 to 4.07++ Replacement Files/" "untitled folder/" "../" "./")
+
+ ("/Users/nick/Downloads/" (23383 13844 669991 175000) "Melee 1.02.iso" "Andres-Gandolfi-code-challenge.clj" "SmashEnablerElCap.pkg.zip" "code-challenge (1).clj" "20XX 4.07++ Root Files/" "Airmail_Beta.app.zip" "#Andres-Gandolfi-code-challenge.clj#" "unnamed.png" "FM-v.5.9-FINAL-Mac.tar.gz" "Generic drawings/" "UCF-v0.73-BETA.txt" "a3368897166_16.jpg" "code-challenge.clj~" "spacemacs-master/" "requirements.zip" "MSEdge - Win10/" "code-challenge-Eduardo-Gandolfi.clj" "2018-02-23_UCF-v0.73_SD-card-files/" "UCF-v0.73_installation-package.zip" "20XX.iso" "auto-selfcontrol-master/" "IE11 - Win81/" "SmashEnablerElCap.pkg" "html/" "mbv_1/" "code-challenge-Eduardo-Gandolfi.clj~" "SizeUp.sizeuplicense" "Airmail Beta.app/" "SmashEnabler.kext.zip" "code-challenge.clj" "Training Mode v1.0 NTSC.iso" ".localized" "TabWranglerExport-6-20-2018.json" "React-Dropzone-Component-3.0.0.zip" ".DS_Store" "093006341890.pdf" "SmashEnabler.kext/" "Win10_1803_English_x64.iso" "Emacs-26.1-2-universal.dmg" "20XX 4.06 to 4.07++ Replacement Files/" "untitled folder/" "../" "./")
+
+ ("/Users/nick/.lein/" (23383 11989 470088 390000) "profiles.clj~" "profiles.clj" "repl-history" "../" "./")
+
+ ("/Users/nick/.emacs.d/elpa/" (23383 11910 189538 951000) "adjust-parens-readme.txt" "pug-mode-20171018.829/" "flx-ido-20180117.719/" "anti-zenburn-theme-20180121.353/" "lispyville-20180506.1633/" "adjust-parens-3.0/" "evil-escape-readme.txt" "4clojure-readme.txt" "company-20171206.352/" "counsel-0.10.0/" "fountain-mode-20171121.559/" "csharp-mode-20171211.2238/" "rainbow-delimiters-20140713.1131/" "evil-lispy-readme.txt" "evil-surround-20180102.601/" "popup-20160709.729/" "lispy-20180516.826/" "zenburn-theme-2.5/" "projectile-20140716.416/" "auto-complete-20170124.1845/" "evil-lispy-20170304.259/" "dired-hacks-utils-20160527.1436/" "web-mode-16/" "dash-readme.txt" "4clojure-20131014.1507/" "ghub-20180715.1159/" "parinfer-20180226.2134/" "parinfer-readme.txt" "evil-smartparens-20171210.713/" "color-theme-20070910.1007/" "zoutline-20170722.651/" "goto-chg-20170917.1200/" "guru-mode-readme.txt" "multi-term-20160619.233/" "lenlen-theme-readme.txt" "smex-20140425.1314/" "ack-readme.txt" "gntp-20141024.1950/" "evil-cleverparens-20170717.2113/" "hydra-20171120.1042/" "magit-popup-readme.txt" "org-9.1.13/" "indium-20171206.1512/" "clojure-mode-readme.txt" "cider-readme.txt" "bind-key-20171210.2125/" "magit-popup-20180618.1602/" "highlight-parentheses-20170809.1151/" "achievements-20150530.1126/" "anti-zenburn-theme-readme.txt" "shell-pop-20170304.616/" "swiper-20180119.911/" "git-commit-20180713.1444/" "with-editor-readme.txt" "clojure-cheatsheet-20161004.2328/" "cl-lib-0.5/" "clojure-cheatsheet-readme.txt" "evil-surround-readme.txt" "monokai-theme-20180104.429/" "inf-clojure-2.1.0/" "treemacs-2.2/" "with-editor-20180217.548/" "color-theme-sanityinc-solarized-20160429.1903/" "sx-20180128.1705/" "which-key-20180301.1018/" "cider-20180122.2345/" "f-20171230.1229/" "s-20140714.707/" "alert-20180122.1242/" "counsel-readme.txt" "spinner-1.7.3/" "editorconfig-20180428.2222/" "zenburn-theme-readme.txt" "highlight2clipboard-20151020.1140/" "xelb-0.14/" "logito-20120225.1255/" "with-editor-20180618.1602/" "inflections-20170913.216/" "rich-minority-20170813.622/" "yaml-mode-0.0.13/" "dired-ranger-readme.txt" "evil-20171224.929/" "pkg-info-20140610.630/" "leuven-theme-readme.txt" "evil-magit-20180702.853/" "ac-slime-readme.txt" "ranger-20170817.857/" "git-commit-20180202.321/" "request-20170131.1747/" "ht-20171213.1334/" "racket-mode-readme.txt" "clj-refactor-20180411.43/" "evil-rsi-readme.txt" "linum-relative-readme.txt" "synosaurus-20180125.1034/" "evil-20180517.1300/" "marshal-20180102.201/" "inf-ruby-readme.txt" "websocket-20171113.2045/" "avy-20171230.220/" "dash-20180206.2124/" "helpful-readme.txt" "align-cljlet-20160112.1301/" "helm-core-20180104.2210/" "helm-20180103.1013/" "clojure-cheatsheet-20180201.4/" "ivy-20180115.1555/" "evil-magit-readme.txt" "evil-magit-20180410.804/" "tagedit-20140618.521/" "git-commit-readme.txt" "vimish-fold-0.2.3/" "archives/" "keyfreq-20160516.716/" "solarized-theme-1.2.2/" "color-theme-readme.txt" "fish-completion-readme.txt" "sx-readme.txt" "pcache-20170105.1414/" "ace-window-20171228.1109/" "markup-20170420.429/" "fountain-mode-readme.txt" "evil-collection-20180422.1442/" "dired-hide-dotfiles-0.1/" "magit-readme.txt" "synosaurus-readme.txt" "yasnippet-20180319.607/" "pfuture-1.2/" "use-package-2.3/" "skewer-mode-20170730.1241/" "edn-20160215.419/" "queue-0.1.1/" "exec-path-from-shell-20141212.846/" "circadian-readme.txt" "runner-1.8/" "nyan-mode-1.1.2/" "htmlize-20180412.1244/" "epl-20140620.218/" "flx-20151030.1112/" "paredit-20140128.1248/" "simple-httpd-20171004.938/" "diminish-20170419.1036/" "log4e-20170401.604/" "cider-20141120.1746/" "treemacs-evil-2.2/" "async-20180103.2312/" "sx-20180606.36/" "highlight-20170702.732/" "heroku-theme-readme.txt" "leuven-theme-20170919.252/" "evil-escape-20170913.618/" "flycheck-20171214.1215/" "ghub-readme.txt" "helm-clojuredocs-20160405.23/" "neotree-20170522.758/" "geiser-20171102.1825/" "runner-readme.txt" "ghub-20180221.1319/" "omnisharp-20171226.1147/" "0blayout-readme.txt" "evil-collection-readme.txt" "sotclojure-readme.txt" "color-theme-solarized-20171024.825/" "smartparens-20180605.733/" "magit-popup-20180217.910/" "hackernews-20170930.1313/" "lsp-mode-4.1/" "magit-20180302.1342/" "org-pomodoro-20171108.1314/" "cljsbuild-mode-readme.txt" "racket-mode-20171110.1153/" "sotclojure-1.3.1/" "0xc-readme.txt" "evil-readme.txt" "linum-relative-20180124.247/" "ido-ubiquitous-20140526.1306/" "clojure-mode-extra-font-locking-20140613.839/" "key-chord-20160227.438/" ".DS_Store" "let-alist-1.0.5/" "js2-mode-20171211.607/" "sotlisp-1.6.2/" "faceup-20170925.1246/" "dired-hacks-utils-readme.txt" "heroku-readme.txt" "inf-ruby-20171211.225/" "evil-collection-20180722.1341/" "fix-muscle-memory-readme.txt" "magit-20180720.1712/" "sesman-20180719.213/" "floobits-20170802.1500/" "peg-20150707.2341/" "seq-2.20/" "parinfer-20170710.821/" "aggressive-indent-20171012.1107/" "markdown-mode-20180124.138/" "undo-tree-20170706.246/" "clojure-mode-20180121.1011/" "helm-projectile-20170926.1123/" "iedit-20170916.1024/" "shut-up-20150423.522/" "ranger-readme.txt" "org-jira-20180103.1813/" "exwm-0.18/" "multiple-cursors-20180406.1350/" "corral-readme.txt" "github-modern-theme-readme.txt" "../" "./")
+
+ ("/Users/nick/cognitect/drawing-comparison-tool/web/" (23383 12614 785975 260000) "src/" ".cljs_rhino_repl/" "dev/" ".gitignore" "logs/" ".lein-repl-history" ".nrepl-port" "resources/" "target/" "joplin/" "config/" "test/" ".DS_Store" "project.clj" ".lein-failures" "../" "./")
+
+ ("/Users/nick/cognitect/drawing-comparison-tool/web/logs/" (23383 10157 825082 713000) "dct-web-dev-2018-06-26.0.log" "dct-web-dev-2018-07-02.0.log" "dct-web-dev-2018-07-24.0.log" "dct-web-dev-2018-07-19.0.log" "dct-web-dev-2018-06-20.0.log" "dct-web-dev-2018-07-04.0.log" "dct-web-dev-2018-07-06.0.log" "dct-web-dev-2018-06-22.0.log" "dct-web-dev-2018-06-18.0.log" "dct-web-dev-2018-07-18.0.log" "dct-web-dev-2018-06-25.0.log" "dct-web-dev-2018-06-27.0.log" "dct-web-dev-2018-07-03.0.log" "dct-web-dev-2018-07-23.0.log" "dct-web-dev-2018-06-21.0.log" "dct-web-dev-2018-07-05.0.log" "dct-web-dev-2018-07-09.0.log" "dct-web-dev-2018-07-10.0.log" "dct-web-dev-2018-07-12.0.log" "dct-web-dev-2018-07-16.0.log" "dct-web-dev-2018-07-14.0.log" "figwheel_server.log" "dct-web-dev-2018-07-13.0.log" "dct-web-dev-2018-07-11.0.log" "dct-web-dev-2018-07-15.0.log" "dct-web-dev-2018-06-28.0.log" "dct-web-dev-2018-06-25.0.log~" "dct-web-dev-2018-07-17.0.log" "../" "./")
+
+ ("/Users/nick/cognitect/drawing-comparison-tool/worker/logs/" (23381 23787 904810 397000) "dct-worker-dev-2018-06-21.0.log" "dct-worker-dev-2018-07-05.0.log" "dct-worker-dev-2018-07-23.0.log" "dct-worker-dev-2018-06-27.0.log" "dct-worker-dev-2018-07-03.0.log" ".dct-worker-dev-2018-07-16.0.log.swp" "dct-worker-dev-2018-06-25.0.log" "dct-worker-dev-2018-07-18.0.log" "dct-worker-dev-2018-07-06.0.log" "dct-worker-dev-2018-06-22.0.log" "dct-worker-dev-2018-07-04.0.log" "dct-worker-dev-2018-07-19.0.log" "dct-worker-dev-2018-06-26.0.log" "dct-worker-dev-2018-07-02.0.log" "dct-worker-dev-2018-07-17.0.log" "dct-worker-dev-2018-06-28.0.log" "dct-worker-dev-2018-07-15.0.log" "dct-worker-dev-2018-07-11.0.log" "dct-worker-dev-2018-07-13.0.log" "dct-worker-dev-2018-07-14.0.log" "dct-worker-dev-2018-07-16.0.log" "dct-worker-dev-2018-07-12.0.log" "dct-worker-dev-2018-07-09.0.log" "dct-worker-dev-2018-07-10.0.log" "../" "./")
+
+ ("/Users/nick/cognitect/drawing-comparison-tool/web/joplin/migrations/" (23374 12214 927868 336000) "20180511092400_revisions.clj" "20180312210639_users.clj" "20180531173455_pages.clj" "20180613051114_views.clj" "20180511092600_comparisons.clj" "20180531173456_levels.clj" "../" "./")
+
+ ("/Users/nick/cognitect/drawing-comparison-tool/web/resources/public/js/compiled/out/re_com/" (23382 19258 380627 412000) "datepicker.js" "buttons.js" "popover.cljs" "tabs.cljs" "modal_panel.cljs.cache.json" "text.js" "util.cljs.cache.json" "tabs.js.map" "splits.js.map" "splits.js" "modal_panel.js.map" "input_time.cljs" "splits.cljs.cache.json" "dropdown.cljs.cache.json" "datepicker.cljs.cache.json" "validate.js" "selection_list.cljs.cache.json" "tour.js.map" "core.cljs" "buttons.js.map" "typeahead.cljs" "selection_list.js" "misc.js.map" "modal_panel.js" "box.cljs.cache.json" "box.js.map" "buttons.cljs.cache.json" "buttons.cljs" "alert.js" "text.cljs" "validate.js.map" "dropdown.js.map" "popover.js" "util.cljs" "input_time.cljs.cache.json" "tour.js" "popover.cljs.cache.json" "dropdown.js" "input_time.js" "validate.cljs.cache.json" "alert.js.map" "core.cljs.cache.json" "core.js.map" "box.cljs" "tabs.js" "popover.js.map" "datepicker.cljs" "tabs.cljs.cache.json" "misc.js" "selection_list.cljs" "box.js" "tour.cljs.cache.json" "input_time.js.map" "datepicker.js.map" "text.js.map" "alert.cljs.cache.json" "text.cljs.cache.json" "typeahead.cljs.cache.json" "util.js.map" "core.js" "misc.cljs.cache.json" "alert.cljs" "typeahead.js" "typeahead.js.map" "util.js" "validate.cljs" "dropdown.cljs" "selection_list.js.map" "misc.cljs" "splits.cljs" "tour.cljs" "modal_panel.cljs" "../" "./")
+
+ ("/Users/nick/cognitect/drawing-comparison-tool/common/src/clj/com/toyota_europe/dct/component/" (23381 58678 667186 770000) "file_storage.clj" "database.clj" "database.clj.rej" "redis.clj" "redis_listener.clj" "../" "./")
+
+ ("/Users/nick/cognitect/drawing-comparison-tool/worker/src/clj/com/toyota_europe/dct/worker/image/" (23381 58678 681317 866000) "shape.clj" "debug.clj" "draw.clj" "cluster_map.clj" "polygonize.clj" "opencv.clj" "tile.clj" "colors.clj" "cluster.clj" "instruction.clj" "image.clj" "location_set.clj" "../" "./")
+
+ ("/Users/nick/cognitect/drawing-comparison-tool/common/src/cljc/com/toyota_europe/dct/" (23374 10075 894400 294000) "math.cljc" "geometry.cljc" "color.cljc" "pixel_spaces.cljc" "../" "./")
+
+ ("/Users/nick/cognitect/drawing-comparison-tool/web/src/cljs/com/toyota_europe/dct/ui/" (23382 25187 886163 554000) "pixi.cljs" "views/" "routes.cljs" "util.cljs" "events.cljs" "api.cljs" "db.cljs" "subs.cljs" "views.cljs" ".swp" "effects.cljs" "config.cljs" "../" "./")
+
+ ("/Users/nick/cognitect/drawing-comparison-tool/worker/src/clj/com/toyota_europe/dct/worker/" (23381 58678 681848 703000) "config.clj" "system.clj" "image/" "cli/" "geometer.clj" "db_writer.clj" "image_processor.clj" "../" "./")
+
+ ("/Users/nick/cognitect/drawing-comparison-tool/worker/" (23382 20997 798261 45000) "src/" "dev/" ".gitignore" "logs/" ".lein-repl-history" "libopencv_java341.dylib" ".nrepl-port" "resources/" "target/" "config/" "test/" "project.clj" "../" "./")
+
+ ("/Users/nick/games/" (23377 59427 233852 358000) "Melee 1.02.iso" "20XX 4.07++ Root Files/" "2018-02-23_UCF-v0.73_SD-card-files/" "20XX.iso" "Training Mode v1.0 NTSC.iso" "20XX 4.06 to 4.07++ Replacement Files/" "20XXTE-v2d-r4-USA.gci" "../" "./")
+
+ ("/Users/nick/books/" (23382 43241 959348 868000) "John Schember/" "Unknown/" "Alejandro Gomez Andrey Antukh/" "metadata.db" "Awareness through movement Health exercises for personal growth Easy-to-Do Health Exercises to I/" "Ben Vandgrift/" "Michael Fogus Chris Houser/" "Abelson/" "Richard Rorty/" ".DS_Store" "metadata_db_prefs_backup.json" "Moshé Feldenkrais, Moshe Feldenkrais - Awareness through movement_ Health exercises for personal growth_ Easy-to-Do Health Exercises to Improve Your Posture, Vision, Imagination, and Personal Awareness (1972, Harper & Row).pdf" "../" "./")
+
+ ("/Users/nick/source/" (23382 9621 906374 611000) "harmonikit/" "../" "./")
+
+ ("/Users/nick/cognitect/drawing-comparison-tool/web/src/clj/com/toyota_europe/dct/web/" (23382 25816 588840 475000) "config.clj" "system.clj" "sse.clj" "service.clj" "server.clj" "api.clj" "../" "./")
+
+ ("/Users/nick/cognitect/drawing-comparison-tool/web/src/cljs/com/toyota_europe/dct/ui/views/" (23381 58678 680467 512000) "drawing_area.cljs" "toolbar.cljs" "../" "./")
+
+ ("/Users/nick/cognitect/" (23381 55158 467044 743000) "#foo#" ".DS_Store" "drawing-comparison-tool/" "../" "./")
+
+ ("/Users/nick/source/Common-Metadata-Repository/" (23381 24266 287526 820000) "dev-system/" "umm-lib/" "transmit-lib/" "vdd-spatial-viz/" "site-templates/" "common-lib/" "umm-spec-lib/" ".git/" ".mailmap" "spatial-lib/" "search-app/" "bootstrap-app/" "es-spatial-plugin/" "CONTRIBUTING.md" ".gitignore" "system-int-test/" "acl-lib/" "README.md" "ingest-app/" "access-control-app/" "oracle-lib/" "message-queue-lib/" "virtual-product-app/" "search-relevancy-test/" "indexer-app/" "metadata-db-app/" "resources/" "common-app-lib/" "elastic-utils-lib/" "cubby-app/" "CHANGELOG.md" "bin/" "LICENSE" "mock-echo-app/" "index-set-app/" "orbits-lib/" "collection-renderer-lib/" "project.clj" "../" "./")
+
+ ("/Users/nick/cognitect/drawing-comparison-tool/web/resources/" (23370 10714 278590 16000) "public/" "dummy.png" ".DS_Store" "../" "./")
+
+ ("/Users/nick/cognitect/drawing-comparison-tool/web/resources/public/" (23374 22816 612613 361000) "vendor/" "health.html" "img/" "js/" "css/" ".DS_Store" "index.html" "../" "./")
+
+ ("/Users/nick/cognitect/drawing-comparison-tool/web/resources/public/js/" (23374 22816 613447 171000) "eventsource.min.js" "flexibility.js" "react-dropzone.js~" "element-closest.js" "compiled/" ".DS_Store" "health.js" "../" "./")
+
+ ("/Users/nick/.emacs.d/elpa/nyan-mode-1.1.2/img/" (23375 30131 387920 306000) "nyan-frame-3.xpm" "nyan-frame-2.xpm" "nyan-frame-1.xpm" "nyan-frame-5.xpm" "nyan-frame-4.xpm" "nyan-frame-6.xpm" "outerspace.xpm" "rainbow.xpm" "nyan.xmp" "o-nyan.xpm" "rainbow.xpm~" "../" "./")
+
+ ("/Users/nick/.emacs.d/elpa/nyan-mode-1.1.2/" (23375 28904 917816 321000) "nyan-mode.elc" "nyan-mode-pkg.el" "mus/" "nyan-mode-autoloads.el" "img/" "nyan-mode.el" "../" "./")
+
+ ("/Users/nick/cognitect/drawing-comparison-tool/common/src/cljc/com/toyota_europe/" (23335 64217 543474 612000) "dct/" "../" "./")
+
+ ("/Users/nick/cognitect/drawing-comparison-tool/common/src/cljc/com/" (23335 64217 543420 171000) "toyota_europe/" "../" "./")
+
+ ("/Users/nick/cognitect/drawing-comparison-tool/common/src/cljc/" (23335 64217 543370 344000) "com/" "../" "./")
+
+ ("/Users/nick/cognitect/drawing-comparison-tool/worker/src/clj/com/toyota_europe/dct/" (23372 48458 615050 369000) "worker/" "worker.clj" "../" "./")
+
+ ("/Users/nick/cognitect/drawing-comparison-tool/common/src/clj/com/toyota_europe/dct/" (23358 28031 327702 944000) "debug.clj" "component/" "util.clj" "../" "./")
+
+ ("/Users/nick/cognitect/drawing-comparison-tool/web/src/" (23370 10765 274039 423000) "clj/" "cljs/" "less/" ".DS_Store" "../" "./")
+
+ ("/Users/nick/cognitect/drawing-comparison-tool/web/src/less/" (23364 46050 399000 763000) "site.less" "../" "./")
+
+ ("/Users/nick/cognitect/drawing-comparison-tool/web/src/cljs/" (23355 55462 782442 880000) "com/" ".DS_Store" "../" "./")
+
+ ("/Users/nick/cognitect/drawing-comparison-tool/web/src/cljs/com/" (23355 55462 780600 905000) "toyota_europe/" ".DS_Store" "../" "./")
+
+ ("/Users/nick/cognitect/drawing-comparison-tool/web/src/cljs/com/toyota_europe/" (23355 55467 793379 120000) "dct/" ".DS_Store" "../" "./")
+
+ ("/Users/nick/cognitect/drawing-comparison-tool/web/resources/public/js/compiled/" (23364 51577 551125 125000) "app.js" "out/" "../" "./")
+
+ ("/Users/nick/cognitect/drawing-comparison-tool/web/resources/public/js/compiled/out/" (23364 51577 550464 814000) ".figwheel-compile-stamp" "process/" "mranderson048/" "com/" "cljs_time/" "cljs/" "cljs_http/" "figwheel/" "day8/" "devtools/" "re_frame/" "cljs_deps.js" "reagent/" "cljsc_opts.edn" "cognitect/" "zprint/" "cljsjs/" "clojure/" "secretary/" "no/" "pushy/" "rewrite_clj/" "re_com/" "goog/" "../" "./")
+
+ ("/Users/nick/cognitect/drawing-comparison-tool/web/resources/public/js/compiled/out/com/" (23364 51577 452403 675000) "toyota_europe/" "cognitect/" "../" "./")
+
+ ("/Users/nick/cognitect/drawing-comparison-tool/web/resources/public/js/compiled/out/com/toyota_europe/" (23364 51557 274020 270000) "dct/" "../" "./")
+
+ ("/Users/nick/cognitect/drawing-comparison-tool/web/resources/public/js/compiled/out/com/toyota_europe/dct/" (23364 51577 500855 394000) "math.cljc" "pixel_spaces.js.map" "color.cljc" "pixel_spaces.js" "ui.cljs" "ui.js.map" "ui.cljs.cache.json" "color.cljc.cache.json" "math.js" "color.js" "math.cljc.cache.json" "pixel_spaces.cljc.cache.json" "math.js.map" "pixel_spaces.cljc" "color.js.map" "ui.js" "ui/" "../" "./")
+
+ ("/Users/nick/cognitect/drawing-comparison-tool/web/resources/public/js/compiled/out/com/toyota_europe/dct/ui/" (23364 51577 500384 550000) "events.js.map" "pixi.js" "util.cljs.cache.json" "pixi.cljs" "routes.js.map" "api.js" "db.js.map" "routes.cljs.cache.json" "api.js.map" "routes.cljs" "views.js" "subs.js.map" "routes.js" "events.cljs.cache.json" "util.cljs" "config.cljs.cache.json" "config.js.map" "config.js" "views.cljs.cache.json" "events.cljs" "api.cljs" "pixi.js.map" "db.cljs" "subs.cljs" "api.cljs.cache.json" "effects.js" "pixi.cljs.cache.json" "subs.cljs.cache.json" "views.cljs" "db.js" "db.cljs.cache.json" "util.js.map" "effects.js.map" "effects.cljs.cache.json" "effects.cljs" "subs.js" "views.js.map" "util.js" "events.js" "config.cljs" "../" "./")
+
+ ("/Users/nick/cognitect/drawing-comparison-tool/worker/src/clj/com/toyota_europe/dct/worker/cli/" (23358 28031 331872 679000) "cluster_files.clj" "validate_clustering.clj" "arguments.clj" "../" "./")
+
+ ("/Users/nick/Downloads/auto-selfcontrol-master/" (23344 17693 309719 988000) "build/" "setup.py" "README.md" "auto-selfcontrol.py" "config.json~" "config.json" "dist/" "LICENSE" "auto_selfcontrol.egg-info/" "../" "./")
+
+ ("/Users/nick/cognitect/drawing-comparison-tool/worker/src/" (23358 28025 761203 243000) "clj/" "java/" "../" "./")
+
+ ("/Users/nick/cognitect/drawing-comparison-tool/web/src/cljs/com/toyota_europe/dct/" (23355 55467 790514 295000) "ui.cljs" ".DS_Store" "ui/" "../" "./")
+
+ ("/Users/nick/Documents/" (23353 3252 719107 504000) "Max 8/" "foo/" "bookmarks_6_21_18.html" ".localized" "../" "./")
+
+ ("/Users/nick/cognitect/drawing-comparison-tool/web/src/clj/com/toyota_europe/dct/" (23347 58731 862148 761000) "web/" "web.clj" "../" "./")
+
+ ("/Users/nick/cognitect/drawing-comparison-tool/web/joplin/" (23335 64217 552641 363000) "joplin.edn" "seeds/" "migrations/" "../" "./")
+
+ ("/Users/nick/cognitect/drawing-comparison-tool/adrs/" (23335 64217 541078 75000) "001-Redis-usage.md" "../" "./")
+
+ ("/tmp/dct/data/file-storage/" (23346 33218 19721 232000) "45263cca-d092-4d76-b9a3-89828e21f4ff/" "cf1a2391-a5a2-4114-88ba-bb275c242e10/" "a818bd80-8136-42c3-8fa5-43431d919ebd/" "a3dee368-f35b-4eee-ba88-65037dc28652/" "dfb6e7bc-8fda-48d2-b5b0-75ffef12f2ed/" "8d700512-faf5-45a1-a023-8a02e6954bb7/" "335725ab-ac47-45d6-9d6f-432ce9ce5980/" "e09f0934-7b03-44f9-ab3d-18df78638d0e/" "4c593793-862e-47b9-b914-fcaeeab129a1/" "a2048c5b-af43-48cf-a6ad-8677bdd2dbbe/" "362995bf-e7bb-47cf-8f1a-537dfd541c1e/" "b811b69f-8881-46e3-9906-4599e304d798/" "f46401fd-6d4d-4eb0-a5be-e1b6c35da649/" "475c282f-1242-4aec-9605-eaed32d9793a/" "a5540511-c52d-432e-b725-1d9c329766eb/" "e1173697-faba-4740-a44e-7a17353974e5/" "1441eab6-5465-4c84-9a64-e267ba0d12b2/" "9e10d32a-3c4a-4b31-be09-f9f3b0f9c506/" "2419645a-e1fd-4426-9c52-fd24c3980132/" "84c03b11-446d-4e31-8e89-702af45507c2/" "0235f0e5-bc70-41c1-ae87-112bac8f8143/" "3d71cd9a-88ba-4009-bd1b-7dcfc90fdaf8/" "924104d9-8c6c-432a-b342-8ae29dc32409/" "d99923fe-da4b-4100-bfaa-71c9abcb0380/" "df87380b-282f-4c11-be14-c7824f641616/" "360fce64-a090-4682-99fe-21695e197042/" "bfc649bb-c3f0-4f0f-9c9e-69b0db8535d7/" "b574d3f7-5fd2-4869-8cc4-a01b83d61a8a/" "c231628c-ac4b-43f1-8f40-414e176d0f7e/" "7e310fab-4edf-4d23-b165-61a84fdcc31b/" "443d10d8-7119-49f8-b2eb-976c61109723/" "62f960a2-2233-4c0e-bfbd-430b14ac80e9/" "67eb2b4a-4d39-4ce7-82f3-cdf1e7e51ede/" "b2ef3608-297c-4487-8008-d2f27467e8f0/" "09be08b7-5581-4f09-adf8-af023f410c84/" "266357fa-8f5b-4cf6-99be-d37392b831bf/" "d8379f25-955e-4114-be72-8ad2278bf801/" "4c162e34-5d78-409b-8ead-a4751318240e/" "3ec8fd76-0f31-4092-8a49-507607ddb695/" "db1c847c-eba8-4f75-bcbd-6696206b9b41/" "861c54eb-0866-4bee-a27a-0f581459a2ad/" "7e1cdc5f-17f1-42d2-b89f-6957d8a1f664/" "90caf98f-000b-4072-b15a-3e58628416a5/" "3ff2d9cb-a461-4b38-bf7f-a830f322e9c4/" "ec3c63b5-1093-4c58-810f-9086593bbc24/" "dd915d81-bb71-43a7-b3ff-38fdb1a4dd1a/" "9e1ca80f-dcae-4a97-b4ab-8e97326aa843/" "32b5c41e-b7ec-4316-8f0a-ec05a422be14/" "b68ff7cf-ae46-4954-a330-096c75c8e3e4/" "1f145308-16e7-4c62-aee5-6e559ca68778/" "e0e704f0-e365-45d8-944f-a435315318d8/" "03da8b49-c43e-4066-b589-98ab8f5a9b37/" "f3108ffe-97fb-4573-b538-df3b79747431/" "ded82419-3e5f-464f-a81f-edb3f0714f1c/" "d74a8ad0-dd75-4f87-917a-6f5a034809ad/" "3db0357d-e6f8-4ad0-af4c-478ccbaa6f04/" "a79deb10-91cd-412c-8ba2-cfb355e643ba/" "71ac87ed-d627-43cb-a174-60dd28cfaf6a/" "e46f6d21-8c53-42af-a81d-3d3d86c65f48/" "f99245ce-9b5f-4c95-bd3d-800ae2a2ea83/" "09c13d09-a2ce-4ce5-b493-149a97d4c522/" "9183c91f-1b35-4fca-878b-e29158210bc1/" "8a440a68-f8ad-44a6-9bf4-26a266449831/" "e9d7d7aa-e244-4314-9cd1-b9c584ee90e2/" "dd0d5b16-5e0d-4a26-b031-0e43396b03ea/" "dac8d948-ed4c-45ab-97ad-8738d9850ece/" "d14db6f1-c6e6-48dd-af8d-29878379e72e/" "3836594f-7197-4c58-bdf3-5d0469cd61f5/" "27e8697e-bfa0-4d35-9bb5-37e87b9bfa56/" "d4129953-fc73-4740-9b73-9068d9bac898/" "0f425341-00ad-4503-9bfe-359f94c3e021/" "6c6c2d1c-8eae-4d5c-a792-26d3a1863f9f/" "e3fa87cd-d616-40f8-8f96-9da75fb73b4c/" "1ae12a57-f17a-4e2e-b4d3-be0b36132f89/" "ed4d5fc1-d3d2-4f77-9708-f8971158ab0b/" "19c12874-8638-4214-8c73-aa9e1b0b44ae/" "5d820124-8866-4173-9dfa-5165dfd8c7bd/" "c6611755-c658-42f9-a264-157a834f51a2/" "64505fbe-4893-492b-98a9-1f231dec1213/" "1b120b46-137e-4749-a0f8-2b6fe99f1bf4/" "40da0fe9-3ffa-424c-9c9b-69ed76e26c13/" "ce34806a-3d47-41e2-b999-5850b10b3a07/" "97a26520-2bcf-4772-abe7-1ec0e4012ec4/" "994187f8-fb60-45bb-a3c3-c0c11248589e/" "6a27eba0-1820-4811-94a2-141057668be6/" "27780f5e-5e1d-4e97-8a84-32b1f60fc5c2/" "5d74c647-a909-4c5f-a507-3f34ef399a70/" "e48e3b9b-de2b-422b-b206-840a37a493cd/" "34a16239-6274-4ce2-93eb-4cee273fa0d6/" "eeedd1f4-c964-4b47-80ef-8b1c62d9e880/" "82950d1c-de8d-4824-b9e7-500d6aeb78e8/" "5d111aae-8c99-41bc-b045-c268a76d65b0/" "d441700f-1a53-4008-8572-5abc351aa884/" "13687be1-9fbe-4229-a235-d29c4e11649b/" "08e60ba2-3434-44f4-91a3-4079aee175a3/" "eb443f60-e900-4f4c-aae0-cc28a2ebfe01/" "dca8c2b9-5848-45dc-a3dc-c529bcb4ea3e/" "5c37f80d-6641-4a16-ae0b-7260229548b5/" "d998b52c-0543-4bd7-9289-62b58268de03/" "ebbee6f5-d156-4139-9c7f-b26102cd35a4/" "4b93ddef-9342-4b16-9c87-ee195a1d8f5e/" "4fcb4976-7626-4f32-8c0b-13b5d7b898cc/" "2b4d7522-49b3-42ee-aed9-fbe0386a0f5b/" "4132f3af-8f92-4a62-94be-862bd0712816/" "0d62a208-67fc-49b1-a66d-b1b306a55b18/" "389d7318-dbd6-438d-a7ac-7e73cf1c9b8f/" "24967290-86bb-413a-bb35-346a627d6a7a/" "dd723d48-d7d1-4810-a5e0-1739a8886682/" "d350d7ba-0042-4750-93d3-596eca7acd16/" "f8592777-2ea7-49b8-8ed9-e8330e9f3537/" "5a782067-30f0-4d8c-b366-c9c6720fea28/" "6c83179c-296f-423e-b667-b182c04c7de2/" "a84b8f0f-7a35-4c43-8e62-8c9bf8b9e197/" "20476d34-d94b-47db-8232-0d397bd2fe8a/" "50070568-41e8-4c5e-b6b8-feecccba6fd7/" "dfe8a83f-f0be-4d42-8fdc-34c78f52c5b1/" "ba55c5f7-cb4b-47c2-86b4-1b5df67e3d16/" "4ea00529-9802-4d5f-96df-a1e86da11778/" "3a53b300-0cb6-4e7d-bdf3-8a2dd9d23e0b/" "83da3fcd-4cca-4e05-af1b-62364e27617c/" "e367a417-add7-4ccc-be59-6fb4fc121b1e/" "c071e852-39dc-4b80-bf56-8dffd68b3b45/" "7e6ec7c6-313b-4b0f-854c-6adfc1cbef2b/" "9a06531e-3deb-49fa-863b-b71dd8656ff7/" "99d9d434-f82d-4d75-9c92-5f5eec18f237/" "75839ee3-e0a9-4bb9-8d37-15bd9279d32d/" "b280e2bb-e942-417a-b6b2-a84ffc32498e/" "a863d7fd-3765-48fe-adb6-d44bc06cb77e/" "f7d57505-3dd3-4c7d-b0b1-dc342df3155f/" "a640c60b-522c-4c42-bda3-632efb698b33/" "6cb089af-21e9-44c7-8b48-7733ec6fa4cf/" "17baa954-5637-4e32-845b-d9e01e1ff99e/" "902a71c7-28e8-4b46-87a4-e0ea01611aaa/" "5dad3c3b-ccd5-4555-aec8-c98c162b712d/" "fa5f5528-1633-44d5-933d-2c08fb24e490/" "c70451e3-e89b-4717-92a6-b074b31ca244/" "56f9b371-7531-4b12-897a-6491c27e69e9/" "32ab5dcc-e8b0-40c9-b91f-f9a39a9387fc/" "30df4225-2262-4181-b74b-7ed01b730bf7/" "68928dd5-8e5e-4eff-8a63-a5e871440608/" "d158d7f8-0ea1-4dcc-8e7c-02c94a3ffeb5/" "b3b50a9f-536e-45c8-8af3-07fc5bb52273/" "50aa83af-cfc8-4cbd-ba22-243bdfdb0690/" "9c337a07-7681-4eab-b5ad-cdd145e9bbc9/" "792eb53d-fba4-4c6c-ad7f-ca3562360cc2/" "623bf582-a4c1-4083-adf5-539d828c2649/" "521f4c0c-be98-4eeb-9943-df98876c6e27/" "3875f8de-45bb-48e8-893c-f9226f62eb33/" "f729ffce-cfa2-455e-97f1-fd467880c669/" "f92c49bd-774b-418c-afef-84b70001d251/" "bbc055e2-9100-46c9-8334-c2e5e5d3679b/" "3919621d-4709-4464-a3bd-5a122fd17374/" "49e53c2e-1934-49ca-acbe-8308f6db109d/" "c196680d-71bf-499d-8ea2-055c86ee1efc/" "6e0fef00-0b94-4fd5-90aa-e0fdfbd8bd7d/" "afa99ebe-7daa-4fdb-9d33-8a768a348daf/" "6588735e-85cc-44c0-a37f-8e6a354428f5/" "9ecb18db-f9a1-435b-9f63-b507ac411195/" "f22d2efb-b550-47fe-b2c7-73cd5041018c/" "552174d2-bf65-4150-a094-fc66daf965d8/" "7b5193ee-6b89-4ca8-b5b7-49adb839265a/" "45a602ce-f1d9-4875-a320-d82c8c95d208/" "edf5ff19-bd88-443c-8368-02fc02cc2207/" "d5ef6054-312a-4958-a3ca-ee12b2b07a78/" "35f155d3-ccd0-4f47-982f-b947eca17c67/" "586ff6bf-22b8-457f-87dc-7bab82bdc9ac/" "27b62664-1973-4881-a932-a45d9565b67a/" "2ecfe651-c073-46f0-94f1-6de84f357e87/" "e02720cf-af66-4f1e-99b0-f38fed2a7d9b/" "3af6122b-546c-4cc1-aea6-b9064939bcca/" "02b296a8-f65d-4d27-9d69-4cbf71ffa033/" "8956f2a5-a1f5-46ee-bb8a-adc5ea477291/" "1b46a6a5-05ac-4b86-8f6c-fe209335b296/" "79172991-d7a6-4154-9319-d530fe7e0653/" "fdb2df3b-0259-4f98-959a-5b7b1999fd24/" "d18fcef2-8474-4459-98d7-064a643cf740/" "c4871e4c-dd53-47b0-a9ae-d94979998503/" "c0169d99-2da2-4ce6-8eac-e8c2c586839c/" "1c2befdf-014f-4a91-8403-e83e1380342e/" "11e8a499-1603-478b-a2e0-154dcce11332/" "6f48e3cc-07a0-4706-b080-20c948ba3a87/" "837df988-bf4a-4b9b-a7e2-e35f5a5239d3/" "c73f03a5-eb04-4940-adae-3177a9caf541/" "9175b7c8-a526-4964-aa7d-d4a3cdeda1d6/" "3eda5b49-6688-4fe6-ac7e-0802002f78a4/" "227f40dd-42c2-485a-92f7-e8949def61cb/" "33ad6a3c-9324-4605-b078-1d4fe459f8a6/" "6019e261-ab7a-4570-b9ec-812fd83591d2/" "d2cd0c9f-d27e-4d0b-833e-3825a3c685a3/" "1b0056a2-5bd4-40ca-a3e8-b5720b8a049c/" "21c8668b-cda5-4956-8c93-336226284913/" "2bcb7f62-984d-4ca6-a426-ca641692e8df/" "b6a5751e-b6df-4f09-8772-92fef51d888f/" "1337ce92-e5dd-41d0-9820-871d91bfabc9/" "d43e9d13-d7ab-456c-a50a-da8dec7334c6/" "7bb8c1df-1ffa-46bf-8786-092a08104e48/" "d80e2de2-b6ef-4396-800c-8c0b5353d914/" "56046d46-af4a-4d1e-be32-74dfe3dc0e13/" "c6ada66e-e88c-4d7a-b086-a9eeb873c7a0/" "5ca277fe-96b4-41fb-91d0-2ec34a655816/" "c5c52428-2768-4fb9-9c8f-d7a97fdb0228/" "ade4f2e7-748c-4976-af4d-67122b4b97f2/" "14aa4349-7f8f-4983-a747-02a481d950ad/" "25eaa5d1-b5f9-4e98-a7fe-1b733b1ffd0a/" "4abb0ff6-0897-4abb-ab3c-735d44833ad6/" "08911214-3f5d-4efa-9b8b-0c3639d85f8a/" "807b2df8-0ace-48b1-9625-c2012c183c9e/" "27955fa8-ed7a-4953-a4d7-25018bd05525/" "15f77ae7-d9ac-43e8-9bca-a645a2ff46ac/" "b2aaaacc-8924-4192-ab05-60d93bd03a59/" "4c015b89-ff5f-4dff-be25-b8ec719f0731/" "06db42e2-18b0-4ec7-9bf1-59b4fe775741/" "3caa7351-8527-44ef-bf46-9190605d72b1/" "7ffc4971-2f8b-4457-9332-8c649ca3c094/" "093f850a-dbf5-40e0-9ff0-e221d0a62462/" "032f18dd-b2ba-4b3e-826e-6800dfa7b02a/" "ae27d485-9db4-41f3-b4a2-7718db674f76/" "fcdbe350-07a1-486b-b538-5a4e851b7613/" "f7812a95-d725-4c0c-95c4-e89e3b25a44e/" "f60782e0-23ee-44a9-84e7-2292bf01175f/" "4ac5b582-8b6b-4970-838b-fae2b4958e23/" "c1a2f855-7f88-468e-b07b-f47bfbd0ac4f/" "cb86bd00-e389-4569-ab1b-4334e7f89be5/" "3aa67023-eeb5-4b7c-ab4d-137a2a92020d/" "474864d5-c58b-4ace-bc66-cc3cde71478a/" "66fead7e-ddc4-43f9-9093-653831255fec/" "43e5a5f8-9543-48bb-bc55-1cbf71bbb558/" "3a399bac-2007-403f-ab1c-20507bfd13a9/" "9d7094c6-6916-4ef4-ab49-45ad4ae77064/" "c39277bb-b231-4ee1-b619-f1fa7ea88363/" "2dd91447-f563-4014-bcdd-63d8f3e6bc83/" "04dc03fb-60ce-46ee-8527-17002fefc92c/" "ac05b642-f293-4175-a6a5-b4e4e269669a/" "529ed557-3761-4925-a3e5-0abf47ac14a9/" "ab385da5-1b38-4d51-aec3-b03eb61b7904/" "0a491045-74aa-4d52-8e93-d8bba3e587ad/" "2676b24f-128e-4a96-b3fe-2019a5288d29/" "2dfeb870-3194-43dc-9f47-96539c9caa92/" "cd81f12e-cdac-4c9c-a224-2b70e3fa73f7/" "f265cdf6-4f6c-4e46-a916-d064aada8c34/" "0ce69452-60b1-41d1-b657-a8151f647f4d/" "35de9787-07ba-4e8e-9446-cecd7a902704/" "e6e168df-a838-449c-85d7-e07499da9f80/" "26aa00a0-dd9d-4d34-a6b5-ebf8b0436513/" "3998cc56-3b6c-44fe-9a49-484b559f5de2/" "5f4af750-285c-4155-8cfa-250c23c99de5/" "46daf45c-55cc-48cb-bee5-c0b279d52f49/" "720a8373-f312-4010-a7db-7871f144b36f/" "9f8aad2a-9632-4560-b80a-82d9242b75cc/" "512c2ff9-5906-4fd8-b700-ace9050d886f/" "ea985d6e-df76-490a-88eb-888534d64e69/" "2f3f9dcd-1be1-4337-ac46-b7a611b9df6d/" "4c6214b9-1067-4df6-9adc-1dd074300046/" "d4e963c8-1ad7-44ea-841c-0f2e57eca651/" "a51df4e5-a00a-429c-8cc7-94d5d2ba5b67/" "e84c4046-83c6-4796-b89a-7313d75fcc6a/" "ee0a0583-1470-4ca7-95e8-79793d6c3b69/" "d847619f-0034-4151-98af-ecc95262a898/" "89e8e4c2-799e-41aa-9d5b-67d5c017e81e/" "849b7624-ef5f-4883-9565-5e75e01f5815/" "204add28-4a48-47cf-9422-c918bf20924f/" "0a05bc88-45eb-49ea-8ff8-244e2aceba25/" "2e26dde3-00c7-4a41-a72d-7524aa242074/" "b38fa8d5-ce8f-4f0e-9b0f-63e059b6a114/" "681bd983-5cb6-4cb7-a450-2298f2ae934b/" "ea0f6345-46a9-48cc-8a30-69ac491a791d/" "55374008-e40a-4749-b5d6-61f8e9c9ca05/" "0757cfbe-c4ff-406d-aed7-5d84bc52a1a3/" "2f373498-48c0-418d-908a-bf86b40b30ed/" "096b730a-61db-4818-8bcb-9d7f7cf753a8/" "1d414a8a-8586-4dc4-a5c3-411467da6626/" "0df4963b-0653-4581-829c-328ba4fc8a50/" "../" "./")
+
+ ("/tmp/dct/data/" (23336 666 168920 795000) "file-storage/" "../" "./")
+
+ ("/tmp/dct/" (23336 666 168877 198000) "data/" "../" "./")
+
+ ("/tmp/" (23346 32471 411413 546000) "com.apple.launchd.ITKMWuJnYZ/" "lein-trampoline-KisPKMI2TBOS0" "lein-trampoline-f0SlWecuIf3uy" "lein-trampoline-ljrzRzbM5lrg7" "com.apple.launchd.ZkFtZIpHbf/" "lein-trampoline-GWDf4Mamybfip" "lein-trampoline-QQEXFAvtmyHv9" "lein-trampoline-PgNC9WMYDUCWe" "com.apple.launchd.fP7XlZJ2UK/" "com.apple.launchd.fK6qpzAq68/" "dct/" "com.apple.launchd.XcG5W0l87j/" "lein-trampoline-olSXphrPrZapU" "com.apple.launchd.ToqZ9bMQBR/" "lein-trampoline-V0LL4VYa9avbA" "com.apple.launchd.q14sPR3fGR/" "lein-trampoline-7TFH4qYjvXhBQ" "com.apple.launchd.GO49eORaaj/" "lein-trampoline-sCrZBD0E2rvw4" "com.apple.launchd.ogiI7ThGMc/" "lein-trampoline-I5XPvHc06ZWrg" "powerlog/" "com.apple.launchd.uQs3stJeAK/" "lein-trampoline-vuNI1A9G7n9wJ" ".keystone_install_lock" "com.apple.launchd.cqtyz1J3p7/" "com.apple.launchd.9KcfzKhNBJ/" "../" "./")
+
+ ("/Applications/" (23339 43721 46890 982000) "System Preferences.app/" "Calendar.app/" "HipChat.app/" "Automator.app/" "Contexts.app/" "App Store.app/" "Reminders.app/" "Launchpad.app/" "Emacs.app/" "Firefox.app/" "iTunes.app/" "Skype.app/" "iTerm.app/" "Calculator.app/" "Flux.app/" "Messages.app/" "Kiwi for Gmail.app/" "Stride.app/" "Photos.app/" "Stickies.app/" "Mission Control.app/" "Maps.app/" "SelfControl.app/" "FaceTime.app/" "Font Book.app/" "Utilities/" "Time Machine.app/" "SizeUp.app/" "Contacts.app/" "Dictionary.app/" "Safari.app/" "Mail.app/" "Docker.app/" "TextEdit.app/" "Spotify.app/" "Dashboard.app/" "Preview.app/" ".localized" "Karabiner-EventViewer.app/" "Karabiner-Elements.app/" "Google Chrome.app/" "iBooks.app/" "Image Capture.app/" "Notes.app/" ".DS_Store" "Photo Booth.app/" "Chess.app/" "QuickTime Player.app/" "Siri.app/" "DVD Player.app/" "../" "./")
+
+ ("/Users/" (23335 59149 589583 124000) "Guest/" "Shared/" "nicholasstares/" ".localized" "nick/" "../" "./")
+
+ ("/Users/nick/cognitect/drawing-comparison-tool/worker/src/clj/com/toyota_europe/" (23335 64217 618353 23000) "dct/" "../" "./")
+
+ ("/Users/nick/cognitect/drawing-comparison-tool/worker/src/clj/com/" (23335 64217 618283 178000) "toyota_europe/" "../" "./")
+
+ ("/Users/nick/cognitect/drawing-comparison-tool/worker/src/clj/" (23335 64217 618202 127000) "com/" "../" "./")
+
+ ("/Users/nick/cognitect/drawing-comparison-tool/web/src/clj/" (23335 64217 587446 332000) "com/" "../" "./")
+
+ ("/Users/nick/cognitect/drawing-comparison-tool/web/src/clj/com/" (23335 64217 587519 754000) "toyota_europe/" "../" "./")
+
+ ("/Users/nick/cognitect/drawing-comparison-tool/web/src/clj/com/toyota_europe/" (23335 64217 587587 691000) "dct/" "../" "./")
 
  ("/Users/nick/cognitect/drawing-comparison-tool/common/src/clj/com/toyota_europe/" (23335 64217 542159 945000) "dct/" "../" "./")
 
@@ -48,10 +244,6 @@
  ("/Users/nick/cognitect/drawing-comparison-tool/common/src/" (23335 64217 543311 477000) "clj/" "cljc/" "../" "./")
 
  ("/Users/nick/cognitect/drawing-comparison-tool/common/" (23335 64217 543926 792000) "src/" "config/" "test/" "../" "./")
-
- ("/Users/nick/cognitect/drawing-comparison-tool/" (23335 64217 616719 308000) "worker/" ".git/" "ops/" "adrs/" "docker-compose.web.yml" ".gitignore" ".dockerignore" "opencv/" "common/" "README.md" ".editorconfig" "docker-compose.worker.yml" "docker-compose.services.yml" "web/" "Makefile" "Dockerfile" "../" "./")
-
- ("/Users/nick/cognitect/" (23335 64203 602974 233000) "drawing-comparison-tool/" "../" "./")
 )
 
 ;; ----- ido-unc-hosts-cache -----
