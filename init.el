@@ -1,9 +1,7 @@
-
-
 (require 'package)
 
 (add-to-list 'package-archives
-             '("melpa" . "https://melpa.org/packages/") t)
+       '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize) ;; You might already have this line
 ;; (defvar mswindows-p (string-match "windows" (symbol-name system-type)))
 
@@ -11,7 +9,7 @@
   :config
   (add-hook 'after-init-hook 'benchmark-init/deactivate))
 
-(defun edit-init
+(defun edit-init ()
  (interactive)
  (find-file "~/.emacs.d/init.el"))
 
@@ -40,9 +38,9 @@
 
 ;; IDO
 (use-package ido
-  :bind (("C-x C-f" . ido-find-file)
-	 ("C-x b" . ido-switch-buffer)
-	 ("C-x C-b" . ido-switch-buffer))
+  :bind (("C-x C-f" . ido-find-file))
+   ("C-x b" . ido-switch-buffer)
+   ("C-x C-b" . ido-switch-buffer)
   :config
   (ido-mode)
   (ido-everywhere))
@@ -59,11 +57,15 @@
   :prefix "SPC")
 
 (my-leader-def
-  :keymaps 'normal
+  :states 'normal
+  :keymaps 'override
   ;; bind "SPC a"
   "f" 'ido-find-file
   "SPC" 'smex
   "b"   'ido-switch-buffer)
+
+(general-create-definier file-def
+       :prefix "SPC f")
 
 (use-package projectile
   :init (projectile-global-mode))
@@ -73,9 +75,17 @@
   :prefix "SPC p")
 
 (projectile-leader-def
-  :keymaps 'normal
+  :states 'normal
+  :keymaps 'override
   "f" 'projectile-find-file)
 
+(general-create-definer magit-leader-def
+    :prefix "SPC g")
+
+(magit-leader-def
+  :states 'normal
+  :keymaps 'override
+  "s" 'magit-status)
 ;; (defvar my-leader-map (make-sparse-keymap)
 ;;   "Keymap for \"leader key\" shortcuts.")
 
@@ -129,7 +139,7 @@
 
 (add-hook 'clojure-mode-hook 'parinfer-mode)
 (add-hook 'clojure-mode-hook 'evil-cleverparens-mode)
-
+()
 ;; PUTATIVE ALTERNATIVE PAREN MANAGEME(setq evil-cp-additional-movement-keys
  ;; '(("L" . evil-cp-forward-sexp)
  ;;   ("H" . evil-cp-backward-sexp)
@@ -141,7 +151,11 @@
  ;;   ("}" . evil-forward-paragraph)
  ;;   ("(" . evil-cp-backward-up-sexp)
  ;;   (")" . evil-cp-up-sexp)))
+(require 'spotify)
 
+;; Settings
+(setq spotify-oauth2-client-secret "a0f81b8aea224a46af5c9909bbc5a9de")
+(setq spotify-oauth2-client-id "6e11117b99084c40b8a95abb5861d0b6")
 
 ;; DIRED
 (require 'dired)
@@ -245,6 +259,7 @@
  '(dired-recursive-copies (quote always))
  '(electric-indent-mode t)
  '(evil-cleverparens-complete-parens-in-yanked-region nil)
+ '(evil-cleverparens-use-additional-bindings t)
  '(evil-cleverparens-use-additional-movement-keys t)
  '(evil-cleverparens-use-regular-insert t)
  '(evil-escape-delay 0.1)
@@ -269,6 +284,7 @@
      ("#3C3D37" . 100))))
  '(hl-sexp-background-color "#efebe9")
  '(ido-completion-buffer "nil")
+ '(ido-everywhere t)
  '(magit-diff-use-overlays nil)
  '(magit-display-buffer-function (quote magit-display-buffer-same-window-except-diff-v1))
  '(magit-save-repository-buffers nil)
@@ -278,7 +294,7 @@
  '(org-agenda-files nil)
  '(package-selected-packages
    (quote
-    (benchmark-init fill-column-indicator company-tern xref-js2 js2-refactor js2-mode evil-visualstar general evil-leader json-mode better-shell dired-quick-sort pdf-tools dired-hide-dotfiles treemacs-evil treemacs use-package nyan-mode vimish-fold lsp-mode yaml-mode adjust-parens highlight-parentheses aggressive-indent evil-smartparens evil-cleverparens smartparens evil-surround zenburn-theme anti-zenburn-theme color-theme-sanityinc-solarized color-theme-solarized solarized-theme highlight2clipboard evil-lispy lispyville exwm diminish evil-magit neotree org align-cljlet clj-refactor el-get runner 4clojure flx-ido which-key with-editor counsel evil-escape helm-clojuredocs clojure-cheatsheet synosaurus sx org-pomodoro clojure-mode cider parinfer ace-window key-chord magit-gh-pulls achievements avy helm-ag-r ag org-jira projectile magit company helm-ag omnisharp helm monokai-theme)))
+    (hl-todo helm-spotify-plus spotify benchmark-init fill-column-indicator company-tern xref-js2 js2-refactor js2-mode evil-visualstar general evil-leader json-mode better-shell dired-quick-sort pdf-tools dired-hide-dotfiles treemacs-evil treemacs use-package nyan-mode vimish-fold lsp-mode yaml-mode adjust-parens highlight-parentheses aggressive-indent evil-smartparens evil-cleverparens smartparens evil-surround zenburn-theme anti-zenburn-theme color-theme-sanityinc-solarized color-theme-solarized solarized-theme highlight2clipboard evil-lispy lispyville exwm diminish evil-magit neotree org align-cljlet clj-refactor el-get runner 4clojure flx-ido which-key with-editor counsel evil-escape helm-clojuredocs clojure-cheatsheet synosaurus sx org-pomodoro clojure-mode cider parinfer ace-window key-chord magit-gh-pulls achievements avy helm-ag-r ag org-jira projectile magit company helm-ag omnisharp helm monokai-theme)))
  '(pdf-view-midnight-colors (quote ("#232333" . "#c7c7c7")))
  '(pos-tip-background-color "#FFFACE")
  '(pos-tip-foreground-color "#272822")
