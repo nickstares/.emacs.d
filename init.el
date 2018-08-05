@@ -5,13 +5,11 @@
 (package-initialize) ;; You might already have this line
 ;; (defvar mswindows-p (string-match "windows" (symbol-name system-type)))
 
-(use-package benchmark-init
-  :config
-  (add-hook 'after-init-hook 'benchmark-init/deactivate))
-
 (defun edit-init ()
  (interactive)
  (find-file "~/.emacs.d/init.el"))
+
+(load-theme 'solarized-light)
 
 (exec-path-from-shell-initialize)
 
@@ -33,7 +31,6 @@
 (global-set-key (kbd "C-k") 'kill-line)
 (global-set-key (kbd "C--") 'undo)
 
-
 ;; PROJECTILE
 
 ;; IDO
@@ -50,8 +47,8 @@
          ("M-x" . smex)
          ("C-x m" . smex)))
 
-
 (require 'general)
+
 (general-create-definer my-leader-def
   ;; :prefix my-leader
   :prefix "SPC")
@@ -63,9 +60,6 @@
   "f" 'ido-find-file
   "SPC" 'smex
   "b"   'ido-switch-buffer)
-
-(general-create-definier file-def
-       :prefix "SPC f")
 
 (use-package projectile
   :init (projectile-global-mode))
@@ -80,24 +74,12 @@
   "f" 'projectile-find-file)
 
 (general-create-definer magit-leader-def
-    :prefix "SPC g")
+    :prefix "SPC m")
 
 (magit-leader-def
   :states 'normal
   :keymaps 'override
   "s" 'magit-status)
-;; (defvar my-leader-map (make-sparse-keymap)
-;;   "Keymap for \"leader key\" shortcuts.")
-
-;; ;; binding "," to the keymap
-;; (define-key evil-normal-state-map (kbd "SPC") my-leader-map)
-
-;; ;; binding ",b"
-;; (define-key my-leader-map "b" 'ido-switch-buffer)
-;; (define-key my-leader-map "f" 'ido-find-file)
-;; (define-key my-leader-map (kbd "SPC") 'smex)
-
-;; change the "leader" key to space
 
 (use-package evil
   :ensure t
@@ -110,6 +92,7 @@
   :after evil
   :ensure t
   :config
+  (evil-magit-init)
   (evil-collection-init))
 
 (use-package evil-escape
@@ -134,28 +117,12 @@
 ;;Parinfer
 (use-package parinfer
   :bind (:map parinfer-mode-map
+              ("C-," . parinfer-toggle-mode)
               ("C-a" . back-to-indentation)
               ("M-m" . move-beginning-of-line)))
 
 (add-hook 'clojure-mode-hook 'parinfer-mode)
 (add-hook 'clojure-mode-hook 'evil-cleverparens-mode)
-()
-;; PUTATIVE ALTERNATIVE PAREN MANAGEME(setq evil-cp-additional-movement-keys
- ;; '(("L" . evil-cp-forward-sexp)
- ;;   ("H" . evil-cp-backward-sexp)
- ;;   ("M-l" . evil-cp-end-of-defun)
- ;;   ("M-h" . evil-cp-beginning-of-defun)
- ;;   ("[" . evil-cp-previous-opening)
- ;;   ("]" . evil-cp-next-closing)
- ;;   ("{" . evil-backward-paragraph)
- ;;   ("}" . evil-forward-paragraph)
- ;;   ("(" . evil-cp-backward-up-sexp)
- ;;   (")" . evil-cp-up-sexp)))
-(require 'spotify)
-
-;; Settings
-(setq spotify-oauth2-client-secret "a0f81b8aea224a46af5c9909bbc5a9de")
-(setq spotify-oauth2-client-id "6e11117b99084c40b8a95abb5861d0b6")
 
 ;; DIRED
 (require 'dired)
@@ -164,16 +131,6 @@
 (define-key dired-mode-map (kbd "^") (lambda () (interactive) (find-alternate-file "..")))  ; was dired-up-directory
 (evil-collection-define-key 'normal 'dired-mode-map
   (kbd "DEL") (lambda () (interactive) (find-alternate-file "..")))  ; was dired-up-directory
-;; (defun xah-dired-mode-setup ()
-;;   "to be run as hook for `dired-mode'."
-;;   (dired-hide-details-mode 1))
-
-;; (add-hook 'dired-mode-hook 'xah-dired-mode-setup)
-;; (load "~/.emacs.d/dired+.el")
-;; (diredp-toggle-find-file-reuse-dir 1)
-;;   (add-hook 'dired-load-hook
-;;             (function (lambda () (load "dired-x"))))
-
 
 
 (setq helm-split-window-inside-p t)
@@ -252,10 +209,9 @@
  '(completion-auto-help nil)
  '(cursor-in-non-selected-windows (quote hollow))
  '(cursor-type (quote bar))
- '(custom-enabled-themes (quote (solarized)))
  '(custom-safe-themes
    (quote
-    ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "4aee8551b53a43a883cb0b7f3255d6859d766b6c5e14bcb01bed572fcbef4328" "8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" "bfdcbf0d33f3376a956707e746d10f3ef2d8d9caa1c214361c9c08f00a1c8409" "bea5fd3610ed135e6ecc35bf8a9c27277d50336455dbdd2969809f7d7c1f7d79" "4cf3221feff536e2b3385209e9b9dc4c2e0818a69a1cdb4b522756bcdf4e00a4" "c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "9a155066ec746201156bb39f7518c1828a73d67742e11271e4f24b7b178c4710" "43c1a8090ed19ab3c0b1490ce412f78f157d69a29828aa977dae941b994b4147" "53f97243218e8be82ba035ae34c024fd2d2e4de29dc6923e026d5580c77ff702" default)))
+    ("d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "4aee8551b53a43a883cb0b7f3255d6859d766b6c5e14bcb01bed572fcbef4328" "8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" "bfdcbf0d33f3376a956707e746d10f3ef2d8d9caa1c214361c9c08f00a1c8409" "bea5fd3610ed135e6ecc35bf8a9c27277d50336455dbdd2969809f7d7c1f7d79" "4cf3221feff536e2b3385209e9b9dc4c2e0818a69a1cdb4b522756bcdf4e00a4" "c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "9a155066ec746201156bb39f7518c1828a73d67742e11271e4f24b7b178c4710" "43c1a8090ed19ab3c0b1490ce412f78f157d69a29828aa977dae941b994b4147" "53f97243218e8be82ba035ae34c024fd2d2e4de29dc6923e026d5580c77ff702" default)))
  '(dired-recursive-copies (quote always))
  '(electric-indent-mode t)
  '(evil-cleverparens-complete-parens-in-yanked-region nil)
@@ -294,10 +250,11 @@
  '(org-agenda-files nil)
  '(package-selected-packages
    (quote
-    (hl-todo helm-spotify-plus spotify benchmark-init fill-column-indicator company-tern xref-js2 js2-refactor js2-mode evil-visualstar general evil-leader json-mode better-shell dired-quick-sort pdf-tools dired-hide-dotfiles treemacs-evil treemacs use-package nyan-mode vimish-fold lsp-mode yaml-mode adjust-parens highlight-parentheses aggressive-indent evil-smartparens evil-cleverparens smartparens evil-surround zenburn-theme anti-zenburn-theme color-theme-sanityinc-solarized color-theme-solarized solarized-theme highlight2clipboard evil-lispy lispyville exwm diminish evil-magit neotree org align-cljlet clj-refactor el-get runner 4clojure flx-ido which-key with-editor counsel evil-escape helm-clojuredocs clojure-cheatsheet synosaurus sx org-pomodoro clojure-mode cider parinfer ace-window key-chord magit-gh-pulls achievements avy helm-ag-r ag org-jira projectile magit company helm-ag omnisharp helm monokai-theme)))
+    (solarized-theme spacemacs-theme spaceline-all-the-icons spaceline powerline-evil airline-themes hl-todo helm-spotify-plus spotify benchmark-init fill-column-indicator company-tern xref-js2 js2-refactor js2-mode evil-visualstar general evil-leader json-mode better-shell dired-quick-sort pdf-tools dired-hide-dotfiles treemacs-evil treemacs use-package nyan-mode vimish-fold lsp-mode yaml-mode adjust-parens highlight-parentheses aggressive-indent evil-smartparens evil-cleverparens smartparens evil-surround zenburn-theme anti-zenburn-theme color-theme-sanityinc-solarized color-theme-solarized highlight2clipboard evil-lispy lispyville exwm diminish evil-magit neotree org align-cljlet clj-refactor el-get runner 4clojure flx-ido which-key with-editor counsel evil-escape helm-clojuredocs clojure-cheatsheet synosaurus sx org-pomodoro clojure-mode cider parinfer ace-window key-chord magit-gh-pulls achievements avy helm-ag-r ag org-jira projectile magit company helm-ag omnisharp helm monokai-theme)))
  '(pdf-view-midnight-colors (quote ("#232333" . "#c7c7c7")))
  '(pos-tip-background-color "#FFFACE")
  '(pos-tip-foreground-color "#272822")
+ '(powerline-default-separator (quote wave))
  '(rich-minority-mode nil)
  '(rm-blacklist (quote ("\"vc-mode\"")))
  '(shell-pop-universal-key "C-t")
