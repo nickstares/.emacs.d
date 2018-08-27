@@ -6,17 +6,17 @@
 ;; (defvar mswindows-p (string-match "windows" (symbol-name system-type)))
 
 (defun edit-init ()
- (interactive)
- (find-file "~/.emacs.d/init.el"))
+  (interactive)
+  (find-file "~/.emacs.d/init.el"))
 
-(load-theme 'solarized-light)
+(load-theme 'solarized-light t)
 
 (exec-path-from-shell-initialize)
 
 (set-scroll-bar-mode nil)
 (tool-bar-mode -1)
 (setq visual-line-mode 1)
-(setq-default show-trailing-whitespace 't)
+;; (setq-default show-trailing-whitespace nil) ;
 (add-hook 'text-mode-hook 'turn-on-visual-line-mode)
 (setq ring-bell-function 'ignore)
 (setq inhibit-startup-message t)
@@ -24,23 +24,26 @@
 
 (set-face-attribute 'default nil :font "Menlo-15")
 
+
 (editorconfig-mode 1)
+
+(require 'simpleclip)
+(simpleclip-mode 1)
 
 (setq-default rainbow-delimiters-mode t)
 
 (global-set-key (kbd "C-k") 'kill-line)
 (global-set-key (kbd "C--") 'undo)
 
-;; PROJECTILE
-
-;; IDO
 (use-package ido
-  :bind (("C-x C-f" . ido-find-file))
-   ("C-x b" . ido-switch-buffer)
-   ("C-x C-b" . ido-switch-buffer)
+  :bind (("C-x b" . 'ido-switch-buffer)
+         ("C-x C-b" . 'ido-switch-buffer))
+  :ensure t
   :config
-  (ido-mode)
-  (ido-everywhere))
+  (setq ido-everywhere 1)
+  (ido-mode 1))
+
+;; PROJECTILE
 
 (use-package smex
   :bind (("C-x C-m" . smex)
@@ -61,8 +64,7 @@
   "SPC" 'smex
   "b"   'ido-switch-buffer)
 
-(use-package projectile
-  :init (projectile-global-mode))
+(require 'projectile)
 
 (general-create-definer projectile-leader-def
   ;; :prefix my-local-leader
@@ -74,7 +76,7 @@
   "f" 'projectile-find-file)
 
 (general-create-definer magit-leader-def
-    :prefix "SPC m")
+    :prefix "SPC g")
 
 (magit-leader-def
   :states 'normal
@@ -88,11 +90,15 @@
   :config
   (evil-mode 1))
 
+(use-package evil-magit
+  :ensure t)
+
+(load-theme 'solarized-light t)
+
 (use-package evil-collection
   :after evil
   :ensure t
   :config
-  (evil-magit-init)
   (evil-collection-init))
 
 (use-package evil-escape
@@ -103,8 +109,8 @@
   (setq evil-escape-mode 1))
 
 (define-key evil-normal-state-map (kbd "C-e") 'end-of-line)
-(define-key evil-normal-state-map (kbd "C-a") 'beginning-of-line)
-(define-key evil-insert-state-map (kbd "C-a") 'beginning-of-line)
+(define-key evil-normal-state-map (kbd "C-a") 'back-to-indentation)
+(define-key evil-insert-state-map (kbd "C-a") 'back-to-indentation)
 (define-key evil-insert-state-map (kbd "C-e") 'end-of-line)
 
 (defun evil-keyboard-quit ()
@@ -129,8 +135,8 @@
 (define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file) ; was dired-advertised-find-file
 (define-key dired-mode-map (kbd "DEL") (lambda () (interactive) (find-alternate-file "..")))  ; was dired-up-directory
 (define-key dired-mode-map (kbd "^") (lambda () (interactive) (find-alternate-file "..")))  ; was dired-up-directory
-(evil-collection-define-key 'normal 'dired-mode-map
-  (kbd "DEL") (lambda () (interactive) (find-alternate-file "..")))  ; was dired-up-directory
+;; (evil-collection-define-key 'normal 'dired-mode-map
+;;   (kbd "DEL") (lambda () (interactive) (find-alternate-file "..")))  ; was dired-up-directory
 
 
 (setq helm-split-window-inside-p t)
@@ -207,6 +213,10 @@
  '(company-quickhelp-color-foreground "#232333")
  '(compilation-message-face (quote default))
  '(completion-auto-help nil)
+ '(cua-global-mark-cursor-color "#2aa198")
+ '(cua-normal-cursor-color "#657b83")
+ '(cua-overwrite-cursor-color "#b58900")
+ '(cua-read-only-cursor-color "#859900")
  '(cursor-in-non-selected-windows (quote hollow))
  '(cursor-type (quote bar))
  '(custom-safe-themes
@@ -228,6 +238,12 @@
  '(global-linum-mode t)
  '(global-visual-line-mode t)
  '(highlight-changes-colors (quote ("#FD5FF0" "#AE81FF")))
+ '(highlight-symbol-colors
+   (--map
+    (solarized-color-blend it "#fdf6e3" 0.25)
+    (quote
+     ("#b58900" "#2aa198" "#dc322f" "#6c71c4" "#859900" "#cb4b16" "#268bd2"))))
+ '(highlight-symbol-foreground-color "#586e75")
  '(highlight-tail-colors
    (quote
     (("#3C3D37" . 0)
@@ -238,9 +254,19 @@
      ("#A75B00" . 70)
      ("#F309DF" . 85)
      ("#3C3D37" . 100))))
+ '(hl-bg-colors
+   (quote
+    ("#DEB542" "#F2804F" "#FF6E64" "#F771AC" "#9EA0E5" "#69B7F0" "#69CABF" "#B4C342")))
+ '(hl-fg-colors
+   (quote
+    ("#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3")))
+ '(hl-paren-colors (quote ("#2aa198" "#b58900" "#268bd2" "#6c71c4" "#859900")))
  '(hl-sexp-background-color "#efebe9")
  '(ido-completion-buffer "nil")
  '(ido-everywhere t)
+ '(lispyville-key-theme
+   (quote
+    (operators c-w slurp/barf-cp additional-insert additional additional-movement)))
  '(magit-diff-use-overlays nil)
  '(magit-display-buffer-function (quote magit-display-buffer-same-window-except-diff-v1))
  '(magit-save-repository-buffers nil)
@@ -250,7 +276,7 @@
  '(org-agenda-files nil)
  '(package-selected-packages
    (quote
-    (solarized-theme spacemacs-theme spaceline-all-the-icons spaceline powerline-evil airline-themes hl-todo helm-spotify-plus spotify benchmark-init fill-column-indicator company-tern xref-js2 js2-refactor js2-mode evil-visualstar general evil-leader json-mode better-shell dired-quick-sort pdf-tools dired-hide-dotfiles treemacs-evil treemacs use-package nyan-mode vimish-fold lsp-mode yaml-mode adjust-parens highlight-parentheses aggressive-indent evil-smartparens evil-cleverparens smartparens evil-surround zenburn-theme anti-zenburn-theme color-theme-sanityinc-solarized color-theme-solarized highlight2clipboard evil-lispy lispyville exwm diminish evil-magit neotree org align-cljlet clj-refactor el-get runner 4clojure flx-ido which-key with-editor counsel evil-escape helm-clojuredocs clojure-cheatsheet synosaurus sx org-pomodoro clojure-mode cider parinfer ace-window key-chord magit-gh-pulls achievements avy helm-ag-r ag org-jira projectile magit company helm-ag omnisharp helm monokai-theme)))
+    (simpleclip flycheck-pos-tip flycheck-clojure ejc-sql solarized-theme spacemacs-theme spaceline-all-the-icons spaceline powerline-evil airline-themes hl-todo helm-spotify-plus spotify benchmark-init fill-column-indicator company-tern xref-js2 js2-refactor js2-mode evil-visualstar general evil-leader json-mode better-shell dired-quick-sort pdf-tools dired-hide-dotfiles treemacs-evil treemacs use-package nyan-mode vimish-fold lsp-mode yaml-mode adjust-parens highlight-parentheses aggressive-indent evil-smartparens evil-cleverparens smartparens evil-surround zenburn-theme anti-zenburn-theme color-theme-sanityinc-solarized color-theme-solarized highlight2clipboard evil-lispy lispyville exwm diminish evil-magit neotree org align-cljlet clj-refactor el-get runner 4clojure flx-ido which-key with-editor counsel evil-escape helm-clojuredocs clojure-cheatsheet synosaurus sx org-pomodoro clojure-mode cider parinfer ace-window key-chord magit-gh-pulls achievements avy helm-ag-r ag org-jira projectile magit company helm-ag omnisharp helm monokai-theme)))
  '(pdf-view-midnight-colors (quote ("#232333" . "#c7c7c7")))
  '(pos-tip-background-color "#FFFACE")
  '(pos-tip-foreground-color "#272822")
@@ -259,9 +285,13 @@
  '(rm-blacklist (quote ("\"vc-mode\"")))
  '(shell-pop-universal-key "C-t")
  '(show-paren-mode t)
+ '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#eee8d5" 0.2))
  '(sp-navigate-interactive-always-progress-point t)
  '(split-width-threshold 150)
+ '(term-default-bg-color "#fdf6e3")
+ '(term-default-fg-color "#657b83")
  '(vc-annotate-background nil)
+ '(vc-annotate-background-mode nil)
  '(vc-annotate-color-map
    (quote
     ((20 . "#F92672")
@@ -284,7 +314,11 @@
      (360 . "#66D9EF"))))
  '(vc-annotate-very-old-color nil)
  '(weechat-color-list
-   (unspecified "#272822" "#3C3D37" "#F70057" "#F92672" "#86C30D" "#A6E22E" "#BEB244" "#E6DB74" "#40CAE4" "#66D9EF" "#FB35EA" "#FD5FF0" "#74DBCD" "#A1EFE4" "#F8F8F2" "#F8F8F0")))
+   (unspecified "#272822" "#3C3D37" "#F70057" "#F92672" "#86C30D" "#A6E22E" "#BEB244" "#E6DB74" "#40CAE4" "#66D9EF" "#FB35EA" "#FD5FF0" "#74DBCD" "#A1EFE4" "#F8F8F2" "#F8F8F0"))
+ '(xterm-color-names
+   ["#eee8d5" "#dc322f" "#859900" "#b58900" "#268bd2" "#d33682" "#2aa198" "#073642"])
+ '(xterm-color-names-bright
+   ["#fdf6e3" "#cb4b16" "#93a1a1" "#839496" "#657b83" "#6c71c4" "#586e75" "#002b36"]))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
