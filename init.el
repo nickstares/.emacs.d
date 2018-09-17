@@ -189,6 +189,11 @@
 (evil-set-initial-state 'shell-mode 'insert)
 
 
+ (define-key evil-motion-state-map "j" 'evil-next-visual-line)
+ (define-key evil-motion-state-map "k" 'evil-previous-visual-line)
+  ;; Also in visual mode
+ (define-key evil-visual-state-map "j" 'evil-next-visual-line)
+ (define-key evil-visual-state-map "k" 'evil-previous-visual-line)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
