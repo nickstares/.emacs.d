@@ -24,7 +24,6 @@
 
 (set-face-attribute 'default nil :font "Menlo-15")
 
-
 (editorconfig-mode 1)
 
 (setq-default rainbow-delimiters-mode t)
@@ -156,13 +155,6 @@
   (setq cider-repl-pop-to-buffer-on-connect nil))
 
 
-;; (defadvice cider-last-sexp (around evil activate)
-;;     "In normal-state or motion-state, last sexp ends at point."
-;;     (if (or (evil-normal-state-p) (evil-motion-state-p))
-;;         (save-excursion
-;;           (unless (or (eobp) (eolp)) (forward-char))
-;;           ad-do-it)
-;;       ad-do-it))
 (defadvice cider-inspect (around evil activate)
     "In normal-state or motion-state, last sexp ends at point."
     (if (or (evil-normal-state-p) (evil-motion-state-p))
@@ -185,7 +177,7 @@
 
 
 (evil-set-initial-state 'cider-repl-mode 'insert)
-(evil-set-initial-state 'cider-inspector-mode 'emacs)
+(evil-set-initial-state 'cider-inspector-mode 'normal)
 (evil-set-initial-state 'shell-mode 'insert)
 
 
