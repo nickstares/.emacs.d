@@ -27,9 +27,6 @@
 
 (editorconfig-mode 1)
 
-(require 'simpleclip)
-(simpleclip-mode 1)
-
 (setq-default rainbow-delimiters-mode t)
 
 (global-set-key (kbd "C-k") 'kill-line)
