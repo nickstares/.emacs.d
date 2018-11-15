@@ -58,6 +58,7 @@
   ;; bind "SPC a"
   "f" 'ido-find-file
   "SPC" 'smex
+  "d"   'ido-dired
   "b"   'ido-switch-buffer)
 
 (require 'projectile)
