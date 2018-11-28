@@ -20,9 +20,14 @@
 (add-hook 'text-mode-hook 'turn-on-visual-line-mode)
 (setq ring-bell-function 'ignore)
 (setq inhibit-startup-message t)
-(setq default-cursor-type 'bar)
+(setq blink-cursor-mode 0)
+;; (setq default-cursor-type 'bar)
+
+;; ORG
+;; (org-indent-mode)
 
 (set-face-attribute 'default nil :font "Menlo-15")
+;; (set-face-attribute 'default nil :font "ETBembo-15")
 
 (editorconfig-mode 1)
 
@@ -87,10 +92,13 @@
   :config
   (evil-mode 1))
 
+(require 'magit)
+(unbind-key "ESC" magit-mode-map)
+
 (use-package evil-magit
   :ensure t)
 
-(load-theme 'solarized-light t)
+;; (load-theme 'solarized-light t)
 
 (use-package evil-collection
   :after evil
@@ -104,11 +112,21 @@
   :config
   (setq evil-escape-key-sequence "kj")
   (setq evil-escape-mode 1))
+  (setq evil-escape-mode 1)
+  (setq evil-escape-excluded-major-modes
+	(list 'magit-status-mode 'magit-refs-mode 'magit-log-mode)))
+
+
 
 (define-key evil-normal-state-map (kbd "C-e") 'end-of-line)
 (define-key evil-normal-state-map (kbd "C-a") 'back-to-indentation)
+(define-key evil-normal-state-map (kbd "C-f") 'forward-char)
+(define-key evil-normal-state-map (kbd "C-b") 'backward-char)
 (define-key evil-insert-state-map (kbd "C-a") 'back-to-indentation)
 (define-key evil-insert-state-map (kbd "C-e") 'end-of-line)
+(define-key evil-insert-state-map (kbd "C-k") 'kill-visual-line)
+(define-key evil-insert-state-map (kbd "C-f") 'forward-char)
+(define-key evil-insert-state-map (kbd "C-b") 'backward-char)
 
 (defun evil-keyboard-quit ()
   "Keyboard quit and force normal state."
@@ -135,6 +153,10 @@
 ;; (evil-collection-define-key 'normal 'dired-mode-map
 ;;   (kbd "DEL") (lambda () (interactive) (find-alternate-file "..")))  ; was dired-up-directory
 
+(evil-collection-define-key 'normal 'dired-mode-map
+  (kbd "DEL") (lambda () (interactive) (find-alternate-file "..")))  ; was dired-up-directory
+(evil-collection-define-key 'normal 'dired-mode-map
+  (kbd "<return>") 'dired-find-alternate-file )  ; was dired-up-directory
 
 (setq helm-split-window-inside-p t)
 
@@ -197,7 +219,7 @@
    [default bold shadow italic underline bold bold-italic bold])
  '(ansi-color-names-vector
    ["#c0c0c0" "#336c6c" "#806080" "#0f2050" "#732f2c" "#23733c" "#6c1f1c" "#232333"])
- '(blink-cursor-mode t)
+ '(blink-cursor-mode nil)
  '(byte-compile-delete-errors nil)
  '(cider-auto-jump-to-error nil)
  '(cider-auto-select-error-buffer nil)
@@ -228,11 +250,18 @@
  '(electric-indent-mode t)
  '(evil-cleverparens-complete-parens-in-yanked-region nil)
  '(evil-cleverparens-use-additional-bindings t)
- '(evil-cleverparens-use-additional-movement-keys t)
+ '(evil-cleverparens-use-additional-movement-keys nil)
  '(evil-cleverparens-use-regular-insert t)
  '(evil-escape-delay 0.1)
+ '(evil-escape-excluded-major-modes
+   (quote
+    (quote
+     ((quote magit-mode)
+      (quote magit-status-mode)
+      (quote magit-refs-mode)))))
  '(evil-escape-mode t)
  '(evil-lispy-cursor (quote ("blue" box)))
+ '(evil-want-Y-yank-to-eol t)
  '(fci-rule-color "#3C3D37")
  '(frame-background-mode (quote light))
  '(global-company-mode nil)
@@ -330,3 +359,4 @@
  '(avy-lead-face-0 ((t (:background "#4f57f9" :foreground "white" :height 1.3))))
  '(cursor ((t (:background "navy")))))
 
+(put 'dired-find-alternate-file 'disabled nil)
