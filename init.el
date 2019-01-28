@@ -5,11 +5,27 @@
 (package-initialize) ;; You might already have this line
 ;; (defvar mswindows-p (string-match "windows" (symbol-name system-type)))
 
+;; (require 'keychain-environment)
+;; (keychain-refresh-environment)
+
+(require 'exec-path-from-shell)
+;; (exec-path-from-shell-copy-env "SSH_AGENT_PID")
+;; (exec-path-from-shell-copy-env "SSH_AUTH_SOCK")
+
+(setq load-prefer-newer t)
+
 (defun edit-init ()
   (interactive)
   (find-file "~/.emacs.d/init.el"))
 
+;; (if window-system
+;;     (load-theme 'solarized-light)
+;;   (disable-theme 'solarized-light))
+;; ; don't use solarized theme if inside term which may already have a theme
+;; (if (display-graphic-p)
 (load-theme 'solarized-light t)
+;; (toggle-frame-maximized)
+(add-hook 'window-setup-hook 'toggle-frame-maximized t)
 
 (exec-path-from-shell-initialize)
 
@@ -26,7 +42,7 @@
 ;; ORG
 ;; (org-indent-mode)
 
-(set-face-attribute 'default nil :font "Menlo-15")
+(set-face-attribute 'default nil :font "Menlo-16")
 ;; (set-face-attribute 'default nil :font "ETBembo-15")
 
 (editorconfig-mode 1)
@@ -64,6 +80,7 @@
   "f" 'ido-find-file
   "SPC" 'smex
   "d"   'ido-dired
+  "s"   'save-buffer
   "b"   'ido-switch-buffer)
 
 (require 'projectile)
@@ -93,7 +110,7 @@
   (evil-mode 1))
 
 (require 'magit)
-(unbind-key "ESC" magit-mode-map)
+(unbind-key "ESC" magit-status-mode-map)
 
 (use-package evil-magit
   :ensure t)
@@ -111,15 +128,116 @@
   :ensure t
   :config
   (setq evil-escape-key-sequence "kj")
-  (setq evil-escape-mode 1))
   (setq evil-escape-mode 1)
   (setq evil-escape-excluded-major-modes
-	(list 'magit-status-mode 'magit-refs-mode 'magit-log-mode)))
+	(list 'magit-status-mode 'magit-refs-mode 'magit-log-mode 'magit-diff-mode)))
+
+(require 'evil)
+(defun bobby ()
+  (interactive)
+  (evil-mode 0)
+  (evil-escape-mode 0))
+
+(defun nick ()
+  (interactive)
+  (evil-mode 1)
+  (evil-escape-mode 1))
+
+;; from https://github.com/nlopes/dotfiles/blob/master/.emacs.d/rust.el
+;; (use-package rust-mode
+;;   :ensure t
+;;   :defer t
+;;   :init
+;;   (require 'rust-mode)
+;;   (global-company-mode)
+;;   (add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-mode))
+
+;;   :config
+;;   (use-package company-racer)
+;;   (use-package flycheck-rust)
+;;   (use-package racer
+;;     :ensure t
+;;     :defer t
+;;     :init (setq racer-rust-src-path
+;;               (concat (string-trim
+;;                        (shell-command-to-string "rustc --print sysroot"))
+;;                       "/lib/rustlib/src/rust/src")) 
+;;     :config
+;;     (define-key rust-mode-map (kbd "M-\"") #'racer-find-definition)
+;;     (add-hook 'racer-mode-hook #'eldoc-mode)
+;;     (add-hook 'racer-mode-hook #'company-mode)
+;;     (local-set-key (kbd "TAB") #'company-indent-or-complete-common)
+;;     (setq company-tooltip-align-annotations t)
+;;     )
+;;   (defun my-rust-mode-hook()
+;;     (setq compile-command "cargo run")
+;;     (add-hook 'flycheck-mode-hook #'flycheck-rust-setup)
+;;     (flycheck-mode)
+;;     ;;(set (make-local-variable 'company-backends) '(company-racer))
+;;     ;;(local-set-key (kbd "TAB") #'racer-complete-or-indent)
+;;     )
+;;   (add-hook 'rust-mode-hook 'my-rust-mode-hook)
+;;   (add-hook 'rust-mode-hook #'racer-mode))
+
+;; (with-eval-after-load 'flycheck
+;;   (remove-hook 'flycheck-mode-hook #'flycheck-inline-mode))
+;; (use-package rust-mode)
+
+(use-package racer
+  :requires rust-mode
+
+  :init (setq racer-rust-src-path
+              (concat (string-trim
+                       (shell-command-to-string "rustc --print sysroot"))
+                      "/lib/rustlib/src/rust/src"))
+
+  :config
+  (add-hook 'rust-mode-hook #'racer-mode)
+  (add-hook 'racer-mode-hook #'eldoc-mode)
+  (add-hook 'racer-mode-hook #'company-mode))
+
+(with-eval-after-load 'rust-mode
+  (add-hook 'flycheck-mode-hook #'flycheck-rust-setup))
+
+(setq flycheck-inline-display-function
+      (lambda (msg pos)
+        (let* ((ov (quick-peek-overlay-ensure-at pos))
+               (contents (quick-peek-overlay-contents ov)))
+          (setf (quick-peek-overlay-contents ov)
+                (concat contents (when contents "\n") msg))
+          (quick-peek-update ov)))
+      flycheck-inline-clear-function #'quick-peek-hide)
+
+(load "~/.emacs.d/gud.el")
+
+(define-key evil-normal-state-map (kbd "") 'end-of-line)
+(define-key evil-normal-state-map (kbd "9") 'lispyville-previous-opening)
+(define-key evil-normal-state-map (kbd "(") 'lispyville-next-opening)
+(define-key evil-normal-state-map (kbd "0") 'lispyville-next-closing)
+(define-key evil-normal-state-map (kbd ")") 'lispyville-previous-closing)
+
+;; H	lispyville-backward-sexp
+;; L	lispyville-forward-sexp
+;; M-h	lispyville-beginning-of-defun
+;; M-l	lispyville-end-of-defun
+;; [	lispyville-previous-opening
+;; ]	lispyville-next-closing
+;; {	lispyville-next-opening
+;; }	lispyville-previous-closing
+;; (	lispyville-backward-up-list
+;; )	lispyville-up-list
 
 
+;; in normal mode may want to turn the above
+;; 9 into lispyville-previous-opening
+;; ( into lispyville-next-opening
+;; 0 into lispyville-next-closing
+;; ) into lispyville-previous-closing
 
-(define-key evil-normal-state-map (kbd "C-e") 'end-of-line)
+
+;; EMACS LIKE COMMANDS
 (define-key evil-normal-state-map (kbd "C-a") 'back-to-indentation)
+(define-key evil-normal-state-map (kbd "C-e") 'end-of-line)
 (define-key evil-normal-state-map (kbd "C-f") 'forward-char)
 (define-key evil-normal-state-map (kbd "C-b") 'backward-char)
 (define-key evil-insert-state-map (kbd "C-a") 'back-to-indentation)
@@ -127,6 +245,17 @@
 (define-key evil-insert-state-map (kbd "C-k") 'kill-visual-line)
 (define-key evil-insert-state-map (kbd "C-f") 'forward-char)
 (define-key evil-insert-state-map (kbd "C-b") 'backward-char)
+(define-key evil-insert-state-map (kbd "C-p") 'evil-previous-visual-line)
+(define-key evil-insert-state-map (kbd "C-n") 'evil-next-visual-line)
+
+(use-package treemacs
+  :ensure t
+  :defer t)
+
+(use-package treemacs-evil
+  :after treemacs evil
+  :ensure t)
+
 
 (defun evil-keyboard-quit ()
   "Keyboard quit and force normal state."
@@ -147,16 +276,12 @@
 
 ;; DIRED
 (require 'dired)
-(define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file) ; was dired-advertised-find-file
 (define-key dired-mode-map (kbd "DEL") (lambda () (interactive) (find-alternate-file "..")))  ; was dired-up-directory
 (define-key dired-mode-map (kbd "^") (lambda () (interactive) (find-alternate-file "..")))  ; was dired-up-directory
-;; (evil-collection-define-key 'normal 'dired-mode-map
-;;   (kbd "DEL") (lambda () (interactive) (find-alternate-file "..")))  ; was dired-up-directory
-
 (evil-collection-define-key 'normal 'dired-mode-map
   (kbd "DEL") (lambda () (interactive) (find-alternate-file "..")))  ; was dired-up-directory
 (evil-collection-define-key 'normal 'dired-mode-map
-  (kbd "<return>") 'dired-find-alternate-file )  ; was dired-up-directory
+  (kbd "<return>") 'dired-find-alternate-file)  ; was dired-up-directory
 
 (setq helm-split-window-inside-p t)
 
@@ -177,6 +302,18 @@
   :config
   (setq cider-repl-pop-to-buffer-on-connect nil))
 
+(defun my-clojure-reset ()
+  "Run a (reset)" 
+  (when
+    (cider-insert-in-repl "(do (ns user) (reset))" 't)))
+
+(remove-hook 'cider-mode-hook
+          (lambda ()
+            (add-hook 'after-save-hook 'my-clojure-reset nil 'make-it-local)))
+
+(use-package company
+  :config
+  (global-company-mode))
 
 (defadvice cider-inspect (around evil activate)
     "In normal-state or motion-state, last sexp ends at point."
@@ -187,28 +324,42 @@
       ad-do-it))
 
 
-;; (require 'magit)
-
-;; (defun magit-publish ()
-;;   (interactive)
-;;   (when (yes-or-no-p "Publish this branch? ")
-;;     (eshell-command
-;;      (format "git push -u origin %s" (magit-get-current-branch)))))
-;; ;; (define-key magit-mode-map (kbd "k") #'previous-line)
-;; (define-key magit-mode-map (kbd "K") 'magit-discard)
-;; (define-key magit-mode-map (kbd "j") #'next-line)
-
-
 (evil-set-initial-state 'cider-repl-mode 'insert)
 (evil-set-initial-state 'cider-inspector-mode 'normal)
 (evil-set-initial-state 'shell-mode 'insert)
-
 
  (define-key evil-motion-state-map "j" 'evil-next-visual-line)
  (define-key evil-motion-state-map "k" 'evil-previous-visual-line)
   ;; Also in visual mode
  (define-key evil-visual-state-map "j" 'evil-next-visual-line)
  (define-key evil-visual-state-map "k" 'evil-previous-visual-line)
+
+
+
+
+(defun markdown-convert-buffer-to-org ()
+    "Convert the current buffer's content from markdown to orgmode format and save it with the current buffer's file name but with .org extension."
+    (interactive)
+    (shell-command-on-region (point-min) (point-max)
+                             (format "pandoc -f markdown -t org -o %s"
+                                     (concat (file-name-sans-extension (buffer-file-name)) ".org"))))
+
+
+(defvar --backup-directory (concat user-emacs-directory "backups"))
+(if (not (file-exists-p --backup-directory))
+        (make-directory --backup-directory t))
+(setq backup-directory-alist `(("." . ,--backup-directory)))
+(setq make-backup-files t               ; backup of a file the first time it is saved.
+      backup-by-copying t               ; don't clobber symlinks
+      version-control t                 ; version numbers for backup files
+      delete-old-versions t             ; delete excess backup files silently
+      delete-by-moving-to-trash t
+      kept-old-versions 6               ; oldest versions to keep when a new numbered backup is made (default: 2)
+      kept-new-versions 9               ; newest versions to keep when a new numbered backup is made (default: 2)
+      auto-save-default t               ; auto-save every buffer that visits a file
+      auto-save-timeout 20              ; number of seconds idle time before auto-save (default: 30)
+      auto-save-interval 200            ; number of keystrokes between auto-saves (default: 300)
+      )
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -226,11 +377,14 @@
  '(cider-cljs-lein-repl
    "(do (require 'figwheel-sidecar.repl-api) (figwheel-sidecar.repl-api/start-figwheel!) (figwheel-sidecar.repl-api/cljs-repl))")
  '(cider-debug-use-overlays t)
+ '(cider-default-cljs-repl (quote figwheel))
  '(cider-mode-line nil)
  '(cider-mode-line-show-connection nil)
+ '(cider-repl-pop-to-buffer-on-connect (quote display-only))
  '(cider-show-error-buffer nil)
  '(cider-use-overlays t)
  '(company-auto-complete t)
+ '(company-auto-complete-chars nil)
  '(company-idle-delay 0)
  '(company-minimum-prefix-length 2)
  '(company-quickhelp-color-background "#b0b0b0")
@@ -263,10 +417,11 @@
  '(evil-lispy-cursor (quote ("blue" box)))
  '(evil-want-Y-yank-to-eol t)
  '(fci-rule-color "#3C3D37")
+ '(flx-ido-mode t)
  '(frame-background-mode (quote light))
  '(global-company-mode nil)
  '(global-evil-visualstar-mode t)
- '(global-linum-mode t)
+ '(global-linum-mode nil)
  '(global-visual-line-mode t)
  '(highlight-changes-colors (quote ("#FD5FF0" "#AE81FF")))
  '(highlight-symbol-colors
@@ -295,25 +450,36 @@
  '(hl-sexp-background-color "#efebe9")
  '(ido-completion-buffer "nil")
  '(ido-everywhere t)
+ '(ido-mode (quote both) nil (ido))
  '(lispyville-key-theme
    (quote
     (operators c-w slurp/barf-cp additional-insert additional additional-movement)))
  '(magit-diff-use-overlays nil)
  '(magit-display-buffer-function (quote magit-display-buffer-same-window-except-diff-v1))
  '(magit-save-repository-buffers nil)
+ '(muse-project-alist nil)
  '(nrepl-message-colors
    (quote
     ("#336c6c" "#205070" "#0f2050" "#806080" "#401440" "#6c1f1c" "#6b400c" "#23733c")))
  '(org-agenda-files nil)
  '(package-selected-packages
    (quote
-    (simpleclip flycheck-pos-tip flycheck-clojure ejc-sql solarized-theme spacemacs-theme spaceline-all-the-icons spaceline powerline-evil airline-themes hl-todo helm-spotify-plus spotify benchmark-init fill-column-indicator company-tern xref-js2 js2-refactor js2-mode evil-visualstar general evil-leader json-mode better-shell dired-quick-sort pdf-tools dired-hide-dotfiles treemacs-evil treemacs use-package nyan-mode vimish-fold lsp-mode yaml-mode adjust-parens highlight-parentheses aggressive-indent evil-smartparens evil-cleverparens smartparens evil-surround zenburn-theme anti-zenburn-theme color-theme-sanityinc-solarized color-theme-solarized highlight2clipboard evil-lispy lispyville exwm diminish evil-magit neotree org align-cljlet clj-refactor el-get runner 4clojure flx-ido which-key with-editor counsel evil-escape helm-clojuredocs clojure-cheatsheet synosaurus sx org-pomodoro clojure-mode cider parinfer ace-window key-chord magit-gh-pulls achievements avy helm-ag-r ag org-jira projectile magit company helm-ag omnisharp helm monokai-theme)))
+    (gh-md flycheck quick-peek flycheck-inline company-racer racer cargo flycheck-rust csv-mode flymd dockerfile-mode writeroom-mode gnuplot company-terraform keychain-environment evil-terminal-cursor-changer dired-sidebar terraform-mode org-bullets olivetti muse simpleclip flycheck-pos-tip flycheck-clojure ejc-sql solarized-theme spacemacs-theme spaceline-all-the-icons spaceline powerline-evil airline-themes hl-todo helm-spotify-plus spotify benchmark-init fill-column-indicator company-tern xref-js2 js2-refactor js2-mode evil-visualstar general evil-leader json-mode better-shell dired-quick-sort pdf-tools dired-hide-dotfiles treemacs-evil treemacs use-package nyan-mode vimish-fold lsp-mode yaml-mode adjust-parens highlight-parentheses aggressive-indent evil-smartparens evil-cleverparens smartparens evil-surround zenburn-theme anti-zenburn-theme color-theme-sanityinc-solarized color-theme-solarized highlight2clipboard evil-lispy lispyville exwm diminish evil-magit neotree org align-cljlet clj-refactor el-get runner 4clojure flx-ido which-key with-editor counsel evil-escape helm-clojuredocs clojure-cheatsheet synosaurus sx org-pomodoro clojure-mode cider parinfer ace-window key-chord magit-gh-pulls achievements avy helm-ag-r ag org-jira projectile magit company helm-ag omnisharp helm monokai-theme)))
  '(pdf-view-midnight-colors (quote ("#232333" . "#c7c7c7")))
  '(pos-tip-background-color "#FFFACE")
  '(pos-tip-foreground-color "#272822")
  '(powerline-default-separator (quote wave))
+ '(projectile-globally-ignored-directories
+   (quote
+    (".idea" ".eunit" ".git" ".hg" ".fslckout" ".bzr" "_darcs" ".tox" ".svn" "build" "target" "node_modules")))
+ '(projectile-globally-ignored-files (quote ("TAGS" "*.log" "*.tmp")))
  '(rich-minority-mode nil)
  '(rm-blacklist (quote ("\"vc-mode\"")))
+ '(safe-local-variable-values
+   (quote
+    ((cider-refresh-after-fn . "integrant.repl/resume")
+     (cider-refresh-before-fn . "integrant.repl/suspend")
+     (cider-clojure-cli-global-options . "-A:dev:build:dev/build:dev/cljs"))))
  '(shell-pop-universal-key "C-t")
  '(show-paren-mode t)
  '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#eee8d5" 0.2))
@@ -360,3 +526,42 @@
  '(cursor ((t (:background "navy")))))
 
 (put 'dired-find-alternate-file 'disabled nil)
+
+(eval-after-load "markdown-mode"
+  '(defun markdown-display-inline-images ()
+  "Add inline image overlays to image links in the buffer.
+This can be toggled with `markdown-toggle-inline-images'
+or \\[markdown-toggle-inline-images]."
+  (interactive)
+  (unless (display-images-p)
+    (error "Cannot show images"))
+  (save-excursion
+    (save-restriction
+      (widen)
+      (goto-char (point-min))
+      (while (re-search-forward markdown-regex-link-inline nil t)
+        (let ((start (match-beginning 0))
+              (end (match-end 0))
+              (file (match-string-no-properties 6)))
+          (when (file-exists-p file)
+            (let* ((abspath (if (file-name-absolute-p file)
+                                file
+                              (concat default-directory file)))
+                   (image
+                    (if (and markdown-max-image-size
+                             (image-type-available-p 'imagemagick))
+                        (create-image
+                         abspath 'imagemagick nil
+                         :max-width (car markdown-max-image-size)
+                         :max-height (cdr markdown-max-image-size))
+                      (create-image abspath))))
+              (when image
+                (setq newStart (+ end ))
+                (setq newEnd (+ end 1))
+                (let ((ov (make-overlay newStart newEnd)))
+                  (message "%s" newEnd)
+                  (overlay-put ov 'display image)
+                  (overlay-put ov 'face 'default)
+                  (overlay-put ov 'before-string "\n\n")
+                  (push ov markdown-inline-image-overlays))))))))))
+)
