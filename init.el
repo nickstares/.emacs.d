@@ -5,14 +5,23 @@
 (package-initialize) ;; You might already have this line
 ;; (defvar mswindows-p (string-match "windows" (symbol-name system-type)))
 
+(require 'keychain-environment)
+(keychain-refresh-environment)
+
+(require 'exec-path-from-shell)
+(exec-path-from-shell-copy-env "SSH_AGENT_PID")
+(exec-path-from-shell-copy-env "SSH_AUTH_SOCK")
+
 (defun edit-init ()
+  "Open init.el"
   (interactive)
   (find-file "~/.emacs.d/init.el"))
 
-(load-theme 'solarized-light t)
+; don't use solarized theme if inside term which may already have a theme
+(if (display-graphic-p)
+    (load-theme 'solarized-light t))
 
 (exec-path-from-shell-initialize)
-
 (set-scroll-bar-mode nil)
 (tool-bar-mode -1)
 (setq visual-line-mode 1)
@@ -93,7 +102,7 @@
   (evil-mode 1))
 
 (require 'magit)
-(unbind-key "ESC" magit-mode-map)
+(unbind-key "ESC" magit-status-mode-map)
 
 (use-package evil-magit
   :ensure t)
@@ -111,15 +120,24 @@
   :ensure t
   :config
   (setq evil-escape-key-sequence "kj")
-  (setq evil-escape-mode 1))
   (setq evil-escape-mode 1)
   (setq evil-escape-excluded-major-modes
-	(list 'magit-status-mode 'magit-refs-mode 'magit-log-mode)))
+	(list 'magit-status-mode 'magit-refs-mode 'magit-log-mode 'magit-diff-mode)))
 
+(require 'evil)
+(defun bobby ()
+  (interactive)
+  (evil-mode 0)
+  (evil-escape-mode 0))
 
+(defun nick ()
+  (interactive)
+  (evil-mode 1)
+  (evil-escape-mode 1))
 
-(define-key evil-normal-state-map (kbd "C-e") 'end-of-line)
+(define-key evil-normal-state-map (kbd "") 'end-of-line)
 (define-key evil-normal-state-map (kbd "C-a") 'back-to-indentation)
+(define-key evil-normal-state-map (kbd "C-e") 'end-of-line)
 (define-key evil-normal-state-map (kbd "C-f") 'forward-char)
 (define-key evil-normal-state-map (kbd "C-b") 'backward-char)
 (define-key evil-insert-state-map (kbd "C-a") 'back-to-indentation)
@@ -127,6 +145,14 @@
 (define-key evil-insert-state-map (kbd "C-k") 'kill-visual-line)
 (define-key evil-insert-state-map (kbd "C-f") 'forward-char)
 (define-key evil-insert-state-map (kbd "C-b") 'backward-char)
+
+(use-package treemacs
+  :ensure t
+  :defer t)
+
+(use-package treemacs-evil
+  :after treemacs evil
+  :ensure t)
 
 (defun evil-keyboard-quit ()
   "Keyboard quit and force normal state."
@@ -144,15 +170,14 @@
 
 (add-hook 'clojure-mode-hook 'parinfer-mode)
 (add-hook 'clojure-mode-hook 'evil-cleverparens-mode)
+(add-hook 'clojure-mode-hook 'flycheck-mode)
+(add-hook 'clojure-mode-hook 'company-mode)
 
 ;; DIRED
 (require 'dired)
 (define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file) ; was dired-advertised-find-file
 (define-key dired-mode-map (kbd "DEL") (lambda () (interactive) (find-alternate-file "..")))  ; was dired-up-directory
 (define-key dired-mode-map (kbd "^") (lambda () (interactive) (find-alternate-file "..")))  ; was dired-up-directory
-;; (evil-collection-define-key 'normal 'dired-mode-map
-;;   (kbd "DEL") (lambda () (interactive) (find-alternate-file "..")))  ; was dired-up-directory
-
 (evil-collection-define-key 'normal 'dired-mode-map
   (kbd "DEL") (lambda () (interactive) (find-alternate-file "..")))  ; was dired-up-directory
 (evil-collection-define-key 'normal 'dired-mode-map
@@ -177,6 +202,9 @@
   :config
   (setq cider-repl-pop-to-buffer-on-connect nil))
 
+(use-package company
+  :config
+  (global-company-mode))
 
 (defadvice cider-inspect (around evil activate)
     "In normal-state or motion-state, last sexp ends at point."
@@ -187,28 +215,37 @@
       ad-do-it))
 
 
-;; (require 'magit)
-
-;; (defun magit-publish ()
-;;   (interactive)
-;;   (when (yes-or-no-p "Publish this branch? ")
-;;     (eshell-command
-;;      (format "git push -u origin %s" (magit-get-current-branch)))))
-;; ;; (define-key magit-mode-map (kbd "k") #'previous-line)
-;; (define-key magit-mode-map (kbd "K") 'magit-discard)
-;; (define-key magit-mode-map (kbd "j") #'next-line)
-
-
 (evil-set-initial-state 'cider-repl-mode 'insert)
 (evil-set-initial-state 'cider-inspector-mode 'normal)
 (evil-set-initial-state 'shell-mode 'insert)
-
 
  (define-key evil-motion-state-map "j" 'evil-next-visual-line)
  (define-key evil-motion-state-map "k" 'evil-previous-visual-line)
   ;; Also in visual mode
  (define-key evil-visual-state-map "j" 'evil-next-visual-line)
  (define-key evil-visual-state-map "k" 'evil-previous-visual-line)
+
+(setq cljr-warn-on-eval nil)
+(require 'flycheck-joker)
+
+;; (hs-minor-mode 1)
+(global-flycheck-mode 1)
+
+(defvar --backup-directory (concat user-emacs-directory "backups"))
+(if (not (file-exists-p --backup-directory))
+        (make-directory --backup-directory t))
+(setq backup-directory-alist `(("." . ,--backup-directory)))
+(setq make-backup-files t               ; backup of a file the first time it is saved.
+      backup-by-copying t               ; don't clobber symlinks
+      version-control t                 ; version numbers for backup files
+      delete-old-versions t             ; delete excess backup files silently
+      delete-by-moving-to-trash t
+      kept-old-versions 6               ; oldest versions to keep when a new numbered backup is made (default: 2)
+      kept-new-versions 9               ; newest versions to keep when a new numbered backup is made (default: 2)
+      auto-save-default t               ; auto-save every buffer that visits a file
+      auto-save-timeout 20              ; number of seconds idle time before auto-save (default: 30)
+      auto-save-interval 200            ; number of keystrokes between auto-saves (default: 300)
+      )
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -231,6 +268,7 @@
  '(cider-show-error-buffer nil)
  '(cider-use-overlays t)
  '(company-auto-complete t)
+ '(company-auto-complete-chars nil)
  '(company-idle-delay 0)
  '(company-minimum-prefix-length 2)
  '(company-quickhelp-color-background "#b0b0b0")
@@ -266,7 +304,7 @@
  '(frame-background-mode (quote light))
  '(global-company-mode nil)
  '(global-evil-visualstar-mode t)
- '(global-linum-mode t)
+ '(global-linum-mode nil)
  '(global-visual-line-mode t)
  '(highlight-changes-colors (quote ("#FD5FF0" "#AE81FF")))
  '(highlight-symbol-colors
@@ -301,17 +339,22 @@
  '(magit-diff-use-overlays nil)
  '(magit-display-buffer-function (quote magit-display-buffer-same-window-except-diff-v1))
  '(magit-save-repository-buffers nil)
+ '(muse-project-alist nil)
  '(nrepl-message-colors
    (quote
     ("#336c6c" "#205070" "#0f2050" "#806080" "#401440" "#6c1f1c" "#6b400c" "#23733c")))
  '(org-agenda-files nil)
  '(package-selected-packages
    (quote
-    (simpleclip flycheck-pos-tip flycheck-clojure ejc-sql solarized-theme spacemacs-theme spaceline-all-the-icons spaceline powerline-evil airline-themes hl-todo helm-spotify-plus spotify benchmark-init fill-column-indicator company-tern xref-js2 js2-refactor js2-mode evil-visualstar general evil-leader json-mode better-shell dired-quick-sort pdf-tools dired-hide-dotfiles treemacs-evil treemacs use-package nyan-mode vimish-fold lsp-mode yaml-mode adjust-parens highlight-parentheses aggressive-indent evil-smartparens evil-cleverparens smartparens evil-surround zenburn-theme anti-zenburn-theme color-theme-sanityinc-solarized color-theme-solarized highlight2clipboard evil-lispy lispyville exwm diminish evil-magit neotree org align-cljlet clj-refactor el-get runner 4clojure flx-ido which-key with-editor counsel evil-escape helm-clojuredocs clojure-cheatsheet synosaurus sx org-pomodoro clojure-mode cider parinfer ace-window key-chord magit-gh-pulls achievements avy helm-ag-r ag org-jira projectile magit company helm-ag omnisharp helm monokai-theme)))
+    (flycheck-joker clojure-snippets ein writeroom-mode gnuplot company-terraform keychain-environment evil-terminal-cursor-changer dired-sidebar terraform-mode org-bullets olivetti muse simpleclip flycheck-pos-tip flycheck-clojure ejc-sql solarized-theme spacemacs-theme spaceline-all-the-icons spaceline powerline-evil airline-themes hl-todo helm-spotify-plus spotify benchmark-init fill-column-indicator company-tern xref-js2 js2-refactor js2-mode evil-visualstar general evil-leader json-mode better-shell dired-quick-sort pdf-tools dired-hide-dotfiles treemacs-evil treemacs use-package nyan-mode vimish-fold lsp-mode yaml-mode adjust-parens highlight-parentheses aggressive-indent evil-smartparens evil-cleverparens smartparens evil-surround zenburn-theme anti-zenburn-theme color-theme-sanityinc-solarized color-theme-solarized highlight2clipboard evil-lispy lispyville exwm diminish evil-magit neotree org align-cljlet clj-refactor el-get runner 4clojure flx-ido which-key with-editor counsel evil-escape helm-clojuredocs clojure-cheatsheet synosaurus sx org-pomodoro clojure-mode cider parinfer ace-window key-chord magit-gh-pulls achievements avy helm-ag-r ag org-jira projectile magit company helm-ag omnisharp helm monokai-theme)))
  '(pdf-view-midnight-colors (quote ("#232333" . "#c7c7c7")))
  '(pos-tip-background-color "#FFFACE")
  '(pos-tip-foreground-color "#272822")
  '(powerline-default-separator (quote wave))
+ '(projectile-globally-ignored-directories
+   (quote
+    (".idea" ".eunit" ".git" ".hg" ".fslckout" ".bzr" "_darcs" ".tox" ".svn" "build" "target" "node_modules")))
+ '(projectile-globally-ignored-files (quote ("TAGS" "*.log" "*.tmp")))
  '(rich-minority-mode nil)
  '(rm-blacklist (quote ("\"vc-mode\"")))
  '(shell-pop-universal-key "C-t")
