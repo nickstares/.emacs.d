@@ -34,9 +34,22 @@
 
 ;; ORG
 ;; (org-indent-mode)
+;; (set-face-attribute 'org-done nil :strike-through t)
+;; (set-face-attribute 'org-headline-done nil :strike-through t)
+
+;; (setq org-fontify-done-headline t)
+;; (custom-set-faces
+;;  '(org-done ((t (:foreground "Red"   
+;;                  :weight normal
+;;                  :strike-through t))))
+;;  '(org-headline-done 
+;;             ((((class color) (min-colors 16) (background dark)) 
+;;                (:foreground "LightSalmon" :strike-through t)))))
 
 (set-face-attribute 'default nil :font "Menlo-15")
+
 ;; (set-face-attribute 'default nil :font "ETBembo-15")
+
 
 (editorconfig-mode 1)
 
@@ -168,10 +181,12 @@
               ("C-a" . back-to-indentation)
               ("M-m" . move-beginning-of-line)))
 
-(add-hook 'clojure-mode-hook 'parinfer-mode)
-(add-hook 'clojure-mode-hook 'evil-cleverparens-mode)
-(add-hook 'clojure-mode-hook 'flycheck-mode)
-(add-hook 'clojure-mode-hook 'company-mode)
+
+
+
+(add-hook 'emacs-lisp-mode-hook 'evil-cleverparens-mode)
+
+(evil-collection-define-key 'normal 'emacs-lisp-mode-map (kbd "RET") 'eval-last-sexp)
 
 ;; DIRED
 (require 'dired)
@@ -196,15 +211,36 @@
 (global-set-key "\C-x2" (lambda () (interactive)(split-window-vertically) (other-window 1)))
 (global-set-key "\C-x3" (lambda () (interactive)(split-window-horizontally) (other-window 1)))
 
-(use-package cider
-  :bind (:map cider-mode-map
-              ("C-c M-." . cider-find-var))
-  :config
-  (setq cider-repl-pop-to-buffer-on-connect nil))
 
 (use-package company
   :config
   (global-company-mode))
+
+(general-create-definer cargo-leader-def
+  ;; :prefix my-local-leader
+  :prefix "SPC e")
+
+(cargo-leader-def
+  :states 'normal
+  :keymaps 'cargo-minor-mode-map
+  "b" 'cargo-process-run)
+
+;; CLOJURE
+(general-create-definer cider-leader-def
+  :prefix "SPC c")
+
+(cider-leader-def
+ :states 'normal
+ :keymaps 'cider-mode-map
+ "j" 'cider-jack-in
+ "c" 'cider-eval-defun-at-point
+ "e b" 'cider-eval-buffer) 
+
+(use-package cider
+  :bind (:map cider-mode-map
+	      ("C-c M-." . cider-find-var))
+  :config
+  (setq cider-repl-pop-to-buffer-on-connect nil))
 
 (defadvice cider-inspect (around evil activate)
     "In normal-state or motion-state, last sexp ends at point."
@@ -214,10 +250,20 @@
           ad-do-it)
       ad-do-it))
 
+(add-hook 'clojure-mode-hook 'parinfer-mode)
+(add-hook 'clojure-mode-hook 'evil-cleverparens-mode)
+(add-hook 'clojure-mode-hook 'flycheck-mode)
+(add-hook 'clojure-mode-hook 'company-mode)
+(evil-collection-define-key 'normal 'evil-cleverparens-mode-map (kbd "[") 'evil-cp-previous-closing)
+(evil-collection-define-key 'normal 'evil-cleverparens-mode-map (kbd "]") 'evil-cp-next-closing)
+(evil-collection-define-key 'normal 'cider-mode-map (kbd "RET") 'cider-eval-last-sexp)
+
+;; END CLOJURE
 
 (evil-set-initial-state 'cider-repl-mode 'insert)
 (evil-set-initial-state 'cider-inspector-mode 'normal)
 (evil-set-initial-state 'shell-mode 'insert)
+(evil-set-initial-state 'eshell-mode 'insert)
 
  (define-key evil-motion-state-map "j" 'evil-next-visual-line)
  (define-key evil-motion-state-map "k" 'evil-previous-visual-line)
@@ -247,6 +293,79 @@
       auto-save-interval 200            ; number of keystrokes between auto-saves (default: 300)
       )
 
+
+(require 'cider)
+(setq incanter-temp-chart-file "/tmp/chart.png")
+(setq incanter-wait-time 500)
+
+
+(defun incanter-display-image-inline (buffer-name file-name)
+  "Use `BUFFER-NAME' to display the image in `FILE-NAME'.
+  Checks whether `BUFFER-NAME' already exists, and if not create
+  as needed."
+  (switch-to-buffer-other-window buffer-name)
+  (iimage-mode t)
+  (read-only-mode -1)
+  (kill-region (point-min) (point-max))
+  ;; unless we clear the cache, the same cached image will
+  ;; always get re-displayed.
+  (clear-image-cache nil)
+  (insert-image (create-image file-name))
+  (read-only-mode t))
+
+(defun incanter-eval-and-display-chart ()
+  "Evaluate the expression preceding point
+   and display the chart into a popup buffer"
+  (interactive)
+  (let ((old-buf (current-buffer)))
+    (condition-case nil
+                    (delete-file incanter-temp-chart-file)
+                    (error nil))
+    (cider-eval-last-sexp)
+    (sleep-for 0 incanter-wait-time)
+    (incanter-display-image-inline "*incanter-chart*" incanter-temp-chart-file)
+    (switch-to-buffer-other-window old-buf)))
+
+(define-key cider-mode-map
+    (kbd "C-c i") #'incanter-eval-and-display-chart)
+
+(add-hook 'rust-mode-hook
+          (lambda ()
+	    ;; (local-set-key (kbd ", c r") #'cargo-process-run)
+            (local-set-key (kbd "M-q") #'rust-format-buffer)))
+(add-hook 'rust-mode-hook 'cargo-minor-mode)
+
+;; colorize cargo process
+(require 'ansi-color)
+(defun my/ansi-colorize-buffer ()
+  (let ((buffer-read-only nil))
+    (ansi-color-apply-on-region (point-min) (point-max))))
+(add-hook 'compilation-filter-hook 'my/ansi-colorize-buffer)
+
+(setq racer-cmd "~/.cargo/bin/racer") ;; Rustup binaries PATH
+(setq racer-rust-src-path "/Users/nick/source/rust/src") ;; Rust source code PATH
+
+(add-hook 'rust-mode-hook #'racer-mode)
+(add-hook 'racer-mode-hook #'eldoc-mode)
+(add-hook 'racer-mode-hook #'company-mode)
+(add-hook 'flycheck-mode-hook #'flycheck-rust-setup)
+
+
+;; see https://github.com/politza/pdf-tools/issues/480
+(setenv "PKG_CONFIG_PATH" "/usr/local/lib/pkgconfig:/usr/local/Cellar/libffi/3.2.1/lib/pkgconfig")
+
+(defun my/modify-org-done-face ()
+  (setq org-fontify-done-headline t)
+  (set-face-attribute 'org-done nil :strike-through t)
+  (set-face-attribute 'org-headline-done nil
+		      :foreground "light grey"
+                      :strike-through t))
+
+(add-hook 'org-mode-hook 'my/modify-org-done-face)
+(setq org-fontify-done-headline t)
+(set-face-attribute 'org-done nil :strike-through t)
+(set-face-attribute 'org-headline-done nil :strike-through t)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -266,6 +385,7 @@
  '(cider-mode-line nil)
  '(cider-mode-line-show-connection nil)
  '(cider-show-error-buffer nil)
+ '(cider-stacktrace-default-filters (quote (tooling dup clojure java REPL)))
  '(cider-use-overlays t)
  '(company-auto-complete t)
  '(company-auto-complete-chars nil)
@@ -346,7 +466,7 @@
  '(org-agenda-files nil)
  '(package-selected-packages
    (quote
-    (flycheck-joker clojure-snippets ein writeroom-mode gnuplot company-terraform keychain-environment evil-terminal-cursor-changer dired-sidebar terraform-mode org-bullets olivetti muse simpleclip flycheck-pos-tip flycheck-clojure ejc-sql solarized-theme spacemacs-theme spaceline-all-the-icons spaceline powerline-evil airline-themes hl-todo helm-spotify-plus spotify benchmark-init fill-column-indicator company-tern xref-js2 js2-refactor js2-mode evil-visualstar general evil-leader json-mode better-shell dired-quick-sort pdf-tools dired-hide-dotfiles treemacs-evil treemacs use-package nyan-mode vimish-fold lsp-mode yaml-mode adjust-parens highlight-parentheses aggressive-indent evil-smartparens evil-cleverparens smartparens evil-surround zenburn-theme anti-zenburn-theme color-theme-sanityinc-solarized color-theme-solarized highlight2clipboard evil-lispy lispyville exwm diminish evil-magit neotree org align-cljlet clj-refactor el-get runner 4clojure flx-ido which-key with-editor counsel evil-escape helm-clojuredocs clojure-cheatsheet synosaurus sx org-pomodoro clojure-mode cider parinfer ace-window key-chord magit-gh-pulls achievements avy helm-ag-r ag org-jira projectile magit company helm-ag omnisharp helm monokai-theme)))
+    (pdf-tools flycheck-rust racer cargo flycheck company-racer flycheck-inline rust-mode evil-vimish-fold yafolding flycheck-joker clojure-snippets ein writeroom-mode gnuplot company-terraform keychain-environment evil-terminal-cursor-changer dired-sidebar terraform-mode org-bullets olivetti muse simpleclip flycheck-pos-tip flycheck-clojure ejc-sql solarized-theme spacemacs-theme spaceline-all-the-icons spaceline powerline-evil airline-themes hl-todo helm-spotify-plus spotify benchmark-init fill-column-indicator company-tern xref-js2 js2-refactor js2-mode evil-visualstar general evil-leader json-mode better-shell dired-quick-sort dired-hide-dotfiles treemacs-evil treemacs use-package nyan-mode vimish-fold lsp-mode yaml-mode adjust-parens highlight-parentheses aggressive-indent evil-smartparens evil-cleverparens smartparens evil-surround zenburn-theme anti-zenburn-theme color-theme-sanityinc-solarized color-theme-solarized highlight2clipboard evil-lispy lispyville exwm diminish evil-magit neotree org align-cljlet clj-refactor el-get runner 4clojure flx-ido which-key with-editor counsel evil-escape helm-clojuredocs clojure-cheatsheet synosaurus sx org-pomodoro clojure-mode cider parinfer ace-window key-chord magit-gh-pulls achievements avy helm-ag-r ag org-jira projectile magit company helm-ag omnisharp helm monokai-theme)))
  '(pdf-view-midnight-colors (quote ("#232333" . "#c7c7c7")))
  '(pos-tip-background-color "#FFFACE")
  '(pos-tip-foreground-color "#272822")
