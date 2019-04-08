@@ -3,11 +3,12 @@
 
 (setq url-cookie-storage
  '((".clojuredocs.org"
-  [url-cookie "HttpOnly" nil "30 Jan 19 14:01:46 [GMT]" "/" ".clojuredocs.org" nil]
-  [url-cookie "__cfduid" "df2cf42d3a3746fef23546d7d1a8077441517320906" "30 Jan 19 14:01:46 [GMT]" "/" ".clojuredocs.org" nil]))
+  [url-cookie "__cfduid" "ddfbeab50bd94046ce31ce6038e0e0a451550608054" "Wed, 19-Feb-20 20:27:34 GMT" "/" ".clojuredocs.org" nil]))
 )
 (setq url-cookie-secure-storage
- 'nil)
+ '((".github.com"
+  [url-cookie "logged_in" "no" "Sun, 13 Feb 2039 08:19:20 -0000" "/" ".github.com" t]))
+)
 
 ;; Local Variables:
 ;; version-control: never

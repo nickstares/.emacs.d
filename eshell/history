@@ -1,128 +1,128 @@
 ls
-cd 1
+cd te
+cd tenant-onboarding/
 ls
-cd 0
+e
+which gnuplot
+cd source
+git clone https://github.com/madvas/catlantis.git
+cd catlantis/
 ls
-npm install -g ijavascript
-apm install hydrogen
-cd ..
-lein repl
-cd web
-lein repl
-lein repl
 ls
-ls -a
-lein repl
-cd ~
 ls
-ls -a
-cd .lein
 ls
-mv repl-port old-repl-port
-touch repl-port
-cd self-installs/
 ls
-cd ..
 ls
-cd ..
 ls
-ls -a
 ls
-c website/
-cd website
-hugo server
-cd ..
-cd ..
-hugo server --verbose
 ls
 ls -la
-hugo server -l
-hugo server --log
-hugo server --log
-hugo server --log
-hugo server --log
-cd ..
-hugo new site test-website
-cd test-website/
 ls
-hugo new theme
-hugo new theme modern-buisiness
-ls
-cd content/
-ls
-cd ..
-cd archetypes/
-ls
-cd ..
-cd layouts/
-ls
+find -name *toyota*
+find -L -name *toyota*
+find -L --name *toyota*
+find -L -name *toyota*
+find -L -name *toyota* .
+find -L . *toyota*
+find -L . toyota
 cd ..
 cd ..
-cd website
+find -L . toyota
 ls
-hugo server --log
-hugo server --help
-hugo server
-hugo server --disableFastRender
-hugo server --disableFastRender --log
-hugo server --disableFastRender --log
-hugo server --disableFastRender --log
-hugo server --disableFastRender --log
-hugo server --disableFastRender --log
+mv events.cljs\\ \ hey events.cljs
+mv events.cljs\\ \ hey ./events.cljs
+open .
+d
+man pkg-config
+curl https://gitlab.com/eval/ohmyclj/raw/0.2/libexec/ohmyclj > ~/bin/ohmyclj
+curl https://gitlab.com/eval/ohmyclj/raw/0.2/libexec/ohmyclj > /usr/local/bin/ohmyclj
+chmod +x /usr/local/bin/ohmyclj
 ls
-cd layouts/
-ls
-rm #index.html#
-rm #index.html#
-rm #index.html#
-hugo server --disableFastRender --log
-cd ..
-hugo server --disableFastRender --log
-hugo server --disableFastRender --log
-hugo server --disableFastRender --log
-hugo server
-hugo server
-hugo server
-cd ../../layouts/
-rm -rf about.html\~
-ls
-rm -rf about.html
-rm -rf about/
-ls
-cd section/
-ls
-rm -rf about.html\~
-rm -rf about.html
-rm -rf about/
 ls
 cd ..
-ls
-cd ..
-cd content/
-ls
-cd about/team
-ls
-mv images ../
-ls
 cd ..
 ls
+touch foo.clj
+./foo.clj
+chmod +x foo.clj
+./foo.clj
+./foo.clj
+./foo.clj
 ls
+cd source/
 ls
-s
+lein new gorilla
+cd gorilla-test/
+cd ..
 ls
+cd gorilla/
+lein gorilla
+lein gorilla
+cd source/
 ls
+cd ep43-data-science-kixi-stats/
 ls
-cd ~/Downloads/
+clj
+eshell
+cd ..
+cd ..
+cd source/
+lein new clj-mxnet hello
 ls
-cd auto-selfcontrol-master/
+cd hello_rs/
+cd ..
 ls
-sudo /usr/bin/python .autoselfcontrol.py
+cd hello
 ls
-sudo python ./auto-selfcontrol.py
-sudo python ./auto-selfcontrol.py
-cd ~/source
+lein run
+lein notebook
+ps ax | grep java
+lein stop
+ps ax | grep lein
 ls
-git clone git@github.com:onyx-platform/onyx-starter.git
+pandoc wendys.org -out wendys.pdf
+pandoc wendys.org -o wendys.pdf
+open wendys.pdf
+pandoc wendys.org -o wendys.pdf
+open wendys.pdf
+pandoc wendys.org -o wendys.pdf
+open wendys.pdf
+pandoc wendys.org -o wendys.pdf
+open wendys.pdf
+pandoc wendys.org -o wendys.pdf
+open wendys.pdf
+pandoc wendys.org -o wendys.pdf
+open wendys.pdf
+kj b
+pandoc wendys.org -o wendys.pdf
+open wendys.pdf
+pandoc wendys.org -o wendys.pdf
+open wendys.pdf
+pandoc wendys.org -o wendys.pdf
+open wendys.pdf
+pandoc wendys.org -o wendys.pdf
+open wendys.pdf
+pandoc wendys.org -o wendys.pdf
+open wendys.pdf
+pandoc wendys.org -o wendys.pdf
+open wendys.pdf
 ls
-git clone https://github.com/onyx-platform/onyx-starter.git
-cd onyx-starter/
+cd GMU/FIRMS/
+ls
+cargo new hello-world
+cd hello-world/
+ls
+nc -l -p 6142
+which ncat
+nc -l 6142
+nc -l 6142
+cd ..
+ls
+cd echo-server/
+nc -l 6142
+nc -l 6142
+nc -l 1235
+nc -l 1234
+nc -l 1234
+cargo bench
+cargo bench

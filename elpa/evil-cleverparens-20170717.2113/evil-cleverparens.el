@@ -1981,8 +1981,6 @@ and/or beginning."
     ("M-h" . evil-cp-beginning-of-defun)
     ("["   . evil-cp-previous-opening)
     ("]"   . evil-cp-next-closing)
-    ("{"   . evil-backward-paragraph)
-    ("}"   . evil-forward-paragraph)
     ("("   . evil-cp-backward-up-sexp)
     (")"   . evil-cp-up-sexp)))
 
