@@ -5,6 +5,7 @@
 (package-initialize) ;; You might already have this line
 ;; (defvar mswindows-p (string-match "windows" (symbol-name system-type)))
 
+(load-theme 'solarized-light t)
 
 ;; (require 'keychain-environment)
 ;; (keychain-refresh-environment)
@@ -63,7 +64,7 @@
 ;;             ((((class color) (min-colors 16) (background dark)) 
 ;;                (:foreground "LightSalmon" :strike-through t)))))
 
-;; (set-face-attribute 'default nil :font "Menlo-16")
+(set-face-attribute 'default nil :font "Menlo-16")
 ;; (set-face-attribute 'default nil :font "ETBembo-15")
 
 
@@ -137,7 +138,6 @@
 (use-package evil-magit
   :ensure t)
 
-(load-theme 'solarized-light t)
 
 (use-package evil-collection
   :after evil
@@ -291,8 +291,6 @@
               ("C-," . parinfer-toggle-mode)
               ("C-a" . back-to-indentation)
               ("M-m" . move-beginning-of-line)))
-
-
 
 
 (add-hook 'emacs-lisp-mode-hook 'evil-cleverparens-mode)
@@ -593,7 +591,7 @@
  '(org-agenda-files nil)
  '(package-selected-packages
    (quote
-    (esup pdf-tools flycheck-rust racer cargo flycheck company-racer flycheck-inline rust-mode evil-vimish-fold yafolding flycheck-joker clojure-snippets ein writeroom-mode gnuplot company-terraform keychain-environment evil-terminal-cursor-changer dired-sidebar terraform-mode org-bullets olivetti muse simpleclip flycheck-pos-tip flycheck-clojure ejc-sql solarized-theme spacemacs-theme spaceline-all-the-icons spaceline powerline-evil airline-themes hl-todo helm-spotify-plus spotify benchmark-init fill-column-indicator company-tern xref-js2 js2-refactor js2-mode evil-visualstar general evil-leader json-mode better-shell dired-quick-sort dired-hide-dotfiles treemacs-evil treemacs use-package nyan-mode vimish-fold lsp-mode yaml-mode adjust-parens highlight-parentheses aggressive-indent evil-smartparens evil-cleverparens smartparens evil-surround zenburn-theme anti-zenburn-theme color-theme-sanityinc-solarized color-theme-solarized highlight2clipboard evil-lispy lispyville exwm diminish evil-magit neotree org align-cljlet clj-refactor el-get runner 4clojure flx-ido which-key with-editor counsel evil-escape helm-clojuredocs clojure-cheatsheet synosaurus sx org-pomodoro clojure-mode cider parinfer ace-window key-chord magit-gh-pulls achievements avy helm-ag-r ag org-jira projectile magit company helm-ag omnisharp helm monokai-theme)))
+    (esup pdf-tools flycheck-rust racer cargo flycheck company-racer flycheck-inline rust-mode evil-vimish-fold yafolding flycheck-joker clojure-snippets ein writeroom-mode gnuplot company-terraform keychain-environment evil-terminal-cursor-changer dired-sidebar terraform-mode org-bullets olivetti muse simpleclip flycheck-pos-tip flycheck-clojure ejc-sql solarized-theme spaceline powerline-evil airline-themes hl-todo benchmark-init fill-column-indicator company-tern xref-js2 js2-refactor js2-mode evil-visualstar general evil-leader json-mode better-shell dired-quick-sort dired-hide-dotfiles treemacs-evil treemacs use-package nyan-mode vimish-fold lsp-mode yaml-mode adjust-parens highlight-parentheses aggressive-indent evil-smartparens evil-cleverparens smartparens evil-surround color-theme-sanityinc-solarized color-theme-solarized highlight2clipboard evil-lispy lispyville diminish evil-magit neotree org align-cljlet clj-refactor el-get runner flx-ido which-key with-editor counsel evil-escape helm-clojuredocs clojure-cheatsheet clojure-mode cider parinfer ace-window key-chord avy helm-ag-r ag projectile magit company helm-ag helm)))
  '(pdf-view-midnight-colors (quote ("#232333" . "#c7c7c7")))
  '(pos-tip-background-color "#FFFACE")
  '(pos-tip-foreground-color "#272822")
