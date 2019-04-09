@@ -6,17 +6,17 @@
 ;; (defvar mswindows-p (string-match "windows" (symbol-name system-type)))
 
 
-(require 'keychain-environment)
-(keychain-refresh-environment)
+;; (require 'keychain-environment)
+;; (keychain-refresh-environment)
 
-(require 'exec-path-from-shell)
-(exec-path-from-shell-copy-env "SSH_AGENT_PID")
-(exec-path-from-shell-copy-env "SSH_AUTH_SOCK")
+;; (require 'exec-path-from-shell)
+;; (exec-path-from-shell-copy-env "SSH_AGENT_PID")
+;; (exec-path-from-shell-copy-env "SSH_AUTH_SOCK")
 
 ;; (require 'keychain-environment)
 ;; (keychain-refresh-environment)
 
-(require 'exec-path-from-shell)
+;; (require 'exec-path-from-shell)
 ;; (exec-path-from-shell-copy-env "SSH_AGENT_PID")
 ;; (exec-path-from-shell-copy-env "SSH_AUTH_SOCK")
 
@@ -34,13 +34,12 @@
 ;;   (disable-theme 'solarized-light))
 ;; ; don't use solarized theme if inside term which may already have a theme
 ;; (if (display-graphic-p)
-(load-theme 'solarized-light t)
+;; (load-theme 'solarized-light t)
 ;; (toggle-frame-maximized)
-(add-hook 'window-setup-hook 'toggle-frame-maximized t)
-
+;; (add-hook 'window-setup-hook 'toggle-frame-maximized t)
 
 (exec-path-from-shell-initialize)
-(set-scroll-bar-mode nil)
+;; (set-scroll-bar-mode nil)
 (tool-bar-mode -1)
 (setq visual-line-mode 1)
 ;; (setq-default show-trailing-whitespace nil) ;
@@ -64,7 +63,7 @@
 ;;             ((((class color) (min-colors 16) (background dark)) 
 ;;                (:foreground "LightSalmon" :strike-through t)))))
 
-(set-face-attribute 'default nil :font "Menlo-16")
+;; (set-face-attribute 'default nil :font "Menlo-16")
 ;; (set-face-attribute 'default nil :font "ETBembo-15")
 
 
@@ -138,7 +137,7 @@
 (use-package evil-magit
   :ensure t)
 
-;; (load-theme 'solarized-light t)
+(load-theme 'solarized-light t)
 
 (use-package evil-collection
   :after evil
@@ -269,14 +268,6 @@
 (define-key evil-insert-state-map (kbd "C-b") 'backward-char)
 (define-key evil-insert-state-map (kbd "C-p") 'evil-previous-visual-line)
 (define-key evil-insert-state-map (kbd "C-n") 'evil-next-visual-line)
-
-(use-package treemacs
-  :ensure t
-  :defer t)
-
-(use-package treemacs-evil
-  :after treemacs evil
-  :ensure t)
 
 
 (use-package treemacs
@@ -467,7 +458,7 @@
             (local-set-key (kbd "M-q") #'rust-format-buffer)))
 (add-hook 'rust-mode-hook 'cargo-minor-mode)
 
-;; colorize cargo process
+;; useful for colorizing cargo process
 (require 'ansi-color)
 (defun my/ansi-colorize-buffer ()
   (let ((buffer-read-only nil))
@@ -602,8 +593,7 @@
  '(org-agenda-files nil)
  '(package-selected-packages
    (quote
-    (pdf-tools flycheck-rust racer cargo flycheck company-racer flycheck-inline rust-mode evil-vimish-fold yafolding flycheck-joker clojure-snippets ein writeroom-mode gnuplot company-terraform keychain-environment evil-terminal-cursor-changer dired-sidebar terraform-mode org-bullets olivetti muse simpleclip flycheck-pos-tip flycheck-clojure ejc-sql solarized-theme spacemacs-theme spaceline-all-the-icons spaceline powerline-evil airline-themes hl-todo helm-spotify-plus spotify benchmark-init fill-column-indicator company-tern xref-js2 js2-refactor js2-mode evil-visualstar general evil-leader json-mode better-shell dired-quick-sort dired-hide-dotfiles treemacs-evil treemacs use-package nyan-mode vimish-fold lsp-mode yaml-mode adjust-parens highlight-parentheses aggressive-indent evil-smartparens evil-cleverparens smartparens evil-surround zenburn-theme anti-zenburn-theme color-theme-sanityinc-solarized color-theme-solarized highlight2clipboard evil-lispy lispyville exwm diminish evil-magit neotree org align-cljlet clj-refactor el-get runner 4clojure flx-ido which-key with-editor counsel evil-escape helm-clojuredocs clojure-cheatsheet synosaurus sx org-pomodoro clojure-mode cider parinfer ace-window key-chord magit-gh-pulls achievements avy helm-ag-r ag org-jira projectile magit company helm-ag omnisharp helm monokai-theme)))
- 
+    (esup pdf-tools flycheck-rust racer cargo flycheck company-racer flycheck-inline rust-mode evil-vimish-fold yafolding flycheck-joker clojure-snippets ein writeroom-mode gnuplot company-terraform keychain-environment evil-terminal-cursor-changer dired-sidebar terraform-mode org-bullets olivetti muse simpleclip flycheck-pos-tip flycheck-clojure ejc-sql solarized-theme spacemacs-theme spaceline-all-the-icons spaceline powerline-evil airline-themes hl-todo helm-spotify-plus spotify benchmark-init fill-column-indicator company-tern xref-js2 js2-refactor js2-mode evil-visualstar general evil-leader json-mode better-shell dired-quick-sort dired-hide-dotfiles treemacs-evil treemacs use-package nyan-mode vimish-fold lsp-mode yaml-mode adjust-parens highlight-parentheses aggressive-indent evil-smartparens evil-cleverparens smartparens evil-surround zenburn-theme anti-zenburn-theme color-theme-sanityinc-solarized color-theme-solarized highlight2clipboard evil-lispy lispyville exwm diminish evil-magit neotree org align-cljlet clj-refactor el-get runner 4clojure flx-ido which-key with-editor counsel evil-escape helm-clojuredocs clojure-cheatsheet synosaurus sx org-pomodoro clojure-mode cider parinfer ace-window key-chord magit-gh-pulls achievements avy helm-ag-r ag org-jira projectile magit company helm-ag omnisharp helm monokai-theme)))
  '(pdf-view-midnight-colors (quote ("#232333" . "#c7c7c7")))
  '(pos-tip-background-color "#FFFACE")
  '(pos-tip-foreground-color "#272822")
