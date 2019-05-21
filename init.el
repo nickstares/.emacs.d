@@ -210,21 +210,21 @@
 ;;   (remove-hook 'flycheck-mode-hook #'flycheck-inline-mode))
 ;; (use-package rust-mode)
 
-(use-package racer
-  :requires rust-mode
-
-  :init (setq racer-rust-src-path
-              (concat (string-trim
-                       (shell-command-to-string "rustc --print sysroot"))
-                      "/lib/rustlib/src/rust/src"))
-
-  :config
-  (add-hook 'rust-mode-hook #'racer-mode)
-  (add-hook 'racer-mode-hook #'eldoc-mode)
-  (add-hook 'racer-mode-hook #'company-mode))
-
-(with-eval-after-load 'rust-mode
-  (add-hook 'flycheck-mode-hook #'flycheck-rust-setup))
+;; (use-package racer
+;;   :requires rust-mode
+;; 
+;;   :init (setq racer-rust-src-path
+;;               (concat (string-trim
+;;                        (shell-command-to-string "rustc --print sysroot"))
+;;                       "/lib/rustlib/src/rust/src"))
+;; 
+;;   :config
+;;   (add-hook 'rust-mode-hook #'racer-mode)
+;;   (add-hook 'racer-mode-hook #'eldoc-mode)
+;;   (add-hook 'racer-mode-hook #'company-mode))
+;; 
+;; (with-eval-after-load 'rust-mode
+;;   (add-hook 'flycheck-mode-hook #'flycheck-rust-setup))
 
 (setq flycheck-inline-display-function
       (lambda (msg pos)
@@ -457,11 +457,11 @@
 (define-key cider-mode-map
     (kbd "C-c i") #'incanter-eval-and-display-chart)
 
-(add-hook 'rust-mode-hook
-          (lambda ()
-	    ;; (local-set-key (kbd ", c r") #'cargo-process-run)
-            (local-set-key (kbd "M-q") #'rust-format-buffer)))
-(add-hook 'rust-mode-hook 'cargo-minor-mode)
+;; (add-hook 'rust-mode-hook
+;;           (lambda ()
+;; 	    ;; (local-set-key (kbd ", c r") #'cargo-process-run)
+;;             (local-set-key (kbd "M-q") #'rust-format-buffer)))
+;; (add-hook 'rust-mode-hook 'cargo-minor-mode)
 
 ;; useful for colorizing cargo process
 (require 'ansi-color)
@@ -470,13 +470,13 @@
     (ansi-color-apply-on-region (point-min) (point-max))))
 (add-hook 'compilation-filter-hook 'my/ansi-colorize-buffer)
 
-(setq racer-cmd "~/.cargo/bin/racer") ;; Rustup binaries PATH
-(setq racer-rust-src-path "/Users/nick/source/rust/src") ;; Rust source code PATH
-
-(add-hook 'rust-mode-hook #'racer-mode)
-(add-hook 'racer-mode-hook #'eldoc-mode)
-(add-hook 'racer-mode-hook #'company-mode)
-(add-hook 'flycheck-mode-hook #'flycheck-rust-setup)
+;; (setq racer-cmd "~/.cargo/bin/racer") ;; Rustup binaries PATH
+;; (setq racer-rust-src-path "/Users/nick/source/rust/src") ;; Rust source code PATH
+;; 
+;; (add-hook 'rust-mode-hook #'racer-mode)
+;; (add-hook 'racer-mode-hook #'eldoc-mode)
+;; (add-hook 'racer-mode-hook #'company-mode)
+;; (add-hook 'flycheck-mode-hook #'flycheck-rust-setup)
 
 (add-hook 'markdown-mode-hook
 	  (lambda ()
