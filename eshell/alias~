@@ -1,3 +1,0 @@
-alias gca git commit -am
-alias gph git push heroku master
-alias gst git status

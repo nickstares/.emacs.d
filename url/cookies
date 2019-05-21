@@ -1,16 +1,0 @@
-;; Emacs-W3 HTTP cookies file
-;; Automatically generated file!!! DO NOT EDIT!!!
-
-(setq url-cookie-storage
- '((".clojuredocs.org"
-  [url-cookie "__cfduid" "ddfbeab50bd94046ce31ce6038e0e0a451550608054" "Wed, 19-Feb-20 20:27:34 GMT" "/" ".clojuredocs.org" nil]))
-)
-(setq url-cookie-secure-storage
- '((".github.com"
-  [url-cookie "logged_in" "no" "Sun, 13 Feb 2039 08:19:20 -0000" "/" ".github.com" t]))
-)
-
-;; Local Variables:
-;; version-control: never
-;; no-byte-compile: t
-;; End:

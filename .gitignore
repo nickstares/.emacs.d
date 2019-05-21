@@ -20,3 +20,5 @@ games
 projectile.cache
 *.cache
 tramp
+url
+.DS_Store
