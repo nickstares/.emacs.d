@@ -8,3 +8,15 @@ projectile-bookmarks.eld
 projectile.cache
 auto-save-list
 backups
+.cache
+semanticdb
+.emacs.desktop
+eshell
+request
+recentf
+network-security.data
+image-dired
+games
+projectile.cache
+*.cache
+tramp
