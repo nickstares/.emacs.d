@@ -6,8 +6,11 @@
 ;; (defvar mswindows-p (string-match "windows" (symbol-name system-type)))
 
 (load-theme 'solarized-light t)
+;; (load-theme 'doom-solarized-light t)
 
-;; (require 'keychain-environment)
+;; (require 'doom-modeline)
+;; (doom-modeline-mode 1)
+;; ;; (require 'keychain-environment)
 ;; (keychain-refresh-environment)
 
 ;; (require 'exec-path-from-shell)
@@ -40,7 +43,8 @@
 ;; (add-hook 'window-setup-hook 'toggle-frame-maximized t)
 
 (exec-path-from-shell-initialize)
-;; (set-scroll-bar-mode nil)
+(set-scroll-bar-mode 1)
+(set-scroll-bar-mode nil)
 (tool-bar-mode -1)
 (setq visual-line-mode 1)
 ;; (setq-default show-trailing-whitespace nil) ;
@@ -233,9 +237,7 @@
 
 (define-key evil-normal-state-map (kbd "") 'end-of-line)
 (define-key evil-normal-state-map (kbd "9") 'lispyville-previous-opening)
-(define-key evil-normal-state-map (kbd "(") 'lispyville-next-opening)
 (define-key evil-normal-state-map (kbd "0") 'lispyville-next-closing)
-(define-key evil-normal-state-map (kbd ")") 'lispyville-previous-closing)
 
 ;; H	lispyville-backward-sexp
 ;; L	lispyville-forward-sexp
@@ -258,7 +260,7 @@
 
 ;; EMACS LIKE COMMANDS
 (define-key evil-normal-state-map (kbd "C-a") 'back-to-indentation)
-(define-key evil-normal-state-map (kbd "C-e") 'end-of-line)
+(define-key evil-normal-state-map (kbd "C-e") 'end-of-visual-line)
 (define-key evil-normal-state-map (kbd "C-f") 'forward-char)
 (define-key evil-normal-state-map (kbd "C-b") 'backward-char)
 (define-key evil-insert-state-map (kbd "C-a") 'back-to-indentation)
@@ -341,6 +343,7 @@
  :keymaps 'cider-mode-map
  "j" 'cider-jack-in
  "c" 'cider-eval-defun-at-point
+ "i" 'incanter-eval-and-display-chart
  "e b" 'cider-eval-buffer) 
 
 (use-package cider
@@ -348,6 +351,7 @@
 	      ("C-c M-." . cider-find-var))
   :config
   (setq cider-repl-pop-to-buffer-on-connect nil))
+
 
 (defun my-clojure-reset ()
   "Run a (reset)" 
@@ -374,7 +378,9 @@
 (add-hook 'clojure-mode-hook 'evil-cleverparens-mode)
 (add-hook 'clojure-mode-hook 'flycheck-mode)
 (add-hook 'clojure-mode-hook 'company-mode)
+(add-hook 'clojure-mode-hook 'cider-mode)
 (evil-collection-define-key 'normal 'evil-cleverparens-mode-map (kbd "[") 'evil-cp-previous-closing)
+(evil-collection-define-key 'normal 'evil-cleverparens-mode-map (kbd ";") 'evil-cp-previous-closing)
 (evil-collection-define-key 'normal 'evil-cleverparens-mode-map (kbd "]") 'evil-cp-next-closing)
 (evil-collection-define-key 'normal 'cider-mode-map (kbd "RET") 'cider-eval-last-sexp)
 
@@ -471,6 +477,18 @@
 (add-hook 'racer-mode-hook #'company-mode)
 (add-hook 'flycheck-mode-hook #'flycheck-rust-setup)
 
+(add-hook 'markdown-mode-hook
+	  (lambda ()
+	    (local-set-key (kbd "C-<return>") #'markdown-insert-list-item)))
+
+(add-hook 'olivetti-mode-hook
+	  (lambda ()
+	    (local-set-key (kbd "C-e") #'end-of-visual-line)))
+
+;; this lets evil-forward-sentence begin find a the next sentence using a . instead of double space
+(setq sentence-end-double-space nil)
+
+
 
 ;; see https://github.com/politza/pdf-tools/issues/480
 (setenv "PKG_CONFIG_PATH" "/usr/local/lib/pkgconfig:/usr/local/Cellar/libffi/3.2.1/lib/pkgconfig")
@@ -487,6 +505,7 @@
 (set-face-attribute 'org-done nil :strike-through t)
 (set-face-attribute 'org-headline-done nil :strike-through t)
 
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -499,7 +518,7 @@
  '(blink-cursor-mode nil)
  '(byte-compile-delete-errors nil)
  '(cider-auto-jump-to-error nil)
- '(cider-auto-select-error-buffer nil)
+ '(cider-auto-select-error-buffer t)
  '(cider-cljs-lein-repl
    "(do (require 'figwheel-sidecar.repl-api) (figwheel-sidecar.repl-api/start-figwheel!) (figwheel-sidecar.repl-api/cljs-repl))")
  '(cider-debug-use-overlays t)
@@ -507,7 +526,7 @@
  '(cider-mode-line nil)
  '(cider-mode-line-show-connection nil)
  '(cider-repl-pop-to-buffer-on-connect (quote display-only))
- '(cider-show-error-buffer nil)
+ '(cider-show-error-buffer (quote except-in-repl))
  '(cider-stacktrace-default-filters (quote (tooling dup clojure java REPL)))
  '(cider-use-overlays t)
  '(company-auto-complete t)
@@ -526,7 +545,7 @@
  '(cursor-type (quote bar))
  '(custom-safe-themes
    (quote
-    ("d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "4aee8551b53a43a883cb0b7f3255d6859d766b6c5e14bcb01bed572fcbef4328" "8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" "bfdcbf0d33f3376a956707e746d10f3ef2d8d9caa1c214361c9c08f00a1c8409" "bea5fd3610ed135e6ecc35bf8a9c27277d50336455dbdd2969809f7d7c1f7d79" "4cf3221feff536e2b3385209e9b9dc4c2e0818a69a1cdb4b522756bcdf4e00a4" "c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "9a155066ec746201156bb39f7518c1828a73d67742e11271e4f24b7b178c4710" "43c1a8090ed19ab3c0b1490ce412f78f157d69a29828aa977dae941b994b4147" "53f97243218e8be82ba035ae34c024fd2d2e4de29dc6923e026d5580c77ff702" default)))
+    ("10461a3c8ca61c52dfbbdedd974319b7f7fd720b091996481c8fb1dded6c6116" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "4aee8551b53a43a883cb0b7f3255d6859d766b6c5e14bcb01bed572fcbef4328" "8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" "bfdcbf0d33f3376a956707e746d10f3ef2d8d9caa1c214361c9c08f00a1c8409" "bea5fd3610ed135e6ecc35bf8a9c27277d50336455dbdd2969809f7d7c1f7d79" "4cf3221feff536e2b3385209e9b9dc4c2e0818a69a1cdb4b522756bcdf4e00a4" "c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "9a155066ec746201156bb39f7518c1828a73d67742e11271e4f24b7b178c4710" "43c1a8090ed19ab3c0b1490ce412f78f157d69a29828aa977dae941b994b4147" "53f97243218e8be82ba035ae34c024fd2d2e4de29dc6923e026d5580c77ff702" default)))
  '(dired-recursive-copies (quote always))
  '(electric-indent-mode t)
  '(evil-cleverparens-complete-parens-in-yanked-region nil)
@@ -578,6 +597,9 @@
  '(ido-completion-buffer "nil")
  '(ido-everywhere t)
  '(ido-mode (quote both) nil (ido))
+ '(jdee-db-active-breakpoint-face-colors (cons "#FFFBF0" "#268bd2"))
+ '(jdee-db-requested-breakpoint-face-colors (cons "#FFFBF0" "#859900"))
+ '(jdee-db-spec-breakpoint-face-colors (cons "#FFFBF0" "#E1DBCD"))
  '(lispyville-key-theme
    (quote
     (operators c-w slurp/barf-cp additional-insert additional additional-movement)))
@@ -591,7 +613,7 @@
  '(org-agenda-files nil)
  '(package-selected-packages
    (quote
-    (esup pdf-tools flycheck-rust racer cargo flycheck company-racer flycheck-inline rust-mode evil-vimish-fold yafolding flycheck-joker clojure-snippets ein writeroom-mode gnuplot company-terraform keychain-environment evil-terminal-cursor-changer dired-sidebar terraform-mode org-bullets olivetti muse simpleclip flycheck-pos-tip flycheck-clojure ejc-sql solarized-theme spaceline powerline-evil airline-themes hl-todo benchmark-init fill-column-indicator company-tern xref-js2 js2-refactor js2-mode evil-visualstar general evil-leader json-mode better-shell dired-quick-sort dired-hide-dotfiles treemacs-evil treemacs use-package nyan-mode vimish-fold lsp-mode yaml-mode adjust-parens highlight-parentheses aggressive-indent evil-smartparens evil-cleverparens smartparens evil-surround color-theme-sanityinc-solarized color-theme-solarized highlight2clipboard evil-lispy lispyville diminish evil-magit neotree org align-cljlet clj-refactor el-get runner flx-ido which-key with-editor counsel evil-escape helm-clojuredocs clojure-cheatsheet clojure-mode cider parinfer ace-window key-chord avy helm-ag-r ag projectile magit company helm-ag helm)))
+    (kotlin-mode simple-httpd pandoc-mode impatient-mode flymd doom-themes doom-modeline esup pdf-tools flycheck-rust racer cargo flycheck company-racer flycheck-inline rust-mode evil-vimish-fold yafolding flycheck-joker clojure-snippets ein writeroom-mode gnuplot company-terraform keychain-environment evil-terminal-cursor-changer dired-sidebar terraform-mode org-bullets olivetti muse simpleclip flycheck-pos-tip flycheck-clojure ejc-sql solarized-theme spaceline powerline-evil airline-themes hl-todo benchmark-init fill-column-indicator company-tern xref-js2 js2-refactor js2-mode evil-visualstar general evil-leader json-mode better-shell dired-quick-sort dired-hide-dotfiles treemacs-evil treemacs use-package nyan-mode vimish-fold lsp-mode yaml-mode adjust-parens highlight-parentheses aggressive-indent evil-smartparens evil-cleverparens smartparens evil-surround color-theme-sanityinc-solarized color-theme-solarized highlight2clipboard evil-lispy lispyville diminish evil-magit neotree org align-cljlet clj-refactor el-get runner flx-ido which-key with-editor counsel evil-escape helm-clojuredocs clojure-cheatsheet clojure-mode cider parinfer ace-window key-chord avy helm-ag-r ag projectile magit company helm-ag helm)))
  '(pdf-view-midnight-colors (quote ("#232333" . "#c7c7c7")))
  '(pos-tip-background-color "#FFFACE")
  '(pos-tip-foreground-color "#272822")
@@ -604,7 +626,9 @@
  '(rm-blacklist (quote ("\"vc-mode\"")))
  '(safe-local-variable-values
    (quote
-    ((cider-refresh-after-fn . "integrant.repl/resume")
+    ((cider-ns-refresh-after-fn . "integrant.repl/resume")
+     (cider-ns-refresh-before-fn . "integrant.repl/suspend")
+     (cider-refresh-after-fn . "integrant.repl/resume")
      (cider-refresh-before-fn . "integrant.repl/suspend")
      (cider-clojure-cli-global-options . "-A:dev:build:dev/build:dev/cljs"))))
  '(shell-pop-universal-key "C-t")
@@ -692,3 +716,4 @@ or \\[markdown-toggle-inline-images]."
                   (overlay-put ov 'before-string "\n\n")
                   (push ov markdown-inline-image-overlays))))))))))
 )
+(put 'upcase-region 'disabled nil)
