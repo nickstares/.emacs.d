@@ -155,6 +155,7 @@
   :config
   (setq evil-escape-key-sequence "kj")
   (setq evil-escape-mode 1)
+  (evil-define-key* evil-magit-state magit-mode-map [escape] nil)
   (setq evil-escape-excluded-major-modes
 	(list 'magit-status-mode 'magit-refs-mode 'magit-log-mode 'magit-diff-mode)))
 
