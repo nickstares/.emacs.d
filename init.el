@@ -159,6 +159,10 @@
   (setq evil-escape-excluded-major-modes
 	(list 'magit-status-mode 'magit-refs-mode 'magit-log-mode 'magit-diff-mode)))
 
+
+(setq evil-escape-excluded-major-modes
+	(list 'magit-status-mode 'magit-refs-mode 'magit-log-mode 'magit-diff-mode))
+
 (require 'evil)
 (defun bobby ()
   (interactive)
