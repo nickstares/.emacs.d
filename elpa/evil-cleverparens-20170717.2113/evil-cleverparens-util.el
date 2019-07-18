@@ -58,6 +58,9 @@
 (defun evil-cp-pair-for (pair)
   (evil-cp--pair-for pair evil-cp-pair-list))
 
+(defun evil-cp--get-delimiter-regexp ()
+  (sp--strict-regexp-opt '("(" "[" "{" ")" "]" "}")))
+
 (defun evil-cp--get-opening-regexp ()
   (sp--strict-regexp-opt (--map (car it) evil-cp-pair-list)))
 
@@ -71,6 +74,15 @@ question. Ignores parentheses inside strings."
   (save-excursion
     (when pos (goto-char pos))
     (and (sp--looking-at-p (evil-cp--get-opening-regexp))
+         (not (evil-cp--inside-string-p)))))
+
+(defun evil-cp--looking-at-delimiter-p (&optional pos)
+  "Predicate that returns true if point is looking at a delimiter
+parentheses as defined by smartparens for the major mode in
+question. Ignores parentheses inside strings."
+  (save-excursion
+    (when pos (goto-char pos))
+    (and (sp--looking-at-p (evil-cp--get-delimiter-regexp))
          (not (evil-cp--inside-string-p)))))
 
 (defun evil-cp--looking-at-closing-p (&optional pos)
@@ -116,6 +128,13 @@ question. Ignores parentheses inside strings."
     (and (evil-cp--looking-at-string-delimiter-p)
          (not (paredit-in-string-escape-p))
          (nth 3 (syntax-ppss)))))
+
+(defun evil-cp--looking-at-any-delimiter-p (&optional pos)
+  "Predicate to check if point (or POS) is on an opening
+parentheses or a string delimiter."
+  (or (evil-cp--looking-at-delimiter-p pos)
+      (evil-cp--looking-at-string-closing-p pos)
+      (evil-cp--looking-at-string-opening-p pos)))
 
 (defun evil-cp--looking-at-any-opening-p (&optional pos)
   "Predicate to check if point (or POS) is on an opening

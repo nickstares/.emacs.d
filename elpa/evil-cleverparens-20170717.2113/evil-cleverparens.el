@@ -821,7 +821,8 @@ level sexp)."
                    (:previous 'point-min)))
         (paren-p (cl-case paren-side
                    (:opening 'evil-cp--looking-at-any-opening-p)
-                   (:closing 'evil-cp--looking-at-any-closing-p)))
+                   (:closing 'evil-cp--looking-at-any-closing-p)
+	           (:delimiter 'evil-cp--looking-at-delimiter-p)))
         (pt-orig (point))
         done-p)
     (when (funcall paren-p) (funcall move-fn))
@@ -842,6 +843,22 @@ level sexp)."
   (let ((count (or count 1)))
     (dotimes (i count)
       (evil-cp--paren-navigation-helper :next :opening))))
+
+(evil-define-motion evil-cp-next-delimiter (count)
+  "Motion for moving to the next delimiter."
+  :move-point nil
+  :type inclusive
+  (let ((count (or count 1)))
+    (dotimes (i count)
+      (evil-cp--paren-navigation-helper :next :delimiter))))
+
+(evil-define-motion evil-cp-previous-delimiter (count)
+  "Motion for moving to the previous open parentheses."
+  :move-point nil
+  :type inclusive
+  (let ((count (or count 1)))
+    (dotimes (i count)
+      (evil-cp--paren-navigation-helper :previous :delimiter))))
 
 (evil-define-motion evil-cp-previous-opening (count)
   "Motion for moving to the previous open parentheses."

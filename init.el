@@ -375,15 +375,47 @@
           ad-do-it)
       ad-do-it))
 
+
+(defadvice cider-pprint-eval-last-sexp-to-comment (around evil activate)
+    "In normal-state or motion-state, last sexp ends at point."
+    (if (or (evil-normal-state-p) (evil-motion-state-p))
+        (save-excursion
+          (unless (or (eobp) (eolp)) (forward-char))
+          ad-do-it)
+      ad-do-it))
+
+
+(defadvice cider-eval-last-sexp-to-repl (around evil activate)
+    "In normal-state or motion-state, last sexp ends at point."
+    (if (or (evil-normal-state-p) (evil-motion-state-p))
+        (save-excursion
+          (unless (or (eobp) (eolp)) (forward-char))
+          ad-do-it)
+      ad-do-it))
+
+(defadvice cider-insert-last-sexp-in-repl (around evil activate)
+    "In normal-state or motion-state, last sexp ends at point."
+    (if (or (evil-normal-state-p) (evil-motion-state-p))
+        (save-excursion
+          (unless (or (eobp) (eolp)) (forward-char))
+          ad-do-it)
+      ad-do-it))
+
 (add-hook 'clojure-mode-hook 'parinfer-mode)
 (add-hook 'clojure-mode-hook 'evil-cleverparens-mode)
 (add-hook 'clojure-mode-hook 'flycheck-mode)
 (add-hook 'clojure-mode-hook 'company-mode)
 (add-hook 'clojure-mode-hook 'cider-mode)
-(evil-collection-define-key 'normal 'evil-cleverparens-mode-map (kbd "[") 'evil-cp-previous-closing)
-(evil-collection-define-key 'normal 'evil-cleverparens-mode-map (kbd ";") 'evil-cp-previous-closing)
-(evil-collection-define-key 'normal 'evil-cleverparens-mode-map (kbd "]") 'evil-cp-next-closing)
+(evil-collection-define-key 'normal 'evil-cleverparens-mode-map (kbd "(") 'evil-cp-previous-closing)
+(evil-collection-define-key 'normal 'evil-cleverparens-mode-map (kbd ")") 'evil-cp-next-opening)
+(evil-collection-define-key 'normal 'evil-cleverparens-mode-map (kbd "9") 'evil-cp-previous-opening)
+(evil-collection-define-key 'normal 'evil-cleverparens-mode-map (kbd "0") 'evil-cp-next-closing)
+(evil-collection-define-key 'normal 'evil-cleverparens-mode-map (kbd ";") 'evil-jump-item)
+(evil-collection-define-key 'normal 'evil-cleverparens-mode-map (kbd "'") 'end-of-visual-line)
+(evil-collection-define-key 'normal 'evil-cleverparens-mode-map (kbd "s") 'evil-cp-previous-delimiter)
+(evil-collection-define-key 'normal 'evil-cleverparens-mode-map (kbd "f") 'evil-cp-next-delimiter)
 (evil-collection-define-key 'normal 'cider-mode-map (kbd "RET") 'cider-eval-last-sexp)
+(evil-collection-define-key 'normal 'cider-inspector-mode-map (kbd "DEL") 'cider-inspector-pop)
 
 ;; END CLOJURE
 
@@ -523,10 +555,12 @@
  '(cider-cljs-lein-repl
    "(do (require 'figwheel-sidecar.repl-api) (figwheel-sidecar.repl-api/start-figwheel!) (figwheel-sidecar.repl-api/cljs-repl))")
  '(cider-debug-use-overlays t)
- '(cider-default-cljs-repl (quote figwheel))
+ '(cider-default-cljs-repl (quote shadow))
  '(cider-mode-line nil)
  '(cider-mode-line-show-connection nil)
  '(cider-repl-pop-to-buffer-on-connect (quote display-only))
+ '(cider-shadow-cljs-command "shadow-cljs")
+ '(cider-shadow-cljs-parameters "watch app")
  '(cider-show-error-buffer (quote except-in-repl))
  '(cider-stacktrace-default-filters (quote (tooling dup clojure java REPL)))
  '(cider-use-overlays t)
