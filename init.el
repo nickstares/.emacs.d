@@ -241,8 +241,6 @@
 
 
 (define-key evil-normal-state-map (kbd "") 'end-of-line)
-(define-key evil-normal-state-map (kbd "9") 'lispyville-previous-opening)
-(define-key evil-normal-state-map (kbd "0") 'lispyville-next-closing)
 
 ;; H	lispyville-backward-sexp
 ;; L	lispyville-forward-sexp
@@ -414,8 +412,8 @@
 (evil-collection-define-key 'normal 'evil-cleverparens-mode-map (kbd ")") 'evil-cp-next-opening)
 (evil-collection-define-key 'normal 'evil-cleverparens-mode-map (kbd "9") 'evil-cp-previous-opening)
 (evil-collection-define-key 'normal 'evil-cleverparens-mode-map (kbd "0") 'evil-cp-next-closing)
-(evil-collection-define-key 'normal 'evil-cleverparens-mode-map (kbd ";") 'evil-jump-item)
-(evil-collection-define-key 'normal 'evil-cleverparens-mode-map (kbd "'") 'end-of-visual-line)
+(evil-collection-define-key 'normal 'evil-cleverparens-mode-map (kbd "'") 'evil-jump-item)
+(evil-collection-define-key 'normal 'evil-cleverparens-mode-map (kbd ";") 'end-of-visual-line)
 (evil-collection-define-key 'normal 'evil-cleverparens-mode-map (kbd "s") 'evil-cp-previous-delimiter)
 (evil-collection-define-key 'normal 'evil-cleverparens-mode-map (kbd "f") 'evil-cp-next-delimiter)
 (evil-collection-define-key 'normal 'cider-mode-map (kbd "RET") 'cider-eval-last-sexp)
