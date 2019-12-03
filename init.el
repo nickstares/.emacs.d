@@ -606,6 +606,7 @@
  '(global-evil-visualstar-mode t)
  '(global-linum-mode nil)
  '(global-visual-line-mode t)
+ '(help-window-select t)
  '(highlight-changes-colors (quote ("#FD5FF0" "#AE81FF")))
  '(highlight-symbol-colors
    (--map
